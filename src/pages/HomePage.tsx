@@ -1,7 +1,13 @@
+import Main from "../components/Main"
+import Manager from "../components/Manager"
+
+
+
 export const HomePage = () => {
   return (
     <div>
-        <h1>teste de feature</h1>
+        <Main/>
+        <Manager/>
     </div>
   )
 }

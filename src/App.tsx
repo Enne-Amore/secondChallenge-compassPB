@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { HomePage } from "./pages/HomePage"
 import { Login } from "./pages/Login"
+import './index.css';
 
 export default function App() {
   return (

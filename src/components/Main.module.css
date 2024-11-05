@@ -1,0 +1,26 @@
+.mainSection{
+    @apply bg-[url('../assets/bg-home.jfif')] flex flex-col text-center 
+    m-auto   items-center pl-5 pr-5 pt-14 text-white 
+}
+.container{
+    @apply w-342 h-285 bg-black-55 flex flex-col justify-around 
+    text-center items-center pt-4 max-h-72 mb-7 rounded-3xl
+    max-w-96
+}
+.title{
+    @apply text-24px font-roboto font-bold max-w-80 max-h-9
+}
+.textMain {
+    @apply max-w-56 max-h-32
+}
+
+.card {
+    @apply bg-amber-950 mx-auto rounded-2xl 
+    min-w-44 min-h-20 mt-4 mb-4 text-start pt-4 pb-4
+}
+
+.text{
+    @apply ml-5 font-semibold
+}
+
+

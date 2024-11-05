@@ -5,8 +5,25 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'black-55': 'rgba(0, 0, 0, 0.55)',
+        'blue-55' : '#92BBFF'
+      },
+      width: {
+        '342': '342px',
+      },
+      height: {
+        '285': '285px',
+    },
+      fontSize: {
+        '24px': '24px',
+  },
+  fontFamily: {
+    roboto: ['Roboto', 'sans-serif'],
   },
   plugins: [],
+  }
+  }
 }
 
