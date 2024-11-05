@@ -8,3 +8,28 @@ input[type="search"]{
 input[type="search"]:focus{
     background-image: none;
 }
+
+.menu{
+    background-image: url('../../assets/menu.svg');
+    width: 24px;
+    height: 24px;
+}
+
+.search{
+    width: 36px;
+    height: 36px;
+    background-image: url('../../assets/ic-search.png');
+    background-repeat: no-repeat;
+    
+}
+
+/* style.css */
+input[type="search"]::placeholder {
+    color: #FFFFFF80; /* Cor personalizada para o placeholder */
+    opacity: 1; /* Certifique-se de que a opacidade seja 1 */
+  }
+  
+/*  */
+
+
+
