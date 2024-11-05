@@ -41,8 +41,8 @@ const Manager = () => {
           <div className={styles.containImg}>
             <img src={collaborate} alt="Imagem 1" className={styles.img}/>
             <div className={styles.containtext}>
-              <h2>Manage Projects</h2>
-              <p className={styles.textcard}>20+ projects</p>
+              <h2>Collaborate</h2>
+              <p className={styles.textcard}>10+ team members</p>
             </div>
           </div>
         </div>
