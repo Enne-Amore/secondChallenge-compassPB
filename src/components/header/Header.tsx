@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
   return (
-    <header className="bg-slate-800 w-full">
+    <header className="bg-blue-750 w-full">
       <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between p-4">
         
         {/* Logo e Título */}
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
         {showLoginButton && (
           <a 
             href="#" 
-            className="w-[105px] md:w-[162px] lg:w-[240px] md:mt-0 md:ml-4 border border-white rounded-full text-white text-center px-4 py-2"
+            className="w-[105px] md:w-[162px] lg:w-[240px] md:mt-0 md:ml-4 border border-white hover:border-[#268FE4]  rounded-full text-white text-center px-4 py-2 transition duration-400"
           >
             Login
           </a>

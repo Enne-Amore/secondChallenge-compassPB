@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       <input 
         type="search" 
         placeholder="Search in site" 
-        className="hidden md:block ml-4 bg-transparent border border-white/50 rounded-md max-w-xs h-9 px-2 text-white placeholder-white bg-no-repeat bg-right"
+        className="hidden md:block ml-4 bg-transparent border border-white/50 rounded-md max-w-xs h-9 px-2 text-white placeholder-white bg-no-repeat bg-right outline-none"
       />
     </nav>
   );

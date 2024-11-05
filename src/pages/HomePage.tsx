@@ -10,7 +10,7 @@ import Manager from "../components/home/Manager"
 export const HomePage = () => {
   return (
     <>
-        <Header/>
+        <Header showLoginButton/>
         <Main/>
         <Manager/>
         <Feature/>
