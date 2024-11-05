@@ -23,6 +23,10 @@ export default {
   fontFamily: {
     roboto: ['Roboto', 'sans-serif'],
   },
+  margin: {
+    'margin-b': '39px', 
+  
+  },
   plugins: [],
   }
   }

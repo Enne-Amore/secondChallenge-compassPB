@@ -1,14 +1,14 @@
 .mainSection{
     @apply bg-[url('../assets/bg-home.jfif')] flex flex-col text-center 
-    m-auto items-center pl-5 pr-5 pt-14 text-white bg-cover bg-center
+    items-center pl-5 pr-5 pt-14  text-white bg-cover bg-center
 }
 .container{
     @apply w-342 h-285 bg-black-55 flex flex-col justify-around 
-    text-center items-center pt-4 max-h-72 mb-7 rounded-3xl
+    text-center items-center rounded-3xl gap-[15px]
     max-w-96
 }
 .title{
-    @apply text-24px  font-bold max-w-80 max-h-9
+    @apply text-24px  font-bold max-w-80 max-h-9 mt-[27px]
 }
 
 .textMain {
@@ -16,7 +16,7 @@
 }
 
 .getButton{
-    @apply text-center rounded-full border p-3 pl-5 font-bold 
+    @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6
 }
 
 .card {
