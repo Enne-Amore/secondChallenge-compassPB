@@ -1,0 +1,43 @@
+.manager {
+    @apply h-794 w-392 bg-blue-750 text-center pt-person1 text-white
+}
+
+.container {
+    @apply text-start mx-5 flex flex-col gap-10 justify-center 
+} 
+
+.title {
+    @apply text-3xl font-bold text-yellow-150
+}
+
+
+.text {
+   @apply text-sm leading-[24px] 
+}
+
+.learButton {
+    @apply w-52 h-9 border rounded-md bg-white text-blue-950  m-auto font-semibold
+}
+
+.containList{
+    @apply flex flex-row mt-[49px] ml-5 overflow-y-auto h-screen
+}
+
+.card {
+    @apply w-[308px] h-[381px] text-left mr-9 
+
+}
+
+.containImg {
+    @apply w-[308px] h-[308px]
+}
+
+.img {
+    @apply rounded-t-md
+}
+.containtext {
+    @apply p-[11px] leading-[21.7px] 
+}
+.textcard {
+    @apply font-semibold font-[18.11px] mt-1
+}
