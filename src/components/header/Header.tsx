@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import "./style.css"
 
 interface HeaderProps {
   showLoginButton?: boolean;
@@ -8,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
   return (
-    <header className="bg-blue-750 w-full">
+    <header className="bg-blue-750 w-full font-roboto">
       <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between p-4">
         
         {/* Logo e Título */}

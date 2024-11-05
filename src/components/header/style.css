@@ -1,0 +1,10 @@
+input[type="search"]{
+    background-image: url('../../assets/ic-search.png');
+    background-position: 97%;
+    -webkit-appearance: none !important;
+    -moz-appearance: textfield !important;
+}
+
+input[type="search"]:focus{
+    background-image: none;
+}
