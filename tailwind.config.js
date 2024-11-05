@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'kanban': "url('/src/assets/draggable-area.png')",
+      },
+      gridTemplateColumns: {
+        'metrics': '112px minmax(100px, 2fr)',
+      }
+    },
   },
   plugins: [],
 }
