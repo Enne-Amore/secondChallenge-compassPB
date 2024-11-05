@@ -1,0 +1,31 @@
+.manager {
+    @apply h-794 w-392 bg-blue-750 text-center pt-person1 text-white
+}
+
+.container {
+    @apply text-start mx-5 flex flex-col gap-10 justify-center 
+} 
+
+.title {
+    @apply text-3xl font-bold text-yellow-150
+}
+
+
+.text {
+   @apply text-sm leading-[24px] 
+}
+
+.learButton {
+    @apply w-52 h-9 border rounded-md bg-white text-blue-950  m-auto font-semibold
+}
+
+.containList{
+    @apply flex flex-row mt-[49px]
+}
+
+.list{
+    @apply flex grid grid-cols-1 md:grid-cols-3 gap-6
+}
+
+
+
