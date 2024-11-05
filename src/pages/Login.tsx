@@ -1,9 +1,6 @@
 export const Login = () => {
     return (
         <div>
-            <div>
-                <img src="project-manager-02/src/assets/login-illustration.png" />
-            </div>
             <form>
                 <div>
                     <h1>Login Information</h1>
