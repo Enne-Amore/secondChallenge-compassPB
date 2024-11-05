@@ -9,12 +9,14 @@ export default {
       colors: {
         'black-55': 'rgba(0, 0, 0, 0.55)',
         'blue-55' : '#92BBFF',
-        "bronw-70" : 'rgba(35, 8, 28, 0.7)' ,
+        "brown-70" : 'rgba(35, 8, 28, 0.7)' ,
         'blue-750' : '#1E293B',
         'yellow-150' : '#FCF4B6',
-        'blue-850' : '#160A60'
+        'blue-850' : '#160A60',
+        'purple-450' : '#5C5A79'
       },
       width: {
+        '353' : '353px',
         '342': '342px',
         '393' : '393px',
         '308' : '308px',

@@ -1,14 +1,15 @@
 .mainSection{
-    @apply bg-[url('../assets/bg-home.jfif')] flex flex-col text-center 
-    items-center pl-5 pr-5 pt-14  text-white bg-cover bg-center
+    @apply bg-[url('../../assets/bg-home.jfif')] flex flex-col text-center 
+    items-center pt-14  text-white bg-cover bg-center max-w-[393px] px-4 bg-amber-400
+    
 }
 .container{
-    @apply w-342 h-285 bg-black-55 flex flex-col justify-around 
-    text-center items-center rounded-3xl gap-[15px]
-    max-w-96
+    @apply w-353 h-285 bg-black-55 flex flex-col justify-around 
+    text-center items-center rounded-3xl gap-y-[15px]
+    max-w-[353px]
 }
 .title{
-    @apply text-24  font-bold max-w-80 max-h-9 mt-[27px]
+    @apply text-24  font-bold min-w-[313px] min-h-[48px] mt-[27px]
 }
 
 .textMain {
@@ -20,12 +21,10 @@
 }
 
 .card {
-    @apply bg-bronw-70 mx-auto rounded-2xl 
+    @apply bg-brown-70 mx-auto rounded-2xl 
     min-w-44 min-h-20 mt-4 mb-4 text-start pt-4 pb-4
 }
 
 .text{
     @apply ml-5 font-semibold
 }
-
-
