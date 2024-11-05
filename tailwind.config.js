@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         'black-55': 'rgba(0, 0, 0, 0.55)',
-        'blue-55' : '#92BBFF'
+        'blue-55' : '#92BBFF',
+        "bronw-70" : 'rgba(35, 8, 28, 0.7)' 
       },
       width: {
         '342': '342px',

@@ -8,7 +8,7 @@ const Main = () => {
             <p className={styles.textMain}>Get your projects and ideas in order, 
                 all in one place! Sign up now and discover a smarter way to 
                 manage your work with efficiency and teamwork</p>
-                <button className={styles.subButton}>Get Start</button>
+                <button className={styles.getButton}>Get Started</button>
         </div>
         <div >
             <div className={styles.card}>
