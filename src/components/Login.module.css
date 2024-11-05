@@ -1,0 +1,15 @@
+.divContainer {
+    @apply bg-[url('../assets/login-illustration.png')] h-screen bg-no-repeat bg-cover w-screen fixed;
+}
+
+.divForm {
+    @apply bg-white flex flex-col m-10 h-5/6  rounded-3xl;
+}
+
+.divText {
+    @apply flex flex-col items-center;
+}
+
+.h1 {
+    @apply m-5 mt-5 text-24px text-roboto text-black-51 font-bold;
+}
