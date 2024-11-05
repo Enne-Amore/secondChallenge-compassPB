@@ -11,7 +11,10 @@ export default {
       },
       gridTemplateColumns: {
         'metrics': '112px minmax(100px, 2fr)',
-      }
+      },
+      fontFamily: {
+        'plus': ['Plus Jakarta Sans', 'sans-serif',],
+      },
     },
   },
   plugins: [],
