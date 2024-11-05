@@ -1,5 +1,5 @@
 .manager {
-    @apply h-794 w-392 bg-blue-750 text-center pt-person1 text-white
+    @apply w-393 bg-blue-750 text-center pt-person1 text-white py-[60px]
 }
 
 .container {
@@ -20,16 +20,16 @@
 }
 
 .containList{
-    @apply flex flex-row mt-[49px] ml-5 overflow-y-auto h-screen
+    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto w-screen 
 }
 
 .card {
-    @apply w-[308px] h-[381px] text-left mr-9 
+    @apply w-308 h-381 text-left mr-9 
 
 }
 
 .containImg {
-    @apply w-[308px] h-[308px]
+    @apply w-308 h-308
 }
 
 .img {
