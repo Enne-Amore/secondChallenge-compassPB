@@ -1,6 +1,6 @@
-import project from '../assets/project-manager-illustration.png'
-import tasks from '../assets/track-tasks-illustration.png'
-import collaborate from '../assets/collaborate-illustration.png'
+import project from '../../assets/project-manager-illustration.png'
+import tasks from '../../assets/track-tasks-illustration.png'
+import collaborate from '../../assets/collaborate-illustration.png'
 import styles from './Manager.module.css'
 
 const Manager = () => {

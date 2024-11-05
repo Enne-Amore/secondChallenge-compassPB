@@ -1,5 +1,5 @@
 .manager {
-    @apply w-393 bg-blue-750 text-center pt-person1 text-white py-[60px]
+    @apply w-393 bg-blue-750 text-center pt-person1 text-white py-person1
 }
 
 .container {

@@ -8,7 +8,7 @@
     max-w-96
 }
 .title{
-    @apply text-24px  font-bold max-w-80 max-h-9 mt-[27px]
+    @apply text-24  font-bold max-w-80 max-h-9 mt-[27px]
 }
 
 .textMain {

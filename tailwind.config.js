@@ -27,10 +27,10 @@ export default {
         '381' : '381px'
     },
       fontSize: {
-        '24px': '24px',
+        '24': '24px',
   },
     fontFamily: {
-    roboto: ['Roboto', 'sans-serif'],
+    roboto: ['Roboto'],
   },
     margin: {
     'margin-b': '39px', 

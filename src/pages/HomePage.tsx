@@ -1,6 +1,6 @@
-import Feature from "../components/Feature"
-import Main from "../components/Main"
-import Manager from "../components/Manager"
+import Feature from "../components/home/Feature"
+import Main from "../components/home/Main"
+import Manager from "../components/home/Manager"
 
 
 
