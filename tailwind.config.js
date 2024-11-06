@@ -14,7 +14,6 @@ export default {
         'yellow-150' : '#FCF4B6',
         'blue-850' : '#160A60',
         'purple-450' : '#5C5A79',
-
       },
       width: {
         '353' : '353px',
