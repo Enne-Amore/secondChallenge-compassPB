@@ -32,6 +32,8 @@ export default {
                 251: "251px",
                 814: "814px",
                 489: "489px",
+                393: "393px",
+                308: "308px",
             },
             height: {
                 285: "285px",
@@ -41,7 +43,9 @@ export default {
                 36: "36px",
                 56: "56px",
                 902: "902px",
-                1053: "1053",
+                1053: "1053px",
+                308: "308px",
+                381: "381px",
             },
             fontSize: {
                 "24px": "24px",
@@ -52,6 +56,7 @@ export default {
             },
             fontFamily: {
                 roboto: ["Roboto", "sans-serif"],
+                plus: ["Plus Jakarta Sans", "sans-serif"],
             },
             margin: {
                 "margin-b": "39px",
@@ -62,7 +67,13 @@ export default {
             backgroundSize: {
                 "50%": "50% 50%",
             },
-            plugins: [],
+            backgroundImage: {
+                kanban: "url('/src/assets/draggable-area.png')",
+            },
+            gridTemplateColumns: {
+                metrics: "112px minmax(100px, 2fr)",
+            },
         },
     },
+    plugins: [],
 };

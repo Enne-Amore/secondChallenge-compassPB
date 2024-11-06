@@ -3,6 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { Login } from "./pages/Login";
 import "./index.css";
 import { SignIn } from "./pages/SingIn/SignIn";
+import { Kanban } from "./pages/Kanban";
 
 export default function App() {
     return (
@@ -12,7 +13,10 @@ export default function App() {
                     <Route path="/" element={<HomePage />} />
 
                     <Route path="/login" element={<Login />} />
-                    <Route path="/singIn" element={<SignIn />} />
+
+                    <Route path="/signIn" element={<SignIn />} />
+
+                    <Route path="/kanban" element={<Kanban />} />
                 </Routes>
             </BrowserRouter>
         </>

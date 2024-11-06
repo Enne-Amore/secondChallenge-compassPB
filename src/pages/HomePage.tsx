@@ -1,5 +1,8 @@
-import Main from "../components/Main"
-import Manager from "../components/Manager"
+
+import Header from "../components/header/Header"
+import Feature from "../components/home/Feature"
+import Main from "../components/home/Main"
+import Manager from "../components/home/Manager"
 
 
 
@@ -7,8 +10,10 @@ import Manager from "../components/Manager"
 export const HomePage = () => {
   return (
     <>
+        <Header showNavbar/>
         <Main/>
         <Manager/>
+        <Feature/>
     </>
   )
 }
