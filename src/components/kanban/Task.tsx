@@ -4,7 +4,7 @@ import { FaCircleCheck } from 'react-icons/fa6'
 
 export const Task = () => {
   return (
-    <article className='bg-white rounded-3xl shadow-sm p-2.5 pb-1.5 flex flex-col gap-3'>
+    <article className='bg-white rounded-2xl shadow-sm p-2.5 pb-1.5 flex flex-col gap-3 min-w-52'>
       <strong className='bg-[#FFFBEB] text-[#F59E0B] text-xs font-semibold font-plus py-1.5 px-2.5 rounded-full w-max'>Mid</strong>
 
       <h3 className='text-[#1E293B] text-xs font-bold mb-1'>Task 3</h3>

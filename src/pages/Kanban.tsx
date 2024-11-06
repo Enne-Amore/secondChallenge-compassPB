@@ -15,7 +15,7 @@ export const Kanban = () => {
     
   } else {
     fixed = "hidden"
-    styleIcon = "top-1.5 left-24 bg-[#94A3B8] hover:bg-[#1E293B] transition-all"
+    styleIcon = "top-1.5 left-28 bg-[#94A3B8] hover:bg-[#1E293B] transition-all"
   }
 
   return (
@@ -101,7 +101,7 @@ export const Kanban = () => {
         </div>
       </div>
 
-      <section className="flex gap-4 bg-kanban bg-no-repeat bg-cover rounded-3xl py-60 w-10/12 overflow-auto">
+      <section className="flex gap-4 bg-kanban bg-no-repeat bg-cover rounded-3xl py-60 w-11/12 overflow-auto">
         <TableTask
           title={"To do"}
           qtd={25}
