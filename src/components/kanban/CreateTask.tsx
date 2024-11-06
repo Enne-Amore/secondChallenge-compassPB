@@ -63,17 +63,17 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
 
             <ul className="flex items-center gap-2">
               <li className="flex items-center gap-1">
-                <input type="radio" id="to-do" />
+                <input type="radio" name="status" id="to-do" value={"to-do"} />
                 <label htmlFor="to-do">To do</label>
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" id="progress" />
+                <input type="radio" name="status" id="progress" value={"in-progress"} />
                 <label htmlFor="progress">In progress</label>
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" id="done" />
+                <input type="radio" name="status" id="done" value={"done"} />
                 <label htmlFor="done">Done</label>
               </li>
             </ul>
