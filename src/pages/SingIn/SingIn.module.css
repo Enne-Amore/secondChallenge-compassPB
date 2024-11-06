@@ -1,15 +1,15 @@
 .divContainer {
     @apply top-0 left-0 w-full h-full z-10 flex items-center justify-center absolute 
-    xl:flex-row  xl:justify-center 
+    xl:flex-row  xl:justify-start
 }
 
 .divImg {
     @apply bg-[url('src/assets/sign-illustration.png')] bg-right-bottom h-full bottom-0 
-    bg-no-repeat bg-cover w-screen absolute opacity-45 xl:w-626 xl:right-0 
-    xl:opacity-100 xl:ml-40 xl:z-10}
+    bg-no-repeat bg-cover w-screen absolute opacity-45  xl:right-0 
+    xl:opacity-100   xl:w-626 }
 .divForm {
     @apply bg-white w-353 flex flex-col rounded-3xl z-10 justify-around 
-    md:w-656 md:h-794  md:justify-between relative xl:mr-80 xl:z-0
+    xl:w-1/2 mx-3  md:justify-between relative  md:w-full
 }
 
 .divText {
@@ -45,7 +45,8 @@
 }
 
 .btnSingIn {
-    @apply mt-10 font-roboto w-324 mx-4 mb-10 md:w-508 md:ml-16 xl:w-489 xl:ml-20;
+    @apply mt-10 font-roboto w-324 mx-4 mb-10 md:w-508 md:mx-20 
+    xl:w-489 xl:ml-20 hover:bg-blue-74
 }
 .divLabel {
     @apply flex flex-col mt-3 text-14px text-black-51 font-bold md:ml-16 
@@ -61,22 +62,24 @@
 }
 
 .divSmall {
-    @apply flex justify-center xl:justify-start;
+    @apply flex justify-center md:justify-start md:ml-72 xl:justify-start xl:ml-72;
 }
 
 .small {
-    @apply text-14px text-black-51 mb-3 xl:ml-72
+    @apply text-14px text-black-51 mb-3 
 }
 
 .divBtn {
-    @apply flex justify-center mb-4 items-center xl:mr-32
+    @apply flex justify-center mb-4 
+    items-center md:justify-start md:ml-56 xl:justify-start xl:ml-56  
 }
 
 .btnFace {
     @apply flex justify-center border-2 p-2 mr-3 border-gray-200 
-    rounded-3xl w-110 h-56 xl:ml-36 
+    rounded-3xl w-110 h-56 hover:border-blue-26
 }
 
 .btnGmail {
-    @apply flex justify-center border-2 p-3 border-gray-200 rounded-3xl w-110 h-56 
+    @apply flex justify-center border-2 p-3 border-gray-200 rounded-3xl w-110 
+    h-56 hover:border-blue-26
 }

@@ -15,7 +15,7 @@ export const Login = () => {
                     </p>
                 </div>
                 <div className={styles.divContainerInput}>
-                    <div className="mb-6">
+                    <div>
                         <label className={styles.divLabel}>Email</label>
                         <input
                             type="text"

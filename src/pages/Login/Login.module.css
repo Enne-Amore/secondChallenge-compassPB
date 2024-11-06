@@ -1,19 +1,23 @@
 .divContainer {
-    @apply top-0 left-0 w-full h-full z-10 flex items-center justify-center absolute xl:justify-end   
+    @apply top-0 left-0 w-full h-full z-10 flex items-center justify-center 
+    absolute  xl:flex xl:flex-row xl:justify-end
  
 }
 
 .divImg{
-    @apply bg-[url('src/assets/login-illustration.png')] h-full bottom-0 bg-no-repeat bg-cover w-screen absolute opacity-45 xl:opacity-100
-    xl:w-1/2 xl:h-full xl:left-0 xl:top-0
+    @apply bg-[url('src/assets/login-illustration.png')] h-full bottom-0 bg-no-repeat 
+    bg-cover w-screen absolute opacity-45 xl:opacity-100
+     xl:w-626 xl:h-full xl:left-0 xl:top-0
 }
 
 .divForm {
-    @apply bg-white w-353 flex flex-col rounded-3xl z-10  justify-around md:w-656 md:justify-start md:h-624  xl:h-screen   relative xl:w-1400  xl:flex xl:items-start xl:justify-evenly;
+    @apply bg-white w-353 flex flex-col rounded-3xl z-10 
+     justify-around md:w-656 md:justify-start md:h-624 px-5
+     xl:h-full mx-2 relative xl:flex xl:flex-col xl:items-start xl:justify-evenly xl:ml-40;
 }
 
 .divText {
-    @apply flex flex-col items-center md:items-start md:mb-12 xl:mb-0;
+    @apply flex flex-col items-center md:items-start md:mb-12 xl:mb-0
 }
 
 .h1 {
@@ -29,18 +33,19 @@
 }
 
 .divContainerInput {
-    @apply flex flex-col mx-3 mt-0 xl:mt-0;
+    @apply flex flex-col  mt-0  w-full xl:mb-0
 }
 
 .divLabel {
-    @apply flex flex-col text-14px text-black-51 font-bold md:ml-16 xl:ml-0;
+    @apply flex flex-col text-14px text-black-51 font-bold  xl:mt-0;
 }
 
 .divInput {
-    @apply w-329 h-36 border-2 border-gray-100 p-3 rounded-md md:ml-16 focus:outline-none xl:w-520 xl:ml-0
+    @apply w-full h-36 border-2 mb-3 border-gray-100 p-3 rounded-md  focus:outline-none  
+    xl:ml-0 xl:mb-5
 }
 .btnLogin { 
-    @apply mt-10 font-roboto mb-10 md:w-508 md:ml-16 xl:ml-0;
+    @apply mt-10 font-roboto mb-10 md:w-508 md:ml-16 xl:ml-0 hover:bg-blue-74;
 }
 .divSmall {
     @apply flex justify-center xl:justify-start ;
@@ -53,8 +58,10 @@
     @apply flex justify-center mb-4 items-center xl:justify-start xl:mb-32;
 }
 .btnFace {
-    @apply flex justify-center border-2 p-2 mr-3 border-gray-200 rounded-3xl w-110 h-56 xl:ml-36;
+    @apply flex justify-center border-2 p-2 mr-3 border-gray-200 rounded-3xl 
+    w-110 h-56 xl:ml-36 hover:border-blue-26;
 }
 .btnGmail {
-    @apply flex justify-center border-2 p-3  border-gray-200 rounded-3xl w-110 h-56;
+    @apply flex justify-center border-2 p-3  border-gray-200 rounded-3xl w-110 
+    h-56 hover:border-blue-26;
 }
