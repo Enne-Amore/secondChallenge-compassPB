@@ -49,8 +49,6 @@
     tablete:grid-cols-2 tablete:gap-y-10 tablete:w-full tablete:gap-x-[130px]
 }
 
-    
-
 .itemList{
     @apply flex  flex-col  items-center py-[12px] justify-between py-3 gap-[20px]
     /* tela de tablete */

@@ -53,7 +53,7 @@ const Feature = () => {
         </div>
       </div>
     </div>
-    
+    {/* da uma olhada nesse ultimo item por que esta quebrando o texto por favor */}
   </div>
 </div>
 
