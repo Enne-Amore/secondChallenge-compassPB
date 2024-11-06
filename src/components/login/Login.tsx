@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button";
+import { Button } from "../Button/Button";
 import styles from "./Login.module.css";
 
 export const Login = () => {
