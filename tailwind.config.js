@@ -47,8 +47,6 @@ export default {
         'person1' : '60px'
       },
     },
+  },
   plugins: [],
-  }
-  }
 }
-
