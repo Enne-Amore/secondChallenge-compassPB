@@ -1,0 +1,11 @@
+.icon{
+    @apply w-[34px] h-[32px] bg-white rounded-full flex items-center;
+}
+
+.iconSVG{
+    @apply w-full
+}
+
+.wraperIcons{
+    @apply flex items-center justify-between w-[136px] m-auto
+}
