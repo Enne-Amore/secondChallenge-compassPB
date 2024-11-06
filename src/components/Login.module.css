@@ -1,0 +1,54 @@
+.divContainer {
+    @apply bg-[url('../assets/login-illustration.png')]  h-full bottom-0 bg-no-repeat bg-cover w-screen absolute opacity-45;
+}
+
+.divForm {
+    @apply bg-white w-353 h-full  flex flex-col m-10  rounded-3xl relative mt-10 top-10;
+}
+
+.divText {
+    @apply flex flex-col items-center;
+}
+
+.h1 {
+    @apply m-5  text-24px font-roboto text-black-51 font-bold;
+}
+
+.p {
+    @apply text-15px text-black-51;
+}
+
+.a {
+    @apply text-blue-46;
+}
+
+.divContainerInput {
+    @apply m-10 flex flex-col right-6 relative;
+}
+
+.divLabel {
+    @apply flex flex-col text-14px text-black-51 font-bold;
+}
+
+.divInput {
+    @apply w-329 h-36 border-2 border-gray-100 p-3 rounded-md;
+}
+.btnLogin {
+    @apply mt-10 mb-10;
+}
+.divSmall {
+    @apply flex justify-center;
+}
+.small {
+    @apply text-14px text-black-51 mb-3;
+}
+
+.divBtn {
+    @apply flex justify-center items-center;
+}
+.btnFace {
+    @apply flex justify-center border-2 p-2 mr-3 border-gray-200 rounded-3xl w-110 h-56;
+}
+.btnGmail {
+    @apply flex justify-center border-2 p-3  border-gray-200 rounded-3xl w-110 h-56;
+}
