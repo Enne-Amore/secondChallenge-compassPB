@@ -41,6 +41,9 @@ export default {
     padding: {
       'person1' : '60px'
     },
+    screens: {
+      'tablete' : '744px'
+    },
   plugins: [],
   }
   }

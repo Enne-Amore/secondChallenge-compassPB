@@ -1,30 +1,40 @@
 .mainSection{
     @apply bg-[url('../../assets/bg-home.jfif')] flex flex-col text-center 
-    items-center pt-14  text-white bg-cover bg-center max-w-[393px] px-4 bg-amber-400
+    items-center pt-14  text-white bg-cover bg-center min-w-[393px] px-4
+    /* tela de tablete */
+    tablete:w-[744px] tablete:h-[644px]
     
 }
 .container{
     @apply w-353 h-285 bg-black-55 flex flex-col justify-around 
-    text-center items-center rounded-3xl gap-y-[15px]
-    max-w-[353px]
-}
+    text-center items-center rounded-3xl gap-y-[15px] 
+    /* tela de tablete */
+    tablete:w-[656px] tablete:h-[258px] tablete:text-start
+} 
 .title{
     @apply text-24  font-bold min-w-[313px] min-h-[48px] mt-[27px]
+     /* tela de tablete */
+     tablete:text-[40px]
 }
 
 .textMain {
-    @apply max-w-56 max-h-32 text-sm leading-[24px] 
+    @apply w-[236px] h-[120px] text-sm leading-[24px] 
+     /* tela de tablete */
+     tablete:text-start tablete:w-[520px] tablete:h-[72px] tablete:text-[16px] font-extralight
 }
 
 .getButton{
     @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6
+     /* tela de tablete */
 }
 
 .card {
     @apply bg-brown-70 mx-auto rounded-2xl 
     min-w-44 min-h-20 mt-4 mb-4 text-start pt-4 pb-4
+     /* tela de tablete */
 }
 
 .text{
     @apply ml-5 font-semibold
+     /* tela de tablete */
 }
