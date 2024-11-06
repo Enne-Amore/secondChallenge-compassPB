@@ -2,14 +2,28 @@ import { TbPinnedFilled } from "react-icons/tb";
 import { PersonProfile } from "../components/PersonProfile";
 import logo from "../../public/logo.png";
 import { TableTask } from "../components/TableTask";
+import { useState } from "react";
 
 export const Kanban = () => {
-  return (
-    <main className="flex flex-col items-center">
-      <div className="relative text-white w-max h-max">
-        <TbPinnedFilled className="absolute top-5 right-1 bg-[#94A3B8] hover:bg-[#1E293B] transition-all cursor-pointer text-xl w-max h-max rounded-full p-3" />
+  const [openFixed, setOpenFixed] = useState<boolean>(false)
+  let fixed: string
+  let styleIcon: string
 
-        <div className="bg-[#6C7D96] rounded-3xl px-5 py-8 font-bold flex-col gap-6 hidden">
+  if (openFixed === true) {
+    fixed = "flex"
+    styleIcon = "top-5 right-1 bg-transparent"
+    
+  } else {
+    fixed = "hidden"
+    styleIcon = "top-1.5 left-24 bg-[#94A3B8] hover:bg-[#1E293B] transition-all"
+  }
+
+  return (
+    <main className="relative flex flex-col items-center">
+      <div className="absolute text-white w-max h-max z-10">
+        <TbPinnedFilled className={`absolute ${styleIcon} cursor-pointer text-xl w-max h-max rounded-full p-3`} onClick={() => setOpenFixed(!openFixed)}  />
+
+        <div className={`bg-[#6C7D96] rounded-3xl px-5 py-8 font-bold flex-col gap-6 ${fixed}`}>
           <section>
             <h2 className="text-sm mb-3">In this project</h2>
 
