@@ -20,7 +20,7 @@
 .textMain {
     @apply w-[236px] h-[120px] text-sm leading-[24px] 
      /* tela de tablete */
-     tablete:text-start tablete:w-[520px] tablete:h-[72px] tablete:text-[16px] font-extralight
+     tablete:text-start tablete:w-[520px] tablete:h-[72px] tablete:text-[16px] font-light
 }
 
 .getButton{

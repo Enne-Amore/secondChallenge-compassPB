@@ -22,7 +22,7 @@
 .text {
    @apply text-sm leading-[24px] 
    /* tela de tablete */
-   tablete:text-[16px]
+   tablete:text-[16px] tablete:font-light
 }
 
 .learButton {
@@ -58,8 +58,15 @@
 .containtext {
     @apply p-[11px] leading-[21.7px] 
     /* tela de tablete */
+    tablete:p-3
+}
+.titleCard {
+    @apply font-light  text-[15px]
+    /* tela de tablete */
+    tablete:text-[16px]
 }
 .textcard {
-    @apply font-semibold  mt-1
+    @apply font-medium  mt-1 text-[18px]
     /* tela de tablete */
+    tablete:text-[20px] table
 }
