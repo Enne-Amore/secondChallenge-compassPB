@@ -1,5 +1,5 @@
 .mainContainer {
-    @apply bg-purple-450 min-h-[1270px] py-[60px] flex flex-col
+    @apply bg-purple-450 min-h-[1270px] py-[60px] flex flex-col gap-16
 }
 .container {
     @apply text-center flex flex-col justify-between min-h-[156px] items-center gap-6
@@ -10,9 +10,31 @@
 }
 
 .text{
-    @apply text-white text-[14px] font-light
+    @apply text-white text-[14px] font-extralight
+}
+
+.titleItem {
+    @apply mb-2 text-white font-extralight text-[20px] 
+}
+.textItem {
+    @apply text-[16px] text-white font-extralight
 }
 
 .ftButton {
     @apply bg-white  w-[148px] h-9 rounded-md font-bold text-[15px] text-blue-850
+}
+
+.list {
+    @apply flex flex-col justify-between gap-10
+}
+.itemList{
+    @apply flex  flex-col  items-center py-[12px] 
+}
+
+.containImg{
+    @apply bg-white rounded-full w-[100px] h-[100px] flex justify-center items-center mb-[20px]
+}
+
+.img {
+    @apply fill-blue-850 w-[38px] h-[38px]  mx-[26px] my-[26px]
 }
