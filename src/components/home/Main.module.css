@@ -1,31 +1,50 @@
 .mainSection{
-    @apply bg-[url('../assets/bg-home.jfif')] flex flex-col text-center 
-    items-center pl-5 pr-5 pt-14  text-white bg-cover bg-center
+    @apply bg-[url('../../assets/bg-home.jfif')] flex flex-col text-center 
+    items-center pt-14  text-white bg-cover bg-center min-w-[393px] px-4
+    /* tela de tablete */
+    tablete:w-[744px] tablete:h-[644px]
+    
 }
 .container{
-    @apply w-342 h-285 bg-black-55 flex flex-col justify-around 
-    text-center items-center rounded-3xl gap-[15px]
-    max-w-96
-}
+    @apply w-353 h-285 bg-black-55 flex flex-col justify-around 
+    text-center items-center rounded-3xl gap-y-[15px] 
+    /* tela de tablete */
+    tablete:w-[656px] tablete:h-[258px] tablete:justify-start
+} 
 .title{
-    @apply text-24  font-bold max-w-80 max-h-9 mt-[27px]
+    @apply text-24  font-bold min-w-[313px] min-h-[48px] mt-[27px]
+     /* tela de tablete */
+     tablete:text-[40px]
 }
 
 .textMain {
-    @apply max-w-56 max-h-32 text-sm leading-[24px] 
+    @apply w-[236px] h-[120px] text-sm leading-[24px] 
+     /* tela de tablete */
+     tablete:text-start tablete:w-[520px] tablete:h-[72px] tablete:text-[16px] font-extralight
 }
 
 .getButton{
     @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6
+     /* tela de tablete */
+     tablete:items-start tablete:w-[240px] tablete:h-12 tablete:py-2 
+     tablete:px-4 tablete:self-start tablete:ml-[68px]
+}
+
+.containerCard{
+    @apply m-margin-b  
+    /* tela de tablete */
+    tablete:flex tablete:flex-row tablete:justify-between 
+    tablete:w-[656px] tablete:mt-[62.5px] tablete:mx-0 tablete:mb-0
 }
 
 .card {
-    @apply bg-bronw-70 mx-auto rounded-2xl 
+    @apply bg-brown-70 mx-auto rounded-2xl 
     min-w-44 min-h-20 mt-4 mb-4 text-start pt-4 pb-4
+     /* tela de tablete */
+     tablete:mx-0
 }
 
 .text{
-    @apply ml-5 font-semibold
+    @apply ml-5 font-semibold text-[16px]
+     /* tela de tablete */
 }
-
-

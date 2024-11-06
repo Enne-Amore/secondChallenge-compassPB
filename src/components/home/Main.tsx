@@ -10,7 +10,7 @@ const Main = () => {
                 manage your work with efficiency and teamwork</p>
                 <button className={styles.getButton}>Get Started</button>
         </div>
-        <div className='m-margin-b mt-1'>
+        <div className={styles.containerCard}>
             <div className={styles.card}>
                 <p className={styles.text}>2000+</p>
                 <p className={styles.text}>Satisfied clients</p>
