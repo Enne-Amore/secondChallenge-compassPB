@@ -12,6 +12,7 @@ export default {
                 "blue-750": "#1E293B",
                 "yellow-150": "#FCF4B6",
                 "blue-850": "#160A60",
+                "green-22": "#22C55E",
             },
             width: {
                 342: "342px",
@@ -19,19 +20,27 @@ export default {
                 353: "353px",
                 329: "329px",
                 110: "110px",
+                744: "744px",
+                656: "656px",
+                508: "508px",
+                1400: "1400",
+                520: "520px",
             },
             height: {
                 285: "285px",
                 794: "794px",
-                623: "624px",
+                624: "624px",
                 36: "36px",
                 56: "56px",
                 902: "902px",
+                1053: "1053",
             },
             fontSize: {
                 "24px": "24px",
                 "15px": "15px",
                 "14px": "14px",
+                "40px": "40px",
+                "16px": "16px",
             },
             fontFamily: {
                 roboto: ["Roboto", "sans-serif"],
@@ -41,6 +50,9 @@ export default {
             },
             padding: {
                 person1: "60px",
+            },
+            backgroundSize: {
+                "50%": "50% 50%",
             },
             plugins: [],
         },
