@@ -5,3 +5,11 @@
 .container{
     @apply max-w-[1440px];
 }
+
+.ul{
+    @apply text-center text-sm
+}
+
+.li{
+    @apply py-5 text-white
+}
