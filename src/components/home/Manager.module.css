@@ -1,45 +1,65 @@
 .manager {
 
-    @apply w-full max-w-[393px] bg-blue-750 text-center pt-person1 text-white py-person1;
+    @apply w-full min-w-[393px] bg-blue-750  pt-person1 text-white py-person1
+    /* tela de tablete */
+    tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px]
    
 }
 
 .container {
     @apply text-start mx-5 flex flex-col gap-10 justify-center 
+    /* tela de tablete */
+    tablete:w-[655px] tablete:h-[216px] tablete:justify-start tablete:mx-0
 } 
 
 .title {
     @apply text-3xl font-bold text-yellow-150
+    /* tela de tablete */
+    tablete:text-[40px]
 }
 
 
 .text {
    @apply text-sm leading-[24px] 
+   /* tela de tablete */
+   tablete:text-[16px]
 }
 
 .learButton {
     @apply w-52 h-9 border rounded-md bg-white text-blue-950  m-auto font-semibold
+    /* tela de tablete */
+    tablete:w-[240px] tablete:h-[48px] tablete:self-start tablete:p-[12px] tablete:m-0
 }
 
 .containList{
     @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px]
+     /* tela de tablete */
+    tablete:mt-[65px] tablete:gap-x-[40px] tablete:ml-0
 }
 
 .card {
-    @apply w-308 h-381 text-left  
+    @apply w-308 h-381 text-left 
+    /* tela de tablete */ 
+    tablete:w-[340px] tablete:h-[420px]
 
 }
 
 .containImg {
-    @apply w-308 h-308
+    @apply w-308 h-308 
+    /* tela de tablete */
+    tablete:w-[340px] tablete:h-[340px]
 }
 
 .img {
-    @apply rounded-t-md
+    @apply rounded-t-md 
+    /* tela de tablete */
+    
 }
 .containtext {
     @apply p-[11px] leading-[21.7px] 
+    /* tela de tablete */
 }
 .textcard {
     @apply font-semibold  mt-1
+    /* tela de tablete */
 }
