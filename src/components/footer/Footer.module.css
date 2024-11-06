@@ -3,11 +3,11 @@
 }
 
 .container{
-    @apply max-w-[1440px] m-auto;
+    @apply max-w-[1440px] m-auto xl:flex xl:w-[1000px];
 }
 
 .ul{
-    @apply text-center text-sm sm:flex justify-between sm:px-10
+    @apply text-center text-sm sm:text-lg xl:text-xl sm:flex justify-between sm:px-10 flex-1
 }
 
 .li{
