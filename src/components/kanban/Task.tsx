@@ -1,5 +1,5 @@
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5'
-import imgProfile from '../assets/profile-img-1.png'
+import imgProfile from '../../assets/profile-img-1.png'
 import { FaCircleCheck } from 'react-icons/fa6'
 
 export const Task = () => {
@@ -25,7 +25,7 @@ export const Task = () => {
               <img src={imgProfile} alt="Profile image" className="w-full h-full rounded-full" />
           </figure>
             
-          <figure className='w-6 h-6 -translate-x-2 rounded-full box-content border-white border-2'>
+          <figure className='w-6 h-6 -ml-2 rounded-full box-content border-white border-2'>
               <img src={imgProfile} alt="Profile image" className="w-full h-full rounded-full" />
           </figure>
         </ul>

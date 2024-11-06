@@ -1,7 +1,7 @@
 import { TbPinnedFilled } from "react-icons/tb";
-import { PersonProfile } from "../components/PersonProfile";
+import { PersonProfile } from "../components/kanban/PersonProfile";
 import logo from "../../public/logo.png";
-import { TableTask } from "../components/TableTask";
+import { TableTask } from "../components/kanban/TableTask";
 import { useState } from "react";
 
 export const Kanban = () => {
