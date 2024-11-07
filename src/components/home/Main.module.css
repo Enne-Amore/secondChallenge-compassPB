@@ -16,7 +16,7 @@
 
 .container{
     @apply min-w-[353px] h-285 bg-black-55 flex flex-col justify-around 
-    text-center items-center rounded-3xl gap-y-[15px] ml-5
+    text-center items-center rounded-3xl gap-y-[15px] 
     /* tela de tablete */
     tablete:w-[656px] tablete:h-[258px] tablete:justify-start tablete:mt-[90px] tablete:ml-11
      /* tela de desktop */
