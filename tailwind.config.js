@@ -72,7 +72,8 @@ export default {
                 "50%": "50% 50%",
             },
             backgroundImage: {
-                'kanban': "url('/src/assets/draggable-area.png')",
+                'kanban-mobile': "url('/src/assets/draggable-area-mobile.png')",
+                'kanban-desktop': "url('/src/assets/draggable-area-desktop.png')",
                 'bgImg': "url('/src/assets/person-illustration.png')",
             },
             gridTemplateColumns: {

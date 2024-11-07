@@ -2,7 +2,7 @@ import logo from "../../../public/logo.png";
 
 export const Notification = () => {
   return (
-    <aside className="bg-[#00000080] text-white rounded-2xl flex flex-col gap-2 pt-1.5 pb-3 px-2.5 -translate-y-full w-10/12">
+    <aside className="absolute bottom-0 bg-[#00000080] text-white rounded-2xl flex flex-col gap-2 pt-1.5 pb-3 px-2.5 w-10/12">
       <div className="flex items-center gap-2">
         <figure className="w-6 h-6">
           <img

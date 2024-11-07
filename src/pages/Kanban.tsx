@@ -9,7 +9,7 @@ export const Kanban = () => {
     <>
       <Header />
 
-      <main className="relative flex flex-col items-center">
+      <main className="relative flex flex-col items-center mt-4 mb-7">
         <FixedCard />
 
         <TablesTasks />
