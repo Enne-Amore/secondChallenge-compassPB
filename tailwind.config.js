@@ -16,6 +16,7 @@ export default {
                 "green-22": "#22C55E",
                 "blue-74": "#3B5174",
                 "blue-26": "#268FE4",
+                "purple-750": "rgba(35, 8, 28, 0.7)"
             },
             width: {
                 342: "342px",
@@ -40,8 +41,8 @@ export default {
                 285: "285px",
                 794: "794px",
                 624: "624px",
-                "36": "36px",
-                "56": "56px",
+                36: "36px",
+                56: "56px",
                 902: "902px",
                 1053: "1053px",
                 308: "308px",
@@ -72,15 +73,16 @@ export default {
             },
             backgroundImage: {
                 kanban: "url('/src/assets/draggable-area.png')",
+                bgImg: "url('/src/assets/person-illustration.png')",
             },
             gridTemplateColumns: {
                 metrics: "112px minmax(100px, 2fr)",
             },
             screens: {
                 tablete: "744px",
+                desktop: "1440px",
             },
         },
-    }
-  plugins: [],
-}
-
+    },
+    plugins: [],
+};
