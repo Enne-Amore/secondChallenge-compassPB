@@ -1,7 +1,31 @@
 import { Button } from "../button/Button";
 import styles from "./Login.module.css";
+import { useState } from "react";
+
+const validarEmail = (email: string): boolean => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return emailRegex.test(email);
+};
+const validatePassword = (password: string): boolean => {
+    const passwordRegex =
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-]{8,}$/;
+    return passwordRegex.test(password);
+};
 
 export const Login = () => {
+    const [email, setemail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
+    const handleLogin = () => {
+        if (!validarEmail(email)) {
+            alert("emai invalido");
+        } else if (!validatePassword(password)) {
+            alert("senha invalida");
+        } else {
+            alert("login realizado");
+        }
+    };
+
     return (
         <div className={styles.divContainer}>
             <form className={styles.divForm}>
@@ -17,23 +41,29 @@ export const Login = () => {
                     <div>
                         <label className={styles.divLabel}>Email</label>
                         <input
-                            type="text"
+                            type="email"
+                            value={email}
                             placeholder="Enter your email"
                             className={styles.divInput}
+                            onChange={(e) => setemail(e.target.value)}
                         />
                     </div>
+
                     <div>
                         <label className={styles.divLabel}>Password</label>
                         <input
-                            type="text"
+                            type="password"
+                            value={password}
                             placeholder="Enter your password"
                             className={styles.divInput}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
+
                     <Button
                         color="blue"
                         className={styles.btnLogin}
-                        onClick={() => {}}
+                        onClick={handleLogin}
                     >
                         Login
                     </Button>
