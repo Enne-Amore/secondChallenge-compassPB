@@ -1,3 +1,4 @@
+import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { FixedCard } from "../components/kanban/FixedCard";
 import { Notification } from "../components/kanban/Notification";
@@ -15,6 +16,8 @@ export const Kanban = () => {
 
         <Notification />
       </main>
+
+      <Footer />
     </>
   );
 };
