@@ -4,6 +4,7 @@
     tablete:py-[60px] tablete:h-[844px] tablete:items-center
     /* tela para desktop: */
     desktop:max-h-[643px]
+    desktop:max-w-[1440px]
 }
 .container {
     @apply text-center flex flex-col justify-between h-[156px] items-center 

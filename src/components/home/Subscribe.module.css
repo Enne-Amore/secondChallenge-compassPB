@@ -1,9 +1,11 @@
 .formContainer {
-    @apply  py-[49px] flex flex-col items-center text-center gap-[60px]
+    @apply py-[49px] flex flex-col items-center text-center gap-[60px] 
     /* tela para tablet */
-    tablete:py-[60px] tablete:px-[170px]
+    tablete:py-[60px] tablete:px-[170px] tablete:ml-0
     /* tela para desktop */
-    desktop:flex-row desktop:items-center desktop:py-[60px] desktop:px-[170px] desktop:justify-between
+    desktop:max-w-[1440px] 
+    desktop:flex-row desktop:items-center desktop:py-[60px] 
+    desktop:px-[170px] desktop:justify-between desktop:ml-0;
 }
 .containText{
     @apply text-center w-[241px] h-24 flex flex-col justify-between
@@ -24,12 +26,11 @@
 
 
 .inputGroup {
-    @apply w-353  flex flex-col items-center justify-between
+    @apply w-353  flex flex-col items-center justify-between 
     /* tela para tablet */
     tablete:w-[404px] tablete:h-[268px]
     /* tela para desktop */
     
-
 }
 
 .inputLabel {
@@ -39,7 +40,7 @@
 }
 
 .inputField {
-    @apply w-full p-3 border border-gray-300 rounded-lg
+    @apply w-full h-36 p-3 border border-gray-300 rounded-lg
      text-gray-700 focus:outline-none focus:border-blue-850
        /* tela para tablet */
        tablete:w-[380px] tablete:h-[36px] tablete:self-start tablete:py-2 tablete:px-3

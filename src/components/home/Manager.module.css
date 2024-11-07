@@ -1,10 +1,9 @@
 .manager {
-
     @apply w-full min-w-[393px] bg-blue-750  pt-person1 text-white py-person1
     /* tela de tablete */
-    tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px]
+    tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px] tablete:ml-0
     /* tela de desktop */
-    desktop:py-[60px] desktop:px-[170px]
+    desktop:py-[60px] desktop:px-[170px]  desktop:ml-0 desktop:max-w-[1440px]
    
 }
 
