@@ -31,8 +31,7 @@ const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
                 md:mt-0 md:ml-4 border border-white hover:border-[#268FE4] 
                 transition duration-400 rounded-full text-white text-center 
                 px-4 py-2"
-            >
-              Login
+            > Login
             </Link>
         )}
       </div>

@@ -10,7 +10,7 @@
 
 .imgcenter {
     @apply bg-bgImg absolute top-[55%] left-[60%] transform 
-    -translate-x-1/2 -translate-y-1/2 z-0 w-[1100px] h-[800px] bg-cover bg-center rounded-lg items-end
+    -translate-x-1/2 -translate-y-1/2 z-0 w-[1100px] h-[800px] bg-cover bg-center rounded-full items-end
     md:hidden sm:hidden desktop:block lg:hidden mobile:hidden
 }
 
