@@ -24,6 +24,7 @@ const Main = () => {
                     <p className={styles.text}>Kanban boards</p>
                 </div>
             </div>
+            <div className={styles.imgcenter}></div>
         </div>
     
   )

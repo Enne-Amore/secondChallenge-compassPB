@@ -4,7 +4,7 @@
     tablete:py-[60px] tablete:px-[170px] tablete:ml-0
     /* tela para desktop */
     desktop:max-w-[1440px] 
-    desktop:flex-row desktop:items-center desktop:py-[60px] 
+    desktop:flex-row desktop:items-center desktop:py-[140px] 
     desktop:px-[170px] desktop:justify-between desktop:ml-0;
 }
 .containText{
@@ -52,7 +52,9 @@
 }
 
 .subscribeButton {
-    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-10
+    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-8
       /* tela para tablet */
       tablete:w-[240px] tablete:h-[48px] tablete:py-3 tablete:text-[16px] tablete:font-medium
+    /* tela para desktop */
+    desktop:self-start 
 }   

@@ -79,6 +79,7 @@ export default {
                 'metrics': "112px minmax(100px, 2fr)",
             },
             screens: {
+                'mobile': '393px',
                 'tablete': "744px",
                 'desktop': "1440px",
             },
