@@ -23,7 +23,7 @@ const Manager = () => {
           <div className={styles.containImg}>
             <img src={project} alt="Imagem 1" className={styles.img}/>
             <div className={styles.containtext}>
-              <h2>Manage Projects</h2>
+              <h2 className={styles.titleCard}>Manage Projects</h2>
               <p className={styles.textcard}>20+ projects</p>
             </div>
           </div>
@@ -32,7 +32,7 @@ const Manager = () => {
           <div className={styles.containImg}>
             <img src={tasks} alt="Imagem 1" className={styles.img}/>
             <div className={styles.containtext}>
-              <h2>Track Tasks</h2>
+              <h2 className={styles.titleCard}>Track Tasks</h2>
               <p className={styles.textcard}>50+ tasks</p>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Manager = () => {
           <div className={styles.containImg}>
             <img src={collaborate} alt="Imagem 1" className={styles.img}/>
             <div className={styles.containtext}>
-              <h2>Collaborate</h2>
+              <h2 className={styles.titleCard}>Collaborate</h2>
               <p className={styles.textcard}>10+ team members</p>
             </div>
           </div>
