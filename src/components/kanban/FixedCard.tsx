@@ -25,7 +25,7 @@ export const FixedCard = () => {
   return (
     <div className="absolute text-white w-max h-max z-10">
       <TbPinnedFilled
-        className={`absolute ${styleIcon} cursor-pointer text-xl w-max h-max rounded-full p-3`}
+        className={`absolute ${styleIcon} cursor-pointer text-xl w-max h-max rounded-full p-3 focus:outline-0 focus-visible:outline-1`}
         onClick={() => setOpenFixed(!openFixed)}
         onKeyDown={keyDown}
         tabIndex={0}

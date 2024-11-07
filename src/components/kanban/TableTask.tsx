@@ -42,7 +42,7 @@ export const TableTask = ({ title, qtd, darkColor, lightColor }: Colors) => {
           height="20"
           viewBox="0 0 9 10"
           fill="none"
-          className="cursor-pointer"
+          className="cursor-pointer focus:outline-0 focus-visible:outline-1"
           tabIndex={0}
           onClick={() => setModalCreate(!modalCreate)}
           onKeyDown={keyDown}

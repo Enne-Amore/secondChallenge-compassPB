@@ -39,7 +39,7 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
           </h2>
 
           <IoCloseOutline
-            className="text-red-800 text-xl font-bold mt-0.5 cursor-pointer"
+            className="text-red-800 text-xl font-bold mt-0.5 cursor-pointer focus:outline-0 focus-visible:outline-1"
             tabIndex={0}
             onClick={() => setModalCreate(!modalCreate)}
             onKeyDown={keyDown}
