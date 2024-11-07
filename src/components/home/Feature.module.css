@@ -1,7 +1,7 @@
 .mainContainer {
     @apply bg-purple-450 h-[1270px] py-[60px] flex flex-col gap-16
     /* tela de tablete */
-    tablete:py-[60px] tablete:h-[844px] tablete:items-center
+    tablete:py-[60px] tablete:px-[170px] tablete:h-[643px] tablete:items-center
     /* tela para desktop: */
     desktop:min-h-[643px]
     desktop:min-w-[1440px]
