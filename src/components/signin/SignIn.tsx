@@ -1,6 +1,94 @@
 import styles from "./SignIn.module.css";
 import { Button } from "../button";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import toast from "react-hot-toast";
+
+interface Erro {
+    emailErro: boolean;
+    passowdErro: boolean;
+    lastNameErro: boolean;
+    firstNameErro: boolean;
+    jobErro: boolean;
+}
+
+const validateNome = (nome: string): boolean => {
+    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/;
+    return regex.test(nome);
+};
+
+const validateJob = (nome: string): boolean => {
+    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/;
+    return regex.test(nome);
+};
+
+const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return emailRegex.test(email);
+};
+const validatePassword = (password: string): boolean => {
+    const passwordRegex =
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-]{8,}$/;
+    return passwordRegex.test(password);
+};
+
 export const SignIn = () => {
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [job, setJob] = useState<string>("");
+    const [email, setemail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [erros, setErros] = useState<Erro>({
+        emailErro: false,
+        passowdErro: false,
+        lastNameErro: false,
+        firstNameErro: false,
+        jobErro: false,
+    });
+
+    const clear = () => {
+        setPassword("");
+        setemail("");
+        setLastName("");
+        setFirstName("");
+        setJob("");
+        erros.emailErro = false;
+        erros.passowdErro = false;
+        erros.lastNameErro = false;
+        erros.firstNameErro = false;
+        erros.jobErro = false;
+    };
+
+    const handleSignIn = () => {
+        if (!validateEmail(email)) {
+            toast.error("E-mail invalid!");
+            setErros({ ...erros, emailErro: true });
+        } else if (!validatePassword(password)) {
+            toast.error("Passwod invalid!");
+            setErros({ ...erros, passowdErro: true });
+        } else if (!validateNome(firstName)) {
+            toast.error("First name invalid!");
+            setErros({ ...erros, firstNameErro: true });
+        } else if (!validateNome(lastName)) {
+            toast.error("Last name invalid!");
+            setErros({ ...erros, lastNameErro: true });
+        } else if (!validateJob(job)) {
+            toast.error("Job invalid!");
+            setErros({ ...erros, jobErro: true });
+        } else if (
+            !validateEmail(email) &&
+            !validatePassword(password) &&
+            !validateNome(firstName) &&
+            validateNome(lastName) &&
+            !validateJob(job)
+        ) {
+            toast.error("Campus invalid!");
+        } else {
+            toast.success("login successful !");
+            clear();
+        }
+    };
+
     return (
         <div className={styles.divContainer}>
             <div className={styles.divForm}>
@@ -8,7 +96,9 @@ export const SignIn = () => {
                     <h1 className={styles.h1}>Sing up Information</h1>
                     <p className={styles.p}>
                         Already have an account?{" "}
-                        <a className={styles.a}>Log in</a>
+                        <Link to="/login" className={styles.a}>
+                            Log in
+                        </Link>
                     </p>
                 </div>
                 <div className={styles.divName}>
@@ -17,7 +107,11 @@ export const SignIn = () => {
                         <input
                             type="text"
                             placeholder="Enter your first name"
-                            className={styles.inputName}
+                            className={`${styles.inputName} ${
+                                erros.firstNameErro ? "bg-red-300" : ""
+                            }`}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                         />
                     </div>
                     <div className="md:w-1/2 md:ml-1">
@@ -25,7 +119,11 @@ export const SignIn = () => {
                         <input
                             type="text"
                             placeholder="Enter your last name"
-                            className={styles.inputName}
+                            className={`${styles.inputName} ${
+                                erros.lastNameErro ? "bg-red-300" : ""
+                            }`}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                         />
                     </div>
                 </div>
@@ -36,7 +134,11 @@ export const SignIn = () => {
                         <input
                             type="text"
                             placeholder="Enter your email"
-                            className={styles.divInput}
+                            className={`${styles.divInput} ${
+                                erros.emailErro ? "bg-red-300" : ""
+                            }`}
+                            value={email}
+                            onChange={(e) => setemail(e.target.value)}
                         />
                     </div>
                     <div className="w-full">
@@ -44,7 +146,11 @@ export const SignIn = () => {
                         <input
                             type="text"
                             placeholder="Enter your job position (example:Project Manager)"
-                            className={styles.divInput}
+                            className={`${styles.divInput} ${
+                                erros.jobErro ? "bg-red-300" : ""
+                            }`}
+                            value={job}
+                            onChange={(e) => setJob(e.target.value)}
                         />
                     </div>
                     <div className="w-full">
@@ -52,15 +158,20 @@ export const SignIn = () => {
                         <input
                             type="password"
                             placeholder="Enter your password"
-                            className={styles.divInput}
+                            className={`${styles.divInput} ${
+                                erros.passowdErro ? "bg-red-300" : ""
+                            }`}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                 </div>
                 <Button
+                    type="button"
                     full
                     color="blue"
                     className={styles.btnSingIn}
-                    onClick={() => {}}
+                    onClick={handleSignIn}
                 >
                     Create an account
                 </Button>
