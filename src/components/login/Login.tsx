@@ -9,7 +9,7 @@ interface Erro {
     passowdErro: boolean;
 }
 
-const validarEmail = (email: string): boolean => {
+const validateEmail = (email: string): boolean => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return emailRegex.test(email);
 };
@@ -37,13 +37,13 @@ export const Login = () => {
     };
 
     const handleLogin = () => {
-        if (!validarEmail(email)) {
+        if (!validateEmail(email)) {
             toast.error("E-mail invalid!");
             setErros({ ...erros, emailErro: true });
         } else if (!validatePassword(password)) {
             toast.error("Passwod invalid!");
             setErros({ ...erros, passowdErro: true });
-        } else if (!validarEmail(email) && !validatePassword(password)) {
+        } else if (!validateEmail(email) && !validatePassword(password)) {
             toast.error("Password and E-mail invalid!");
         } else {
             toast.success("login successful !");
@@ -53,7 +53,7 @@ export const Login = () => {
             }, 2000);
         }
     };
-    console.log(erros);
+
     return (
         <div className={styles.divContainer}>
             <form className={styles.divForm}>
