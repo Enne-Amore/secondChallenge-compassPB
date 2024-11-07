@@ -38,18 +38,18 @@ export default {
                 '308': "308px",
             },
             height: {
-                285: "285px",
-                794: "794px",
-                624: "624px",
-                36: "36px",
-                56: "56px",
-                902: "902px",
-                1053: "1053px",
-                308: "308px",
-                381: "381px",
-                625: "625px",
-                108: "108px",
-                706: "706px",
+               '285': "285px",
+               '794': "794px",
+               '624': "624px",
+               '36': "36px",
+               '56': "56px",
+               '902': "902px",
+               '1053': "1053px",
+               '308': "308px",
+               '381': "381px",
+               '625': "625px",
+               '108': "108px",
+               '706': "706px",
             },
             fontSize: {
                 '24': "24px",
@@ -72,7 +72,8 @@ export default {
                 "50%": "50% 50%",
             },
             backgroundImage: {
-                'kanban': "url('/src/assets/draggable-area.png')",
+                'kanban-mobile': "url('/src/assets/draggable-area-mobile.png')",
+                'kanban-desktop': "url('/src/assets/draggable-area-desktop.png')",
                 'bgImg': "url('/src/assets/person-illustration.png')",
             },
             gridTemplateColumns: {
@@ -97,6 +98,6 @@ export default {
                 display: 'none',               // Chrome, Safari and Edge
               },
             });
-        },
+          },
     ],
 };

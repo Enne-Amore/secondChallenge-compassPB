@@ -2,7 +2,7 @@ import { TableTask } from "./TableTask";
 
 export const TablesTasks = () => {
   return (
-    <section className="flex gap-4 bg-kanban bg-no-repeat bg-cover rounded-3xl py-60 w-11/12 overflow-auto">
+    <section className="flex gap-4 bg-kanban-mobile xl:bg-kanban-desktop bg-no-repeat bg-cover bg-center rounded-3xl py-60 w-11/12 overflow-auto">
       <TableTask
         title={"To do"}
         qtd={25}
