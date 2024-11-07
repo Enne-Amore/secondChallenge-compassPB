@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="flex items-center">
-      <div className="menu w-6 sm:hidden" onClick={isShow}></div>
+      <div className="menu w-6 sm:hidden cursor-pointer hover:scale-110 transition duration-400" onClick={isShow}></div>
       <div className="search bg-center border rounded-md border-[#FFFFFF1A] ml-5 sm:hidden" /*onClick={isSearch}*/></div>
 
       <ul className="hidden sm:flex">
