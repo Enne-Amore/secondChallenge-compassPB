@@ -2,6 +2,8 @@
     @apply  py-[49px] flex flex-col items-center text-center gap-[60px]
     /* tela para tablet */
     tablete:py-[60px] tablete:px-[170px]
+    /* tela para desktop */
+    desktop:flex-row desktop:items-center desktop:py-[60px] desktop:px-[170px] desktop:justify-between
 }
 .containText{
     @apply text-center w-[241px] h-24 flex flex-col justify-between
@@ -25,6 +27,8 @@
     @apply w-353  flex flex-col items-center justify-between
     /* tela para tablet */
     tablete:w-[404px] tablete:h-[268px]
+    /* tela para desktop */
+    
 
 }
 
