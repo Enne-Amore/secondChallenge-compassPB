@@ -36,7 +36,7 @@
 }
 
 .containList{
-    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px]
+    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px] overflow-auto no-scrollbar
      /* tela de tablete */
     tablete:mt-[65px] tablete:gap-x-[40px] tablete:ml-0
 }
