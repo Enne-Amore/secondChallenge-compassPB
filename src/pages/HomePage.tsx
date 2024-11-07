@@ -8,7 +8,7 @@ import Subscribe from "../components/home/Subscribe"
 export const HomePage = () => {
   return (
     <>
-        <Header showNavbar/>
+        <Header showLoginButton/>
         <Main/>
         <Manager/>
         <Feature/>

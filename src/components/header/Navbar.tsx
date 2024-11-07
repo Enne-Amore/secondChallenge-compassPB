@@ -39,10 +39,10 @@ const Navbar: React.FC = () => {
         className={`sm:hidden absolute left-0 top-16 w-full bg-blue-750 text-center 
         ${show ? 'opacity-100 visible' : 'opacity-0 invisible'} 
         transition-all duration-300 ease-in-out`}>
-        <li><Link to="/" className="text-white block py-4">Home</Link></li>
-        <li><Link to="/" className="text-white block py-4">About</Link></li>
-        <li><Link to="/" className="text-white block py-4">Settings</Link></li>
-        <li><Link to="/" className="text-white block pt-4 pb-8">Profile</Link></li>
+        <li><Link to="/" className="text-white hover:underline block py-4">Home</Link></li>
+        <li><Link to="/" className="text-white hover:underline block py-4">About</Link></li>
+        <li><Link to="/" className="text-white hover:underline block py-4">Settings</Link></li>
+        <li><Link to="/" className="text-white hover:underline block pt-4 pb-8">Profile</Link></li>
       </ul>
     </nav>
   );
