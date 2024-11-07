@@ -24,7 +24,6 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
     setFileName(file ? file.name : null);
   };
 
-
   return (
     <div className="fixed min-h-screen inset-x-0 inset-y-0 flex justify-center items-center z-20">
       <div
@@ -74,7 +73,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
 
             <ul className="flex items-center gap-2">
               <li className="flex items-center gap-1">
-                <input type="radio" name="status" id="to-do" value={"to-do"} />
+                <input
+                  type="radio"
+                  name="status"
+                  id="to-do"
+                  value={"to-do"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#5570F1]"
+                />
                 <label
                   htmlFor="to-do"
                   className="text-[#2B2F32] text-xs font-normal"
@@ -89,6 +94,7 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
                   name="status"
                   id="progress"
                   value={"in-progress"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#F59E0B]"
                 />
                 <label
                   htmlFor="progress"
@@ -99,7 +105,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" name="status" id="done" value={"done"} />
+                <input
+                  type="radio"
+                  name="status"
+                  id="done"
+                  value={"done"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#22C55E]"
+                />
                 <label
                   htmlFor="done"
                   className="text-[#2B2F32] text-xs font-normal"
@@ -250,7 +262,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
 
             <ul className="flex items-center gap-2">
               <li className="flex items-center gap-1">
-                <input type="radio" name="priority" id="low" value={"low"} />
+                <input
+                  type="radio"
+                  name="priority"
+                  id="low"
+                  value={"low"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#5570F1]"
+                />
                 <label
                   htmlFor="low"
                   className="text-[#2B2F32] text-xs font-normal"
@@ -260,7 +278,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" name="priority" id="mid" value={"mid"} />
+                <input
+                  type="radio"
+                  name="priority"
+                  id="mid"
+                  value={"mid"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#F59E0B]"
+                />
                 <label
                   htmlFor="mid"
                   className="text-[#2B2F32] text-xs font-normal"
@@ -270,7 +294,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" name="priority" id="high" value={"high"} />
+                <input
+                  type="radio"
+                  name="priority"
+                  id="high"
+                  value={"high"}
+                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#22C55E]"
+                />
                 <label
                   htmlFor="high"
                   className="text-[#2B2F32] text-xs font-normal"
