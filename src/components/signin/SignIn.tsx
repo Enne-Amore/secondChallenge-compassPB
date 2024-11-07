@@ -1,5 +1,6 @@
 import styles from "./SignIn.module.css";
 import { Button } from "../button";
+import { Link } from "react-router-dom";
 export const SignIn = () => {
     return (
         <div className={styles.divContainer}>
@@ -8,7 +9,7 @@ export const SignIn = () => {
                     <h1 className={styles.h1}>Sing up Information</h1>
                     <p className={styles.p}>
                         Already have an account?{" "}
-                        <a className={styles.a}>Log in</a>
+                        <Link to='/login' className={styles.a}>Log in</Link>
                     </p>
                 </div>
                 <div className={styles.divName}>

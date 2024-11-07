@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 
@@ -10,7 +11,7 @@ export const Login = () => {
                     <p className={styles.p}>Enter your credentials</p>
                     <p className={styles.p}>
                         New here? Let's take you to
-                        <a className={styles.a}> sing up.</a>
+                        <Link to='/subscribe' className={styles.a}> sing up.</Link>
                     </p>
                 </div>
                 <div className={styles.divContainerInput}>
