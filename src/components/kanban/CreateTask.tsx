@@ -11,12 +11,19 @@ export type Modal = ComponentProps<"div"> & {
 };
 
 export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
+  const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
+    if (event.key === "Enter") {
+      setModalCreate(!modalCreate);
+    }
+  };
+
   const [fileName, setFileName] = useState<string | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files ? event.target.files[0] : null;
     setFileName(file ? file.name : null);
   };
+
 
   return (
     <div className="fixed min-h-screen inset-x-0 inset-y-0 flex justify-center items-center z-20">
@@ -33,7 +40,9 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
 
           <IoCloseOutline
             className="text-red-800 text-xl font-bold mt-0.5 cursor-pointer"
+            tabIndex={0}
             onClick={() => setModalCreate(!modalCreate)}
+            onKeyDown={keyDown}
           />
         </div>
 
