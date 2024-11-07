@@ -1,7 +1,7 @@
 import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 interface Erro {
@@ -62,7 +62,10 @@ export const Login = () => {
                     <p className={styles.p}>Enter your credentials</p>
                     <p className={styles.p}>
                         New here? Let's take you to
-                        <a className={styles.a}> sing up.</a>
+                        <Link to="/signin" className={styles.a}>
+                            {" "}
+                            sing up.
+                        </Link>
                     </p>
                 </div>
                 <div className={styles.divContainerInput}>
