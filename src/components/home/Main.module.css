@@ -4,7 +4,7 @@
     /* tela de tablete */
     tablete:min-w-[744px] tablete:min-h-[644px] tablete:pt-0
     /* tela de desktop */   
-    desktop:flex-row desktop:justify-between desktop:pl-[64px] desktop:max-w-[1440px]
+    desktop:flex-row desktop:justify-between desktop:pl-[64px] desktop:min-w-[1440px]
     desktop:py-[70px] desktop:pr-[197px] desktop:min-h-[644px] desktop:relative 
 }
 

@@ -3,7 +3,7 @@
     /* tela para tablet */
     tablete:py-[60px] tablete:px-[170px] tablete:ml-0
     /* tela para desktop */
-    desktop:max-w-[1440px] 
+    desktop:min-w-[1440px] 
     desktop:flex-row desktop:items-center desktop:py-[140px] 
     desktop:px-[170px] desktop:justify-between desktop:ml-0;
 }
