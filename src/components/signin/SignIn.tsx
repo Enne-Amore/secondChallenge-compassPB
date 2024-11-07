@@ -1,19 +1,19 @@
-import styles from ".//SingIn.module.css";
-import { Button } from "../../components/Button";
+import styles from "./SignIn.module.css";
+import { Button } from "../button";
+import { Link } from "react-router-dom";
 export const SignIn = () => {
     return (
         <div className={styles.divContainer}>
-            <div className={styles.divImg}></div>
             <div className={styles.divForm}>
                 <div className={styles.divText}>
                     <h1 className={styles.h1}>Sing up Information</h1>
                     <p className={styles.p}>
                         Already have an account?{" "}
-                        <a className={styles.a}>Log in</a>
+                        <Link to='/login' className={styles.a}>Log in</Link>
                     </p>
                 </div>
                 <div className={styles.divName}>
-                    <div>
+                    <div className="md:w-1/2 md:mr-1">
                         <label className={styles.labelName}>First name</label>
                         <input
                             type="text"
@@ -21,7 +21,7 @@ export const SignIn = () => {
                             className={styles.inputName}
                         />
                     </div>
-                    <div>
+                    <div className="md:w-1/2 md:ml-1">
                         <label className={styles.labelName}>Last name</label>
                         <input
                             type="text"
@@ -32,36 +32,33 @@ export const SignIn = () => {
                 </div>
 
                 <div className={styles.divContainerInput}>
-                    <div>
-                        <div>
-                            <label className={styles.divLabel}>Email</label>
-                            <input
-                                type="text"
-                                placeholder="Enter your email"
-                                className={styles.divInput}
-                            />
-                        </div>
-                        <div>
-                            <label className={styles.divLabel}>
-                                Job position
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Enter your job position (example:Project Manager)"
-                                className={styles.divInput}
-                            />
-                        </div>
-                        <div>
-                            <label className={styles.divLabel}>Password</label>
-                            <input
-                                type="password"
-                                placeholder="Enter your password"
-                                className={styles.divInput}
-                            />
-                        </div>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Email</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your email"
+                            className={styles.divInput}
+                        />
+                    </div>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Job position</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your job position (example:Project Manager)"
+                            className={styles.divInput}
+                        />
+                    </div>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Password</label>
+                        <input
+                            type="password"
+                            placeholder="Enter your password"
+                            className={styles.divInput}
+                        />
                     </div>
                 </div>
                 <Button
+                    full
                     color="blue"
                     className={styles.btnSingIn}
                     onClick={() => {}}

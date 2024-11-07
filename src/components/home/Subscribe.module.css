@@ -1,33 +1,64 @@
 .formContainer {
-    @apply  py-[49px] flex flex-col items-center text-center gap-[60px]
+    @apply py-[49px] flex flex-col items-center text-center gap-[60px] 
+    /* tela para tablet */
+    tablete:py-[60px] tablete:px-[170px] tablete:ml-0
+    /* tela para desktop */
+    desktop:min-w-[1440px] 
+    desktop:flex-row desktop:items-center desktop:py-[140px] 
+    desktop:px-[170px] desktop:justify-between desktop:ml-0;
 }
 .containText{
     @apply text-center w-[241px] h-24 flex flex-col justify-between
+    /* tela para tablet */
+    tablete:w-[404px] tablete:h-[96px] tablete:text-start tablete:gap-6
 }
 .formTitle {
-    @apply text-[25px] font-bold text-blue-850;
+    @apply text-[25px] font-bold text-blue-850
+    /* tela para tablet */
+    tablete:text-[40px]
 }
 
 .formSubtitle {
-    @apply text-blue-850 text-[14px];
+    @apply text-blue-850 text-[14px]
+    /* tela para tablet */
+    tablete:text-[16px] tablete:font-normal
 }
 
+
 .inputGroup {
-    @apply w-353  flex flex-col items-center justify-between;
+    @apply w-353  flex flex-col items-center justify-between 
+    /* tela para tablet */
+    tablete:w-[404px] tablete:h-[268px]
+    /* tela para desktop */
+    
 }
 
 .inputLabel {
-    @apply  font-bold text-blue-850 self-start text-[14px];
+    @apply  font-bold text-blue-850 self-start text-[14px]
+    /* tela para tablet */
+    tablete:text-[16px] tablete:font-medium
 }
 
 .inputField {
-    @apply w-full p-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-850;
+    @apply w-full h-36 p-3 border border-gray-300 rounded-lg
+     text-gray-700 focus:outline-none focus:border-blue-850
+       /* tela para tablet */
+       tablete:w-[380px] tablete:h-[36px] tablete:self-start tablete:py-2 tablete:px-3
 }
 
 .inputHelperText {
-    @apply mt-2 text-sm text-gray-500 self-start mb-10;
+    @apply mt-2 text-sm text-gray-500 self-start mb-10
+      /* tela para tablet */
 }
 
 .subscribeButton {
-    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-10;
+    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-8
+      /* tela para tablet */
+      tablete:w-[240px] tablete:h-[48px] tablete:py-3 tablete:text-[16px] tablete:font-medium
+    /* tela para desktop */
+    desktop:self-start 
+}   
+
+.errorMessage{
+    @apply text-red-600 
 }

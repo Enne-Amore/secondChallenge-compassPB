@@ -1,21 +1,21 @@
-import { Button } from "../Button/Button";
+import { Link } from "react-router-dom";
+import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 
 export const Login = () => {
     return (
         <div className={styles.divContainer}>
-            <div className={styles.divImg}></div>
             <form className={styles.divForm}>
                 <div className={styles.divText}>
                     <h1 className={styles.h1}>Login Information</h1>
                     <p className={styles.p}>Enter your credentials</p>
                     <p className={styles.p}>
                         New here? Let's take you to
-                        <a className={styles.a}> sing up.</a>
+                        <Link to='/subscribe' className={styles.a}> sing up.</Link>
                     </p>
                 </div>
                 <div className={styles.divContainerInput}>
-                    <div className="mb-6">
+                    <div>
                         <label className={styles.divLabel}>Email</label>
                         <input
                             type="text"
