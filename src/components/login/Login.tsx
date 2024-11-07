@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 import { useState } from "react";
@@ -63,14 +62,10 @@ export const Login = () => {
                     <p className={styles.p}>Enter your credentials</p>
                     <p className={styles.p}>
                         New here? Let's take you to
-
                         <Link to="/signin" className={styles.a}>
                             {" "}
                             sing up.
                         </Link>
-
-                        <Link to='/subscribe' className={styles.a}> sing up.</Link>
-
                     </p>
                 </div>
                 <div className={styles.divContainerInput}>
