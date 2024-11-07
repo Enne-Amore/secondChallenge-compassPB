@@ -58,3 +58,7 @@
     /* tela para desktop */
     desktop:self-start 
 }   
+
+.errorMessage{
+    @apply text-red-600 
+}
