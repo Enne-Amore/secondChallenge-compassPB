@@ -1,22 +1,26 @@
 .mainSection{
     @apply bg-[url('../../assets/bg-home.jfif')] flex flex-col text-center 
-    items-center pt-14  text-white bg-cover bg-center min-w-[393px] px-4
+    items-center pt-14  text-white bg-cover bg-center min-w-[393px] 
     /* tela de tablete */
-    tablete:min-w-[744px] tablete:min-h-[644px]
+    tablete:min-w-[744px] tablete:min-h-[644px] tablete:pt-0
     /* tela de desktop */   
-    desktop:flex-row desktop:justify-between desktop:pl-[64px] 
-    desktop:pt-[70px] desktop:pr-[197px] desktop:min-h-[644px]
-    desktop:bg-cover desktop:bg-center  desktop:rounded-lg
-    
+    desktop:flex-row desktop:justify-between desktop:pl-[64px] desktop:min-w-[1440px]
+    desktop:py-[70px] desktop:pr-[197px] desktop:min-h-[644px] desktop:relative 
+}
+
+.imgcenter {
+    @apply bg-bgImg absolute top-[55%] left-[60%] transform 
+    -translate-x-1/2 -translate-y-1/2 z-0 w-[1100px] h-[800px] bg-cover bg-center rounded-lg items-end
+    md:hidden sm:hidden desktop:block lg:hidden mobile:hidden
 }
 
 .container{
-    @apply w-353 h-285 bg-black-55 flex flex-col justify-around 
+    @apply min-w-[353px] h-285 bg-black-55 flex flex-col justify-around 
     text-center items-center rounded-3xl gap-y-[15px] 
     /* tela de tablete */
-    tablete:w-[656px] tablete:h-[258px] tablete:justify-start
+    tablete:w-[656px] tablete:h-[258px] tablete:justify-start tablete:mt-[90px] tablete:ml-11
      /* tela de desktop */
-     desktop:self-start desktop:mt-5 
+     desktop:self-start desktop:mt-5  desktop:ml-0
 } 
 .title{
     @apply text-24  font-bold min-w-[313px] min-h-[48px] mt-[27px]
@@ -42,19 +46,20 @@
 }
 
 .containerCard{
-    @apply m-margin-b  
+    @apply mb-margin-b  
     /* tela de tablete */
     tablete:flex tablete:flex-row tablete:justify-between 
-    tablete:w-[656px] tablete:mt-[62.5px] tablete:mx-0 tablete:mb-0
+    tablete:w-[656px] tablete:mt-[62.5px] tablete:mb-0 tablete:ml-11
      /* tela de desktop */
-     desktop:flex-col  desktop:mt-0 desktop:items-end desktop:w-[179px] desktop:h-[272px] desktop:self-start
+     desktop:flex-col  desktop:mt-0 desktop:items-end desktop:w-[179px] 
+     desktop:h-[272px] desktop:self-start
 }
 
 .card {
     @apply bg-brown-70 mx-auto rounded-2xl 
-    max-w-[179px] max-h-20 mt-4 mb-4 text-start pt-4 pb-4
+    min-w-[179px] min-h-20 mt-4 mb-4 text-start pt-3 pb-3
      /* tela de tablete */
-     tablete:mx-0
+     tablete:mx-0 tablete:mt-0 tablete:mb-0
       /* tela de desktop */
       desktop:w-full desktop:mt-0
      

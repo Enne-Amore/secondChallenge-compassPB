@@ -9,7 +9,7 @@ import Subscribe from "../components/home/Subscribe"
 export const HomePage = () => {
   return (
     <>
-        <Header showNavbar/>
+        <Header />
         <Main/>
         <Manager/>
         <Feature/>

@@ -9,12 +9,16 @@ const SubscribeForm = () => {
         </div>
       
         <div className={styles.inputGroup}>
+          
             <label className={styles.inputLabel}>Email</label>
             <input type="{styles.email" placeholder="Enter your email" className={styles.inputField}/>
             <p className={styles.inputHelperText}>We promise not to spam</p>
+          
+          
             <label className={styles.inputLabel}>Name</label>
             <input type="text" placeholder="Enter your name" className={styles.inputField} />
-        <button className={styles.subscribeButton}>Subscribe</button>
+          
+            <button className={styles.subscribeButton}>Subscribe</button>
         </div>
      
     </section>
