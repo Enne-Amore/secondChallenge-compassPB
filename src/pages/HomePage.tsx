@@ -1,3 +1,4 @@
+import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
 import Feature from "../components/home/Feature"
 import Main from "../components/home/Main"
@@ -12,6 +13,7 @@ export const HomePage = () => {
         <Manager/>
         <Feature/>
         <Subscribe/>
+        <Footer/>
     </>
   )
 }
