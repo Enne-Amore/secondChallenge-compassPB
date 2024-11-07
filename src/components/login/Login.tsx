@@ -1,6 +1,13 @@
 import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
+interface Erro {
+    emailErro: boolean;
+    passowdErro: boolean;
+}
 
 const validarEmail = (email: string): boolean => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -15,17 +22,38 @@ const validatePassword = (password: string): boolean => {
 export const Login = () => {
     const [email, setemail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [erros, setErros] = useState<Erro>({
+        emailErro: false,
+        passowdErro: false,
+    });
+
+    const navegate = useNavigate();
+
+    const clear = () => {
+        setPassword("");
+        setemail("");
+        erros.emailErro = false;
+        erros.passowdErro = false;
+    };
 
     const handleLogin = () => {
         if (!validarEmail(email)) {
-            alert("emai invalido");
+            toast.error("E-mail invalid!");
+            setErros({ ...erros, emailErro: true });
         } else if (!validatePassword(password)) {
-            alert("senha invalida");
+            toast.error("Passwod invalid!");
+            setErros({ ...erros, passowdErro: true });
+        } else if (!validarEmail(email) && !validatePassword(password)) {
+            toast.error("Password and E-mail invalid!");
         } else {
-            alert("login realizado");
+            toast.success("login successful !");
+            clear();
+            setTimeout(() => {
+                navegate("/signin");
+            }, 2000);
         }
     };
-
+    console.log(erros);
     return (
         <div className={styles.divContainer}>
             <form className={styles.divForm}>
@@ -44,7 +72,9 @@ export const Login = () => {
                             type="email"
                             value={email}
                             placeholder="Enter your email"
-                            className={styles.divInput}
+                            className={`${styles.divInput} ${
+                                erros.emailErro ? "bg-red-300" : ""
+                            }`}
                             onChange={(e) => setemail(e.target.value)}
                         />
                     </div>
@@ -55,12 +85,17 @@ export const Login = () => {
                             type="password"
                             value={password}
                             placeholder="Enter your password"
-                            className={styles.divInput}
+                            className={`${styles.divInput} ${
+                                erros.passowdErro
+                                    ? "border-spacing-2 border-red-400"
+                                    : ""
+                            }`}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 
                     <Button
+                        type="button"
                         color="blue"
                         className={styles.btnLogin}
                         onClick={handleLogin}
