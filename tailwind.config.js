@@ -14,6 +14,7 @@ export default {
         "black-51": "rgb(51, 20, 54)",
         "blue-46": "#4F46E5",
         "green-22": "#22C55E",
+        'purple-750' : 'rgba(35, 8, 28, 0.7)'
 
       },
       width: {
@@ -68,12 +69,14 @@ export default {
       },
       backgroundImage: {
         kanban: "url('/src/assets/draggable-area.png')",
+        bgImg: 'url("/src/assets/person-illustration.png")'
       },
       gridTemplateColumns: {
         metrics: "112px minmax(100px, 2fr)",
       },
       screens: {
-        'tablete' : '744px'
+        'tablete' : '744px',
+        'desktop' : '1440px'
       }
     },
   },

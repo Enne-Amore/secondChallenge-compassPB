@@ -2,6 +2,8 @@
     @apply bg-purple-450 h-[1270px] py-[60px] flex flex-col gap-16
     /* tela de tablete */
     tablete:py-[60px] tablete:h-[844px] tablete:items-center
+    /* tela para desktop: */
+    desktop:max-h-[643px]
 }
 .container {
     @apply text-center flex flex-col justify-between h-[156px] items-center 
@@ -12,6 +14,8 @@
     @apply text-center flex flex-col  h-[156px] items-center 
     /* tela de tablete */
     tablete:w-[588px] tablete:h-[488px] tablete:justify-evenly tablete:gap-y-[130px]
+    /* tela para desktop */
+    desktop:min-w-[1100px] desktop:gap-y-0 tablete:h-[204px]
 }
 
 .title {
@@ -47,6 +51,8 @@
     @apply grid grid-cols-1 gap-y-10 w-full
     /* tela de tablete */
     tablete:grid-cols-2 tablete:gap-y-10 tablete:w-full tablete:gap-x-[130px]
+    /* tela desktop */
+    desktop:flex-row desktop:flex desktop:justify-between
 }
  
     
@@ -54,7 +60,9 @@
 .itemList{
     @apply flex  flex-col  items-center py-[12px] justify-between py-3 gap-[20px]
     /* tela de tablete */
-    tablete:w-[229px] tablete:h-[204px] tablete:py-0  
+    tablete:w-[229px] tablete:min-h-[204px] tablete:py-0  
+    /* tela para desktop */
+    
     
 }
 
