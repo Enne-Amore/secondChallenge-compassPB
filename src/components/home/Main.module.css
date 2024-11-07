@@ -18,7 +18,7 @@
     @apply min-w-[353px] h-285 bg-black-55 flex flex-col justify-around 
     text-center items-center rounded-3xl gap-y-[15px] 
     /* tela de tablete */
-    tablete:w-[656px] tablete:h-[258px] tablete:justify-start tablete:mt-[90px] tablete:ml-11
+    tablete:w-[656px] tablete:h-[258px] tablete:justify-start tablete:mt-[90px] 
      /* tela de desktop */
      desktop:self-start desktop:mt-5  desktop:ml-0
 } 
@@ -49,7 +49,7 @@
     @apply mb-margin-b  
     /* tela de tablete */
     tablete:flex tablete:flex-row tablete:justify-between 
-    tablete:w-[656px] tablete:mt-[62.5px] tablete:mb-0 tablete:ml-11
+    tablete:w-[656px] tablete:mt-[62.5px] tablete:mb-0 
      /* tela de desktop */
      desktop:flex-col  desktop:mt-0 desktop:items-end desktop:w-[179px] 
      desktop:h-[272px] desktop:self-start
