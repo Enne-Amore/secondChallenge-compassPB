@@ -1,7 +1,6 @@
+
 export const Login = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+    return (
+        <Login/>
+    );
+};

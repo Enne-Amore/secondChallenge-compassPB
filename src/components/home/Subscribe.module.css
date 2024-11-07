@@ -1,0 +1,33 @@
+.formContainer {
+    @apply  py-[49px] flex flex-col items-center text-center gap-[60px]
+}
+.containText{
+    @apply text-center w-[241px] h-24 flex flex-col justify-between
+}
+.formTitle {
+    @apply text-[25px] font-bold text-blue-850;
+}
+
+.formSubtitle {
+    @apply text-blue-850 text-[14px];
+}
+
+.inputGroup {
+    @apply w-353  flex flex-col items-center justify-between;
+}
+
+.inputLabel {
+    @apply  font-bold text-blue-850 self-start text-[14px];
+}
+
+.inputField {
+    @apply w-full p-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-850;
+}
+
+.inputHelperText {
+    @apply mt-2 text-sm text-gray-500 self-start mb-10;
+}
+
+.subscribeButton {
+    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-10;
+}

@@ -1,5 +1,7 @@
 .manager {
-    @apply w-393 bg-blue-750 text-center pt-person1 text-white py-person1
+
+    @apply w-full max-w-[393px] bg-blue-750 text-center pt-person1 text-white py-person1;
+   
 }
 
 .container {
@@ -20,11 +22,11 @@
 }
 
 .containList{
-    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto w-screen 
+    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px]
 }
 
 .card {
-    @apply w-308 h-381 text-left mr-9 
+    @apply w-308 h-381 text-left  
 
 }
 
@@ -39,5 +41,5 @@
     @apply p-[11px] leading-[21.7px] 
 }
 .textcard {
-    @apply font-semibold font-[18.11px] mt-1
+    @apply font-semibold  mt-1
 }
