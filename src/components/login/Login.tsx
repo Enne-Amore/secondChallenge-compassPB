@@ -1,10 +1,9 @@
-import { Button } from "../Button/Button";
+import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 
 export const Login = () => {
     return (
         <div className={styles.divContainer}>
-            <div className={styles.divImg}></div>
             <form className={styles.divForm}>
                 <div className={styles.divText}>
                     <h1 className={styles.h1}>Login Information</h1>
