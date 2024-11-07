@@ -49,7 +49,7 @@ export const Login = () => {
             toast.success("login successful !");
             clear();
             setTimeout(() => {
-                navegate("/signin");
+                navegate("/subscribe");
             }, 2000);
         }
     };
@@ -62,7 +62,7 @@ export const Login = () => {
                     <p className={styles.p}>Enter your credentials</p>
                     <p className={styles.p}>
                         New here? Let's take you to
-                        <Link to="/signin" className={styles.a}>
+                        <Link to="/subscribe" className={styles.a}>
                             {" "}
                             sing up.
                         </Link>

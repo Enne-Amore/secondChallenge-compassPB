@@ -1,4 +1,4 @@
-import styles from "./SignIn.module.css";
+import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -32,7 +32,7 @@ const validatePassword = (password: string): boolean => {
     return passwordRegex.test(password);
 };
 
-export const SignIn = () => {
+export const Subscribe = () => {
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [job, setJob] = useState<string>("");
