@@ -1,19 +1,19 @@
 .manager {
-
     @apply w-full min-w-[393px] bg-blue-750  pt-person1 text-white py-person1
     /* tela de tablete */
-    tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px]
+    tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px] tablete:ml-0
     /* tela de desktop */
-    desktop:py-[60px] desktop:px-[170px]
+    desktop:py-[60px] desktop:px-[170px]  
+    desktop:ml-0 desktop:min-w-[1440px] desktop:relative desktop:gap-x-11
    
 }
 
 .container {
     @apply text-start mx-5 flex flex-col gap-10 justify-center 
     /* tela de tablete */
-    tablete:w-[655px] tablete:h-[216px] tablete:justify-start tablete:mx-0
+    tablete:max-w-[655px] tablete:max-h-[216px] tablete:justify-start tablete:mx-0
     /* tela de desktop */
-    desktop:min-w-[1100px]
+    desktop:min-w-[1100px] 
 } 
 
 .title {
@@ -36,7 +36,7 @@
 }
 
 .containList{
-    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px]
+    @apply flex flex-row mt-[49px] ml-5 overflow-x-auto gap-x-[36px] overflow-auto no-scrollbar
      /* tela de tablete */
     tablete:mt-[65px] tablete:gap-x-[40px] tablete:ml-0
 }
