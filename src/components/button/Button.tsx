@@ -6,6 +6,7 @@ interface ButtonProps {
     children: ReactNode;
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
     className?: string;
+    type?: "button" | "submit" | "reset";
 }
 
 const bgColor = {
@@ -26,6 +27,7 @@ export const Button = ({
     children,
     onClick,
     className,
+    type,
 }: ButtonProps) => {
     const classNameList = [
         "borde-none rounded-lg flex justify-center items-center p-3",
@@ -41,7 +43,11 @@ export const Button = ({
     }
 
     return (
-        <button onClick={onClick} className={classNameList.join(" ")}>
+        <button
+            onClick={onClick}
+            type={type}
+            className={classNameList.join(" ")}
+        >
             {children}
         </button>
     );
