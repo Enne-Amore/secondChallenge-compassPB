@@ -55,14 +55,14 @@ export const Task = () => {
           </figure>
         </ul>
 
-        <div className="flex gap-4">
-          <div className="flex items-center gap-1.5">
+        <div className="flex gap-3.5">
+          <div className="flex items-center gap-1">
             <IoChatbubbleEllipsesSharp className="text-[#94A3B8] text-sm" />
 
             <span className="text-xs font-semibold font-plus">987</span>
           </div>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1">
             <FaCircleCheck className="text-[#94A3B8] text-sm" />
 
             <span className="text-xs font-semibold font-plus">210</span>

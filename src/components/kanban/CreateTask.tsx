@@ -1,5 +1,6 @@
 import { ComponentProps, useState } from "react";
 import { BsUpload } from "react-icons/bs";
+import { CiSearch } from "react-icons/ci";
 import { FiTrash2 } from "react-icons/fi";
 import { GoPaperclip } from "react-icons/go";
 import { IoCloseOutline } from "react-icons/io5";
@@ -50,6 +51,7 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
               id="title"
               placeholder="Enter the title of the task"
               className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md"
+              min={5}
             />
           </div>
 
@@ -64,17 +66,37 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
             <ul className="flex items-center gap-2">
               <li className="flex items-center gap-1">
                 <input type="radio" name="status" id="to-do" value={"to-do"} />
-                <label htmlFor="to-do">To do</label>
+                <label
+                  htmlFor="to-do"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  To do
+                </label>
               </li>
 
               <li className="flex items-center gap-1">
-                <input type="radio" name="status" id="progress" value={"in-progress"} />
-                <label htmlFor="progress">In progress</label>
+                <input
+                  type="radio"
+                  name="status"
+                  id="progress"
+                  value={"in-progress"}
+                />
+                <label
+                  htmlFor="progress"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  In progress
+                </label>
               </li>
 
               <li className="flex items-center gap-1">
                 <input type="radio" name="status" id="done" value={"done"} />
-                <label htmlFor="done">Done</label>
+                <label
+                  htmlFor="done"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  Done
+                </label>
               </li>
             </ul>
           </div>
@@ -90,7 +112,8 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
             <textarea
               id="description"
               placeholder="Enter a description"
-              className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md h-20"
+              className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md h-20 resize-none"
+              maxLength={300}
             ></textarea>
           </div>
 
@@ -162,12 +185,13 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
                   <div className="flex items-center gap-1">
                     <GoPaperclip className="text-xs" />
 
-                    <span className="text-xs font-normal">
-                      {fileName}
-                    </span>
+                    <span className="text-xs font-normal">{fileName}</span>
                   </div>
 
-                  <FiTrash2 className="text-xs cursor-pointer" onClick={() => setFileName(null)} />
+                  <FiTrash2
+                    className="text-xs cursor-pointer"
+                    onClick={() => setFileName(null)}
+                  />
                 </div>
               ) : null}
 
@@ -179,11 +203,9 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
 
                 <span>
                   Drop here to attach or{" "}
-                  <strong className="text-[#60A5FA] font-normal">
-                    upload
-                  </strong>
+                  <strong className="text-[#60A5FA] font-normal">upload</strong>
                 </span>
-                
+
                 <p>Max size: 5GB</p>
               </label>
             </div>
@@ -197,17 +219,62 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
               Add people
             </label>
 
-            <input
-              type="text"
-              id="add-people"
-              placeholder="John Doe"
-              className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md"
-            />
+            <div className="relative w-full">
+              <input
+                type="text"
+                id="add-people"
+                placeholder="John Doe"
+                className="text-[#5E6366] text-xs border border-[#0000001A] py-1.5 pl-8 pr-2 rounded-md w-full"
+              />
+
+              <CiSearch className="absolute top-1.5 left-2 text-[#00000080]" />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <label
+              htmlFor="priority"
+              className="text-[#331436] text-xs font-medium"
+            >
+              Priority
+            </label>
+
+            <ul className="flex items-center gap-2">
+              <li className="flex items-center gap-1">
+                <input type="radio" name="priority" id="low" value={"low"} />
+                <label
+                  htmlFor="low"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  Low
+                </label>
+              </li>
+
+              <li className="flex items-center gap-1">
+                <input type="radio" name="priority" id="mid" value={"mid"} />
+                <label
+                  htmlFor="mid"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  Mid
+                </label>
+              </li>
+
+              <li className="flex items-center gap-1">
+                <input type="radio" name="priority" id="high" value={"high"} />
+                <label
+                  htmlFor="high"
+                  className="text-[#2B2F32] text-xs font-normal"
+                >
+                  Done
+                </label>
+              </li>
+            </ul>
           </div>
 
           <button
             type="submit"
-            className="bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1"
+            className="bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1 mt-2"
           >
             Create!
           </button>
