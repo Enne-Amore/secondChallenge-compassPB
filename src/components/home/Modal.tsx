@@ -18,7 +18,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+      className="modal-overlay fixed inset-0 bg-black 
+      bg-opacity-50 flex justify-center items-center"
       onClick={handleOverlayClick}  // Detect click outside the modal
     >
       <div className="modal-content bg-white p-6 rounded-lg w-80">

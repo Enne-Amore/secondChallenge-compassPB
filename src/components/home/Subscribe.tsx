@@ -24,12 +24,12 @@ const SubscribeForm = () => {
   const openModal = () => {
     // Email and name validation
     if (!validateEmail(email)) {
-      setErrorMessage('Por favor, insira um email válido.');
+      setErrorMessage('Please enter a valid email.');
       return;
     }
 
     if (!validateName(name)) {
-      setErrorMessage('O nome deve ter pelo menos 2 caracteres e não pode conter números.');
+      setErrorMessage('The name must be at least 2 characters long and cannot contain numbers.');
       return;
     }
 
