@@ -5,9 +5,6 @@ import Main from "../components/home/Main"
 import Manager from "../components/home/Manager"
 import Subscribe from "../components/home/Subscribe"
 
-
-
-
 export const HomePage = () => {
   return (
     <>
