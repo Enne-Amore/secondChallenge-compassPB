@@ -97,7 +97,8 @@ export const SignIn = () => {
                     <p className={styles.p}>
                         Already have an account?{" "}
                         <Link to="/login" className={styles.a}>
-                            Log in
+                            {" "}
+                            Login
                         </Link>
                     </p>
                 </div>

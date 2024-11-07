@@ -1,6 +1,6 @@
 import { ComponentProps, useState } from "react";
 import { Task } from "./Task";
-import { CreateTask } from "./CreateTask";
+import { ModalCreateTask } from "./ModalCreateTask";
 
 export type Colors = ComponentProps<"div"> &
   ComponentProps<"strong"> &
@@ -55,7 +55,7 @@ export const TableTask = ({ title, qtd, darkColor, lightColor }: Colors) => {
       </div>
 
       {modalCreate === true ? (
-        <CreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
+        <ModalCreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
       ) : null}
 
       <ul className="flex flex-col gap-3.5 py-3 px-3.5">

@@ -16,25 +16,26 @@ export default {
                 "green-22": "#22C55E",
                 "blue-74": "#3B5174",
                 "blue-26": "#268FE4",
+                "purple-750": "#23081C"
             },
             width: {
-                342: "342px",
-                392: "392px",
-                353: "353px",
-                329: "329px",
-                110: "110px",
-                744: "744px",
-                656: "656px",
-                626: "626px",
-                508: "508px",
-                1400: "1400px",
-                520: "520px",
-                324: "324px",
-                251: "251px",
-                814: "814px",
-                489: "489px",
-                393: "393px",
-                308: "308px",
+                '342': "342px",
+                '392': "392px",
+                '353': "353px",
+                '329': "329px",
+                '110': "110px",
+                '744': "744px",
+                '656': "656px",
+                '626': "626px",
+                '508': "508px",
+                '1400': "1400px",
+                '520': "520px",
+                '324': "324px",
+                '251': "251px",
+                '814': "814px",
+                '489': "489px",
+                '393': "393px",
+                '308': "308px",
             },
             height: {
                 285: "285px",
@@ -51,35 +52,51 @@ export default {
                 706: "706px",
             },
             fontSize: {
-                24: "24px",
-                15: "15px",
-                14: "14px",
-                40: "40px",
-                16: "16px",
+                '24': "24px",
+                '15': "15px",
+                '14': "14px",
+                '40': "40px",
+                '16': "16px",
             },
             fontFamily: {
-                roboto: ["Roboto", "sans-serif"],
-                plus: ["Plus Jakarta Sans", "sans-serif"],
+                'roboto': ["Roboto", "sans-serif"],
+                'plus': ["Plus Jakarta Sans", "sans-serif"],
             },
             margin: {
                 "margin-b": "39px",
             },
             padding: {
-                person1: "60px",
+                'person1': "60px",
             },
             backgroundSize: {
                 "50%": "50% 50%",
             },
             backgroundImage: {
-                kanban: "url('/src/assets/draggable-area.png')",
+                'kanban': "url('/src/assets/draggable-area.png')",
+                'bgImg': "url('/src/assets/person-illustration.png')",
             },
             gridTemplateColumns: {
-                metrics: "112px minmax(100px, 2fr)",
+                'metrics': "112px minmax(100px, 2fr)",
             },
             screens: {
-                tablete: "744px",
+                'mobile': '393px',
+                'tablete': "744px",
+                'desktop': "1440px",
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function({ addUtilities }) {
+            addUtilities({
+              '.no-scrollbar': {
+                /* Oculta a scrollbar no Chrome, Safari e Edge */
+                '-ms-overflow-style': 'none',  // IE and Edge
+                'scrollbar-width': 'none',     // Firefox
+              },
+              '.no-scrollbar::-webkit-scrollbar': {
+                display: 'none',               // Chrome, Safari and Edge
+              },
+            });
+        },
+    ],
 };
