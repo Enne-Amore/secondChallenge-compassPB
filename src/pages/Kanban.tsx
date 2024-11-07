@@ -6,9 +6,7 @@ export const Kanban = () => {
   return (
     <main className="relative flex flex-col items-center">
       <FixedCard />
-
       <TablesTasks />
-
       <Notification />
     </main>
   );

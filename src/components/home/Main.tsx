@@ -1,4 +1,5 @@
 import styles from './Main.module.css'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   return (
@@ -7,8 +8,10 @@ const Main = () => {
                 <h1 className={styles.title}>Welcome to <span className='text-blue-55'>Project Manager</span></h1>
                 <p className={styles.textMain}>Get your projects and ideas in order, 
                     all in one place! Sign up now and discover a smarter way to 
-                    manage your work with efficiency and teamwork</p>
-                    <button className={styles.getButton}>Get Started</button>
+                    manage your work with efficiency and teamwork</p>    
+                <Link className={styles.getButton} to="/subscribe">
+                    Get Started
+                </Link>      
             </div>
             <div className={styles.containerCard}>
                 <div className={styles.card}>
