@@ -4,6 +4,9 @@ import { CiSearch } from "react-icons/ci";
 import { FiTrash2 } from "react-icons/fi";
 import { GoPaperclip } from "react-icons/go";
 import { IoCloseOutline } from "react-icons/io5";
+import { TitleInput } from "./InputCreateTask";
+import { DescriptionInput } from "./DescriptionInput";
+import { RadioInput } from "./RadioInput";
 
 export type Modal = ComponentProps<"div"> & {
   modalCreate: boolean;
@@ -46,22 +49,7 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
         </div>
 
         <form action="" method="post" className="flex flex-col gap-3">
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor="title"
-              className="text-[#331436] text-xs font-medium"
-            >
-              Title
-            </label>
-
-            <input
-              type="text"
-              id="title"
-              placeholder="Enter the title of the task"
-              className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md"
-              min={5}
-            />
-          </div>
+          <TitleInput/>
 
           <div className="flex flex-col gap-1">
             <label
@@ -72,71 +60,15 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
             </label>
 
             <ul className="flex items-center gap-2">
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="status"
-                  id="to-do"
-                  value={"to-do"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#5570F1]"
-                />
-                <label
-                  htmlFor="to-do"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  To do
-                </label>
-              </li>
+              <RadioInput id="todo" label="To do" name="status" />
 
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="status"
-                  id="progress"
-                  value={"in-progress"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#F59E0B]"
-                />
-                <label
-                  htmlFor="progress"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  In progress
-                </label>
-              </li>
+              <RadioInput id="inProgress" label="In progress" name="status" />
 
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="status"
-                  id="done"
-                  value={"done"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#22C55E]"
-                />
-                <label
-                  htmlFor="done"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  Done
-                </label>
-              </li>
+              <RadioInput id="done" label="Done" name="status" />
             </ul>
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor="description"
-              className="text-[#331436] text-xs font-medium"
-            >
-              Description
-            </label>
-
-            <textarea
-              id="description"
-              placeholder="Enter a description"
-              className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md h-20 resize-none"
-              maxLength={300}
-            ></textarea>
-          </div>
+          <DescriptionInput />
 
           <div className="flex flex-col gap-1">
             <label
@@ -261,53 +193,11 @@ export const CreateTask = ({ modalCreate, setModalCreate }: Modal) => {
             </label>
 
             <ul className="flex items-center gap-2">
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="priority"
-                  id="low"
-                  value={"low"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#5570F1]"
-                />
-                <label
-                  htmlFor="low"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  Low
-                </label>
-              </li>
+              <RadioInput id="low" label="Low" name="priority" />
 
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="priority"
-                  id="mid"
-                  value={"mid"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#F59E0B]"
-                />
-                <label
-                  htmlFor="mid"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  Mid
-                </label>
-              </li>
+              <RadioInput id="mid" label="Mid" name="priority" />
 
-              <li className="flex items-center gap-1">
-                <input
-                  type="radio"
-                  name="priority"
-                  id="high"
-                  value={"high"}
-                  className="form-radio h-4 w-4 transition duration-200 ease-in-out checked:text-[#22C55E]"
-                />
-                <label
-                  htmlFor="high"
-                  className="text-[#2B2F32] text-xs font-normal"
-                >
-                  Done
-                </label>
-              </li>
+              <RadioInput id="high" label="High" name="priority" />
             </ul>
           </div>
 
