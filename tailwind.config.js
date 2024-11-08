@@ -15,12 +15,18 @@ export default {
         'blue-850' : '#160A60',
         'blue-check': '#5570F1',
         'social-color':'#5E6366',
+        'btn-blue': '#1E293B',
       },
       width: {
         '342': '342px',
         '393' : '393px',
         '308' : '308px',
+        '37': '37%',
+        '48': '48%',
         '51': '51%',
+        '65': '65%',
+        '70': '70%',
+        '85': '85%',
       },
       height: {
         '285': '285px',
@@ -29,12 +35,17 @@ export default {
         '381' : '381px'
     },
       fontSize: {
-        '24': '24px',
-        '48': '48px',
-        '28': '28px',
-        '32': '32px',
         '15': '15px',
         '16': '16px',
+        '20': '20px',
+        '24': '24px',
+        '28': '28px',
+        '32': '32px',
+        '48': '48px',
+  },
+  screens: {
+    'tablet': '394px',
+    'desktop': "745px", // Adiciona um breakpoint extra grande
   },
     fontFamily: {
     'roboto': ['Roboto'],
@@ -48,6 +59,7 @@ export default {
     },
     spacing: {
       '1/3': '33.3333%',
+      '1/5': '20%'
     },
   plugins: [],
   }

@@ -1,55 +1,38 @@
 .profileContainer {
-  @apply max-w-[1440px] w-full bg-white p-10 rounded-lg shadow-lg m-auto;
+  @apply max-w-full w-full bg-white p-8 tablet:p-6  tablet:max-w-[1440px]  desktop:p-10 rounded-lg shadow-lg m-auto;
 }
 
 .projectProfile {
-  @apply leading-9;
+  @apply  leading-9 tablet:leading-7 desktop:leading-9;
 }
+
 .projectProfile h1 {
-  @apply font-medium text-32;
+  @apply font-semibold text-32 tablet:text-32 desktop:text-32;
 }
+
 .projectProfile p {
-  @apply text-base text-black text-opacity-50;
+  @apply leading-9 text-sm tablet:text-base text-black text-opacity-50;
 }
 
-.basicInfo {
-  @apply w-1/3 leading-9;
-}
-.basicInfo h1 {
-  @apply font-medium text-2xl;
-}
-.basicInfo p {
-  @apply text-15 text-black text-opacity-50;
-}
-
-.profileInfo {
-  @apply w-1/3 leading-9;
-}
-.profileInfo h1 {
-  @apply font-medium text-2xl;
-}
-.profileInfo p {
-  @apply text-15 text-black text-opacity-50;
-}
-
-.profileCommunication {
-  @apply w-1/3 leading-9;
-}
-.profileCommunication h1 {
-  @apply font-medium text-2xl;
-}
-.profileCommunication p {
-  @apply text-15 text-black text-opacity-50;
-}
-
+.basicInfo,
+.profileInfo,
+.profileCommunication,
 .profileSocial {
-  @apply w-1/3 leading-9;
+  @apply w-full tablet:w-1/2 leading-9 tablet:leading-8 desktop:w-48 desktop:leading-9;
 }
+
+.basicInfo h1,
+.profileInfo h1,
+.profileCommunication h1,
 .profileSocial h1 {
-  @apply font-medium text-2xl;
+  @apply font-semibold text-20 tablet:text-2xl;
 }
+
+.basicInfo p,
+.profileInfo p,
+.profileCommunication p,
 .profileSocial p {
-  @apply text-15 text-black text-opacity-50;
+  @apply leading-9 text-sm tablet:text-15 text-black text-opacity-50;
 }
 
 .inputName,
@@ -59,63 +42,63 @@
 }
 
 .profileHeader {
-  @apply flex items-center mb-10;
+  @apply flex gap-4 tablet:flex-row items-center mb-6 tablet:mb-10;
 }
 
 .uploadSection {
-  @apply flex flex-col w-1/2 font-inter;
+  @apply font-medium w-full tablet:w-1/2 font-inter;
 }
 
 .profilePicture {
-  @apply w-44 h-44 rounded-full mr-5;
+  @apply w-32 h-32 tablet:w-36 tablet:h-36 desktop:w-44 desktop:h-44 rounded-full mr-0 tablet:mr-5;
 }
 
 .profileName {
-  @apply text-5xl font-medium mb-1;
+  @apply text-3xl tablet:text-4xl desktop:text-5xl font-medium mb-1;
 }
 
 .profileEmail {
-  @apply text-28 text-black text-opacity-70;
+  @apply text-lg tablet:text-xl desktop:text-28 text-black text-opacity-70;
 }
 
 .profileSection {
-  @apply border-t border-gray-300 pt-5 mt-5 flex gap-1/3;
+  @apply gap-6 border-t border-gray-300 pt-5 mt-5 flex flex-col tablet:gap-4 desktop:gap-1/5 desktop:flex desktop:flex-row;
 }
+
 .profileGrid {
-  @apply grid grid-cols-2 gap-4 w-full;
+  @apply tablet:w-85 gap-3 tablet:gap-4 tablet:flex tablet:flex-row tablet:flex-wrap desktop:w-70 desktop:gap-5 w-full;
 }
 
 .profileGrid input {
   @apply p-2 border border-gray-300 rounded-md;
 }
-
-.profileGrid .inputName, .profileGrid .inputLname {
-  @apply w-full ;
+.profileContent{
+  @apply tablet:w-48
 }
-
+.profileGrid .inputName,
+.profileGrid .inputLname,
 .profileGrid .inputEmail {
   @apply w-full;
 }
-.profileGrid {
-  @apply text-sm gap-5 w-51;
-}
+
 .profileGrid span {
   @apply font-medium;
 }
+
 .lastName {
-  @apply ml-1/3;
+  @apply ml-0 tablet:ml-1/3;
 }
 
 .profilePictureSection {
-  @apply flex items-center leading-9 gap-5 w-51;
+  @apply tablet:flex items-center leading-7 tablet:leading-8 desktop:leading-9 gap-5 w-full desktop:w-70;
 }
 
 .profilePicturePreview {
-  @apply w-44 h-44 rounded-full border border-gray-300;
+  @apply w-32 h-32 tablet:w-36 tablet:h-36 desktop:w-44 desktop:h-44 rounded-full border border-gray-300;
 }
 
 .uploadArea {
-  @apply flex flex-col items-center justify-center border-2 border-dashed border-gray-400 p-2 rounded-md w-full max-w-[300px] text-center text-gray-700 font-normal;
+  @apply flex flex-col gap-3 items-center justify-center border-2 border-dashed border-gray-400 p-2 rounded-md w-full max-w-full min-h-36 desktop:max-w-[300px] text-center text-gray-700 font-normal;
 }
 
 .uploadLink {
@@ -123,24 +106,27 @@
 }
 
 .checkboxSection {
-  @apply flex flex-col gap-2 w-51 font-normal text-sm; 
+  @apply leading-4 flex flex-col gap-2 w-full desktop:w-70 font-normal text-sm;
 }
 
 .socialContainer {
-  @apply flex flex-col gap-5 w-51;
+  @apply flex flex-col gap-5 w-full tablet:w-2/3 desktop:w-70;
 }
-.socialContainer label{
-  @apply text-xs text-social-color
+
+.socialContainer label {
+  @apply text-xs text-social-color;
 }
+
 .socialOption {
   @apply flex flex-col;
 }
 
 .inputRow {
-  @apply flex items-center gap-2 ;
+  @apply flex items-center gap-2;
 }
-.inputRow input{
-  @apply border border-gray-200 rounded-lg p-4;
+
+.inputRow input {
+  @apply border border-gray-200 rounded-lg p-2 desktop:p-4;
 }
 
 .urlInput {
@@ -148,11 +134,11 @@
 }
 
 .buttonUpdate {
-  @apply max-w-1/3 flex flex-col mx-auto mt-8;
+  @apply w-full tablet:w-51 flex flex-col mx-auto mt-6 tablet:mt-8;
 }
 
 .updateButton {
-  @apply bg-blue-600 text-white py-2 px-4 rounded-lg font-medium w-full mt-5 transition-colors hover:bg-blue-800;
+  @apply bg-btn-blue text-white py-2 px-4 rounded-lg font-medium w-full mt-5
 }
 
 .backLink {
@@ -162,25 +148,31 @@
 .backLink a {
   @apply text-blue-600 hover:underline;
 }
+
 .checkboxButton {
   @apply w-5 h-5 mr-2 bg-white text-white rounded cursor-pointer border border-white outline outline-1 outline-gray-500;
 }
- .checkboxButtonChecked{
+
+.checkboxButtonChecked {
   @apply w-5 h-5 mr-2 bg-blue-check text-white rounded cursor-pointer border border-white outline outline-1 outline-gray-500;
- }
+}
+
 .checkboxButton:active {
   @apply bg-blue-700;
 }
 
 .optionDescription {
-  @apply text-gray-600;
+  @apply mt-2 mb-2 tablet:mb-4 text-gray-600;
 }
+
 .fileNameContainer {
   @apply bg-gray-200 p-2 rounded-md mb-4 flex items-center justify-between;
 }
+
 .uploadContainer {
   @apply w-full;
 }
+
 .deleteIcon {
   @apply cursor-pointer text-lg;
 }

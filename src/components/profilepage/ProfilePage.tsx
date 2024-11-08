@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './Profile.module.css';
 import { GrTrash } from "react-icons/gr";
+import { FiUpload } from 'react-icons/fi';
 
 export default function Profile() {
   return (
     <div className={styles.profileContainer}>
       {/* Profile Header */}
       <div className={styles.profileHeader}>
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" className={styles.profilePicture} />
+        <img src="https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg" className={styles.profilePicture} />
         <div>
           <h1 className={styles.profileName}>John Doe</h1>
           <p className={styles.profileEmail}>john.doe@example.com</p>
@@ -31,17 +32,17 @@ export default function Profile() {
         </div>
         <div className={styles.profileGrid}>
           {/* First Name e Last Name lado a lado */}
-          <div>
+          <div className={styles.profileContent}>
             <span>First Name</span><br />
             <input className={`${styles.inputName} inputName`} type="text" placeholder="First name" />
           </div>
-          <div>
+          <div className={styles.profileContent}>
             <span>Last Name</span><br />
             <input className={`${styles.inputLname} inputLname`} type="text" placeholder="Last name" />
           </div>
 
           {/* Campo de Email abaixo */}
-          <div className="col-span-2">
+          <div className="col-span-2 w-full">
             <span>Email</span>
             <input className={`${styles.inputEmail} inputEmail`} type="email" placeholder="E-mail" />
           </div>
@@ -56,7 +57,7 @@ export default function Profile() {
         </div>
         <div className={styles.profilePictureSection}>
           <div className={styles.profileImg}>
-            <img src="https://via.placeholder.com/150" alt="Profile Preview" className={styles.profilePicturePreview} />
+            <img src="https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg" alt="Profile Preview" className={styles.profilePicturePreview} />
           </div>
           <div className={styles.uploadSection}>
             <span className={styles.addImg}>Add new profile picture</span>
@@ -68,6 +69,7 @@ export default function Profile() {
             </div>
             <div className={styles.newFile}></div>
             <div className={styles.uploadArea}>
+              <FiUpload size={24} />
               <p>Drop here to attach or <span className={styles.uploadLink}>upload</span></p>
               <h6>Max size: 5GB</h6>
             </div>
