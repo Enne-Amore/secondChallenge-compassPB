@@ -24,7 +24,7 @@ export const TableTask = ({ title, qtd, darkColor, lightColor }: Colors) => {
   return (
     <article className="bg-[#1E293B1A] rounded-3xl">
       <div
-        className={`bg-[${lightColor}] flex items-center justify-between py-1 pl-2 pr-3 rounded-full`}
+        className={`${lightColor} flex items-center justify-between py-1 pl-2 pr-3 rounded-full`}
       >
         <div className="flex items-center gap-2.5">
           <strong

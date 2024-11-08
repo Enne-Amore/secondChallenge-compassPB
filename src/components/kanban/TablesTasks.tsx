@@ -7,21 +7,21 @@ export const TablesTasks = () => {
         title={"To do"}
         qtd={25}
         darkColor={"#4F46E5"}
-        lightColor={"#D3D0F8"}
+        lightColor={"bg-[#D3D0F8]"}
       />
 
       <TableTask
         title={"In progress"}
         qtd={8}
         darkColor={"#F59E0B"}
-        lightColor={"#FCE6C2"}
+        lightColor={"bg-[#FCE6C2]"}
       />
 
       <TableTask
         title={"Done"}
         qtd={5}
         darkColor={"#22C55E"}
-        lightColor={"#C7F0D6"}
+        lightColor={"bg-[#C7F0D6]"}
       />
     </section>
   );
