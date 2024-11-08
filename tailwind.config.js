@@ -62,6 +62,9 @@ export default {
         '24': '24px',
         '40': '40px',
         '14': '14px',
+        '32': '32px',
+        '20': '20px',
+        '28': '28px',
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
@@ -87,7 +90,7 @@ export default {
       },
       screens: {
         'mobile': '393px',
-        'tablete': '744px',
+        'tablet': '744px',
         'desktop': '1440px',
       },
     },

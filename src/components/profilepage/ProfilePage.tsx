@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Profile.module.css';
 import { GrTrash } from "react-icons/gr";
 import { FiUpload } from 'react-icons/fi';

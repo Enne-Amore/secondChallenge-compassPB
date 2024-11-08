@@ -7,6 +7,7 @@ import { Kanban } from "./pages/Kanban";
 
 import "./index.css";
 import { Toaster } from "react-hot-toast";
+import Profile from "./components/profilepage/ProfilePage";
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/subscribe" element={<SubscribePage />} />
                 <Route path="/kanban" element={<Kanban />} />
+                {/* <Route path="/profile" element={<Profile />} /> */}
             </Routes>
         </>
     );
