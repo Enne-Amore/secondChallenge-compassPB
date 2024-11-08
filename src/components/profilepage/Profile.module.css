@@ -18,7 +18,7 @@
 .profileInfo,
 .profileCommunication,
 .profileSocial {
-  @apply w-full tablet:w-1/2 leading-9 tablet:leading-8 desktop:w-48 desktop:leading-9;
+  @apply w-full tablet:w-1/2 leading-9 tablet:leading-8 desktop:w-51 desktop:leading-9;
 }
 
 .basicInfo h1,

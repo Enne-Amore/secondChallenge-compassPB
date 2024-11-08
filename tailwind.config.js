@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        '1/5': '20%',
+        '1/3': '33.3333%',  // Adiciona a classe gap-1/5
+      },
       colors: {
         'black-55': 'rgba(0, 0, 0, 0.55)',
         'blue-55' : '#92BBFF',
@@ -25,6 +29,9 @@ export default {
         'purple-750': '#23081C',
       },
       width: {
+        '51': '51%',
+        '70': '70%',
+        '85': '85%',
         '342': '342px',
         '393': '393px',
         '353': '353px',

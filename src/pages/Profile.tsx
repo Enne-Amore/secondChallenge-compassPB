@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div>
       <Header showNavbar/>
-        <ProfilePage/>
+      <ProfilePage/>
     </div>
   )
 }

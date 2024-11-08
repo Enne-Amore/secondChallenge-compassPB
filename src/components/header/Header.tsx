@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 import "./style.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@clerk/clerk-react';
 
 interface HeaderProps {
   showLoginButton?: boolean;
@@ -9,6 +10,17 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
+  const navigate = useNavigate();
+  const { signOut } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      navigate("/"); // Redireciona para a página inicial
+    } catch (error) {
+      console.error("Erro ao tentar encerrar a sessão:", error);
+    }
+  };
   return (
     
     <header className="bg-blue-750 w-full font-roboto desktop:min-w-[1440px]">
@@ -17,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
         {/* Logo e Título */}
 
         <div className="flex items-center space-x-4">
-          <Link to='/'>
+          <Link to='/' onClick={handleLogout}>
           <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
           </Link>
           <h1 className="text-white text-lg md:text-2xl">Project Manager</h1>
