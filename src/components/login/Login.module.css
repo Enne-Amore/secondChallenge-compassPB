@@ -13,7 +13,7 @@
 
 .divForm {
     @apply bg-white w-353 flex flex-col justify-evenly rounded-3xl z-10 relative h-624 
-      md:w-656 md:justify-start md:h-624  px-5  md:px-24 xl:w-1/2 xl:px-36
+      md:w-656 md:justify-start md:h-624  px-5  md:px-24 xl:w-1/2 xl:px-36 my-5 md:my-0
      xl:h-full  xl:flex xl:flex-col xl:items-start xl:justify-evenly 
 }
 
