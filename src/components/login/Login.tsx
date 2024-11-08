@@ -3,6 +3,7 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useClerk } from "@clerk/clerk-react";
 
 interface Erro {
     emailErro: boolean;
@@ -13,6 +14,7 @@ const validateEmail = (email: string): boolean => {
     const emailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return emailRegex.test(email);
 };
+
 const validatePassword = (password: string): boolean => {
     const passwordRegex =
         /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/;
@@ -27,13 +29,16 @@ export const Login = () => {
         passowdErro: false,
     });
 
+    const { openSignIn } = useClerk(); // Usando openSignIn para autenticação social
     const navigate = useNavigate();
 
     const clear = () => {
         setPassword("");
         setemail("");
-        erros.emailErro = false;
-        erros.passowdErro = false;
+        setErros({
+            emailErro: false,
+            passowdErro: false,
+        });
     };
 
     const handleLogin = () => {
@@ -41,17 +46,24 @@ export const Login = () => {
             toast.error("Password and E-mail invalid!");
             setErros({ ...erros, emailErro: true });
         } else if (!validatePassword(password)) {
-            toast.error("Passwod invalid!");
+            toast.error("Password invalid!");
             setErros({ ...erros, passowdErro: true });
         } else if (!validateEmail(email)) {
             toast.error("E-mail invalid!");
         } else {
-            toast.success("login successful !");
+            toast.success("Login successful!");
             clear();
             setTimeout(() => {
                 navigate("/kanban");
             }, 2000);
         }
+    };
+
+    const handleOAuthLogin = () => {
+        openSignIn({
+            redirectUrl: "/kanban", // Redireciona após o login
+            options: { allowedSignInMethods: ["oauth_google", "oauth_facebook"] },
+        });
     };
 
     return (
@@ -63,11 +75,11 @@ export const Login = () => {
                     <p className={styles.p}>
                         New here? Let's take you to
                         <Link to="/subscribe" className={styles.a}>
-                            {" "}
-                            sing up.
+                            {" "}sign up.
                         </Link>
                     </p>
                 </div>
+
                 <div className={styles.divContainerInput}>
                     <div>
                         <label className={styles.divLabel}>Email</label>
@@ -75,9 +87,7 @@ export const Login = () => {
                             type="email"
                             value={email}
                             placeholder="Enter your email"
-                            className={`${styles.divInput} ${
-                                erros.emailErro ? "bg-red-300" : ""
-                            }`}
+                            className={`${styles.divInput} ${erros.emailErro ? "bg-red-300" : ""}`}
                             onChange={(e) => setemail(e.target.value)}
                         />
                     </div>
@@ -88,11 +98,7 @@ export const Login = () => {
                             type="password"
                             value={password}
                             placeholder="Enter your password"
-                            className={`${styles.divInput} ${
-                                erros.passowdErro
-                                    ? "border-spacing-2 border-red-400"
-                                    : ""
-                            }`}
+                            className={`${styles.divInput} ${erros.passowdErro ? "border-red-400" : ""}`}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
@@ -105,6 +111,7 @@ export const Login = () => {
                     >
                         Login
                     </Button>
+
                     <div className={styles.divSmall}>
                         <small className={styles.small}>
                             or sign in with...
@@ -112,12 +119,19 @@ export const Login = () => {
                     </div>
 
                     <div className={styles.divBtn}>
-                        <button className={styles.btnFace}>
-                            <img src="src/assets/facebook-logo.png" />
-                        </button>
-                        <button className={styles.btnGmail}>
-                            <img src="src/assets/google-icon.png" />
-                        </button>
+                        <div
+                            className={styles.btnFace}
+                            onClick={() => handleOAuthLogin()}
+                        >
+                            <img src="src/assets/facebook-logo.png" alt="Facebook login" />
+                        </div>
+
+                        <div
+                            className={styles.btnGmail}
+                            onClick={() => handleOAuthLogin()}
+                        >
+                            <img src="src/assets/google-icon.png" alt="Google login" />
+                        </div>
                     </div>
                 </div>
             </form>
