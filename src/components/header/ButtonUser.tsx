@@ -10,10 +10,12 @@ const ButtonUser = () => {
     const handleClick = () => {
         if (isSignedIn) {
             signOut();
-        } else {
-            navigate("/login");
         }
     };
+
+    if (!isSignedIn) {
+        return null;
+    }
 
     return (
         <button
@@ -39,7 +41,6 @@ const ButtonUser = () => {
                     }}
                 />
             ) : null}
-            {isSignedIn ? "Minha Conta" : "Login"}
         </button>
     );
 };
