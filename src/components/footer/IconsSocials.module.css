@@ -1,0 +1,26 @@
+.icon{
+    @apply w-[34px] h-[32px] bg-white rounded-full flex items-center;
+}
+
+
+.iconSVG{
+    @apply w-full
+}
+
+.wraperIcons{
+    @apply flex items-center justify-between w-[136px] m-auto;
+}
+
+.icon:hover > .iconFacebook{
+    @apply text-[#0866FF] transition duration-[0.4s]
+}
+
+
+.icon:hover > .iconLinkedin{
+    @apply text-[#0A66C2] transition duration-[0.4s]
+}
+
+.icon:hover > .iconInstagram{
+    @apply text-[#FD596A] transition duration-[0.4s]
+}
+

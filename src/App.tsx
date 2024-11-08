@@ -1,15 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import './index.css';
-import Profile from "./components/profilepage/ProfilePage";
+
+import { HomePage } from "./pages/HomePage";
+import { Routes, Route } from "react-router-dom";
+import { LoginPage } from "./pages/LoginPage";
+import { SubscribePage } from "./pages/SubscribePage";
+import { Kanban } from "./pages/Kanban";
+import { Toaster } from "react-hot-toast";
+import "./index.css";
 
 export default function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Profile/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
-}
+    return (
+        <>
+            <Toaster />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/subscribe" element={<SubscribePage />} />
+                <Route path="/kanban" element={<Kanban />} />
+            </Routes>
+        </>
+    );
+
