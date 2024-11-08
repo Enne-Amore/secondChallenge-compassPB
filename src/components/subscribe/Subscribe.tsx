@@ -3,15 +3,7 @@ import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
-
-
-interface Erro {
-    emailErro: boolean;
-    passowdErro: boolean;
-    lastNameErro: boolean;
-    firstNameErro: boolean;
-    jobErro: boolean;
-}
+import { useClerk } from '@clerk/clerk-react'; // Hook do Clerk
 
 const validateNome = (nome: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
 const validateJob = (nome: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
@@ -25,7 +17,7 @@ export const Subscribe = () => {
     const [job, setJob] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [erros, setErros] = useState<Erro>({
+    const [erros, setErros] = useState({
         emailErro: false,
         passowdErro: false,
         lastNameErro: false,
@@ -34,9 +26,10 @@ export const Subscribe = () => {
     });
     const [isValidated, setIsValidated] = useState<boolean>(false);
 
+    const { openSignIn, isAuthenticated } = useClerk(); // Hook do Clerk para verificar a autenticação
     const navigate = useNavigate();
 
-    const handleSignIn = () => {
+    const handleSignIn = async () => {
         const isFirstNameValid = validateNome(firstName);
         const isLastNameValid = validateNome(lastName);
         const isEmailValid = validateEmail(email);
@@ -55,16 +48,21 @@ export const Subscribe = () => {
 
         if (isFirstNameValid && isLastNameValid && isEmailValid && isJobValid && isPasswordValid) {
             toast.success("Account created successfully!");
-            saveData();
             setTimeout(() => navigate("/login"), 2000);
         }
     };
 
-    const saveData = async () => {
-        // Simulação de envio dos dados
+    const handleOAuthLogin = (provider: string) => {
+        openSignIn({
+            strategy: provider === "google" ? "oauth_google" : "oauth_facebook",
+            redirectUrl: "/kanban", // Redireciona para a página de Kanban após login
+        });
     };
 
-    
+    // Verifica se o usuário está autenticado, e redireciona para o Kanban
+    if (isAuthenticated) {
+        navigate("/kanban");
+    }
 
     return (
         <div className={styles.divContainer}>
@@ -83,9 +81,7 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your first name"
-                            className={`${styles.inputName} ${
-                                isValidated ? (erros.firstNameErro ? "bg-red-300" : "bg-green-200") : ""
-                            }`}
+                            className={`${styles.inputName} ${isValidated ? (erros.firstNameErro ? "bg-red-300" : "bg-green-200") : ""}`}
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         />
@@ -95,9 +91,7 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your last name"
-                            className={`${styles.inputName} ${
-                                isValidated ? (erros.lastNameErro ? "bg-red-300" : "bg-green-200") : ""
-                            }`}
+                            className={`${styles.inputName} ${isValidated ? (erros.lastNameErro ? "bg-red-300" : "bg-green-200") : ""}`}
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                         />
@@ -110,9 +104,7 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your email"
-                            className={`${styles.divInput} ${
-                                isValidated ? (erros.emailErro ? "bg-red-300" : "bg-green-200") : ""
-                            }`}
+                            className={`${styles.divInput} ${isValidated ? (erros.emailErro ? "bg-red-300" : "bg-green-200") : ""}`}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -122,9 +114,7 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your job position"
-                            className={`${styles.divInput} ${
-                                isValidated ? (erros.jobErro ? "bg-red-300" : "bg-green-200") : ""
-                            }`}
+                            className={`${styles.divInput} ${isValidated ? (erros.jobErro ? "bg-red-300" : "bg-green-200") : ""}`}
                             value={job}
                             onChange={(e) => setJob(e.target.value)}
                         />
@@ -134,15 +124,13 @@ export const Subscribe = () => {
                         <input
                             type="password"
                             placeholder="Enter your password"
-                            className={`${styles.divInput} ${
-                                isValidated ? (erros.passowdErro ? "bg-red-300" : "border-green-300") : ""
-                            }`}
+                            className={`${styles.divInput} ${isValidated ? (erros.passowdErro ? "bg-red-300" : "bg-green-200") : ""}`}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                 </div>
-                
+
                 <Button
                     type="button"
                     full
@@ -154,18 +142,22 @@ export const Subscribe = () => {
                 </Button>
 
                 <div className={styles.divBtn}>
-                        <div
-                            className={styles.btnFace}
-                        >
-                            <img src="src/assets/facebook-logo.png" alt="Facebook login" />
-                        </div>
-
-                        <div
-                            className={styles.btnGmail}
-                        >
-                            <img src="src/assets/google-icon.png" alt="Google login" />
-                        </div>
+                    <div
+                        className={styles.btnFace}
+                        onClick={() => handleOAuthLogin("facebook")}
+                    >
+                        <img src="src/assets/facebook-logo.png" alt="Facebook login" className={styles.iconOAuth} />
+                        
                     </div>
+
+                    <div
+                        className={styles.btnGmail}
+                        onClick={() => handleOAuthLogin("google")}
+                    >
+                        <img src="src/assets/google-icon.png" alt="Google login" className={styles.iconOAuth} />
+                        
+                    </div>
+                </div>
             </div>
         </div>
     );
