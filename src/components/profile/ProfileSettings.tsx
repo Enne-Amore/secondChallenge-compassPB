@@ -1,9 +1,8 @@
-import React from 'react';
 import styles from './Profile.module.css';
 import { GrTrash } from "react-icons/gr";
 import { FiUpload } from 'react-icons/fi';
 
-export default function Profile() {
+export default function ProfileSettings() {
   return (
     <div className={styles.profileContainer}>
       {/* Profile Header */}
@@ -167,3 +166,4 @@ export default function Profile() {
 function selectOption(option: number) {
   console.log(`Option ${option} selected`);
 }
+
