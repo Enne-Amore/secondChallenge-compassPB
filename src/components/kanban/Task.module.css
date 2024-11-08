@@ -1,0 +1,67 @@
+.container {
+    @apply bg-white rounded-2xl shadow-sm p-2.5 pb-1.5 flex flex-col gap-3 min-w-52
+}
+
+.priority {
+    @apply bg-[#FFFBEB] text-[#F59E0B] text-xs font-semibold font-plus py-1.5 px-2.5 rounded-full w-max
+}
+
+.title {
+    @apply text-[#1E293B] text-xs font-bold mb-1
+}
+
+.containerProgress {
+    @apply flex flex-col gap-2.5
+}
+
+.containerInfoProgress {
+    @apply flex justify-between items-center
+}
+
+.labelProgress {
+    @apply text-[#475569] text-xs font-medium font-plus
+}
+
+.percentage {
+    @apply text-xs font-bold font-plus
+}
+
+.inputProgress {
+    @apply w-full h-2.5 rounded-full
+}
+
+.containerPeople {
+    @apply flex justify-between items-center
+}
+
+.imgsPeople {
+    @apply flex items-center
+}
+
+.firstPerson {
+    @apply w-6 h-6
+}
+
+.othersPeople {
+    @apply w-6 h-6 -ml-2 rounded-full box-content border-white border-2
+}
+
+.img {
+    @apply w-full h-full rounded-full
+}
+
+.containerInfo {
+    @apply flex gap-3.5
+}
+
+.containerData {
+    @apply flex items-center gap-1
+}
+
+.icon {
+    @apply text-[#94A3B8] text-sm
+}
+
+.qtd {
+    @apply text-xs font-semibold font-plus
+}
