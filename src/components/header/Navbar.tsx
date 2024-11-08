@@ -30,8 +30,8 @@ const Navbar: React.FC = () => {
       <ul className="hidden sm:flex">
         <li><Link to="/" className="mr-5 xl:mr-10 text-white hover:underline" onClick={handleLogout}>Home</Link></li>
         <li><Link to="/" className="mr-5 xl:mr-10 text-white hover:underline">About</Link></li>
-        <li><Link to="/" className="mr-5 xl:mr-10 text-white hover:underline">Settings</Link></li>
-        <li><Link to="/profile" className="mr-5 xl:mr-10 text-white hover:underline">Profile</Link></li>
+        <li><Link to="/setting" className="mr-5 xl:mr-10 text-white hover:underline">Settings</Link></li>
+        <li><Link to="/" className="mr-5 xl:mr-10 text-white hover:underline">Profile</Link></li>
       </ul>
 
       <input 
@@ -46,8 +46,8 @@ const Navbar: React.FC = () => {
         transition-all duration-300 ease-in-out`}>
         <li><Link to="/" className="text-white block py-4" onClick={handleLogout}>Home</Link></li>
         <li><Link to="/" className="text-white block py-4">About</Link></li>
-        <li><Link to="/" className="text-white block py-4">Settings</Link></li>
-        <li><Link to="/profile" className="text-white block pt-4 pb-8">Profile</Link></li>
+        <li><Link to="/setting" className="text-white block py-4">Settings</Link></li>
+        <li><Link to="/" className="text-white block pt-4 pb-8">Profile</Link></li>
 
       </ul>
     </nav>

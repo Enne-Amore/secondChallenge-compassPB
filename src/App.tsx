@@ -1,13 +1,12 @@
-
 import { HomePage } from "./pages/HomePage";
 import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
 import { SubscribePage } from "./pages/SubscribePage";
 import { Kanban } from "./pages/Kanban";
+import  Settings from "./pages/Settings";
 
 import "./index.css";
 import { Toaster } from "react-hot-toast";
-import Profile from "./pages/Profile";
 
 
 export default function App() {
@@ -19,7 +18,7 @@ export default function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/subscribe" element={<SubscribePage />} />
                 <Route path="/kanban" element={<Kanban />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/setting" element={<Settings />} />
             </Routes>
         </>
     );
