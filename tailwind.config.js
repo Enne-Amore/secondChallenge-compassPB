@@ -87,7 +87,7 @@ export default {
       },
       screens: {
         'mobile': '393px',
-        'tablet': '744px',
+        'tablete': '744px',
         'desktop': '1440px',
       },
     },

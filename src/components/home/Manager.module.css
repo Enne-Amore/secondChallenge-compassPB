@@ -4,7 +4,7 @@
     tablete:min-w-[744px] tablete:h-[843px]  tablete:py-[60px] tablete:pl-[44px] tablete:ml-0
     /* tela de desktop */
     desktop:py-[60px] desktop:px-[170px]  
-    desktop:ml-0 desktop:min-w-[1440px] desktop:relative desktop:gap-x-11
+    desktop:ml-0 desktop:min-w-[1440px] 
    
 }
 
