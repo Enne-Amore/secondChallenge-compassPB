@@ -1,5 +1,6 @@
 import { TableTask } from "./TableTask";
 import styles from "./TablesTasks.module.css";
+import { Task } from "./Task";
 
 export const TablesTasks = () => {
   return (
@@ -11,6 +12,13 @@ export const TablesTasks = () => {
         strongBgColor={"bg-[#4F46E5]"}
         titleColor={"text-[#4F46E5]"}
         moreIcon={"#4F46E5"}
+        task={
+          <>
+            <Task />
+
+            <Task />
+          </>
+        }
       />
 
       <TableTask
@@ -20,6 +28,15 @@ export const TablesTasks = () => {
         strongBgColor={"bg-[#F59E0B]"}
         titleColor={"text-[#F59E0B]"}
         moreIcon={"#F59E0B"}
+        task={
+          <>
+            <Task />
+
+            <Task />
+            
+            <Task />
+          </>
+        }
       />
 
       <TableTask
@@ -29,6 +46,11 @@ export const TablesTasks = () => {
         strongBgColor={"bg-[#22C55E]"}
         titleColor={"text-[#22C55E]"}
         moreIcon={"#22C55E"}
+        task={
+          <>
+            <Task />
+          </>
+        }
       />
     </section>
   );

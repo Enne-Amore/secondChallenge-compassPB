@@ -1,5 +1,5 @@
 .containerTable {
-    @apply bg-[#1E293B1A] rounded-3xl
+    @apply bg-[#1E293B1A] rounded-3xl h-510 overflow-y-clip
 }
 
 .containerInfoTop {
@@ -23,5 +23,5 @@
 }
 
 .taskList {
-    @apply flex flex-col gap-3.5 py-3 px-3.5
+    @apply flex flex-col gap-3.5 pt-3 pb-14 px-3.5 h-full overflow-y-scroll
 }

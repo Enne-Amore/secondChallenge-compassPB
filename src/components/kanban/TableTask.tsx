@@ -1,5 +1,4 @@
-import { ComponentProps, useState } from "react";
-import { Task } from "./Task";
+import React, { ComponentProps, useState } from "react";
 import { ModalCreateTask } from "./ModalCreateTask";
 import styles from "./TableTask.module.css";
 
@@ -13,9 +12,10 @@ export type Colors = ComponentProps<"div"> &
     strongBgColor: string;
     titleColor: string;
     moreIcon: string;
+    task: React.ReactNode;
   };
 
-export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, moreIcon }: Colors) => {
+export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, moreIcon, task }: Colors) => {
   const [modalCreate, setModalCreate] = useState<boolean>(false);
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
@@ -62,11 +62,7 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
       ) : null}
 
       <ul className={styles.taskList}>
-        <Task />
-
-        <Task />
-
-        <Task />
+        {task}
       </ul>
     </article>
   );
