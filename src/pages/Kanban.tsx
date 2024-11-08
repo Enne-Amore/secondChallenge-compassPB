@@ -7,11 +7,13 @@ import { TablesTasks } from "../components/kanban/TablesTasks";
 export const Kanban = () => {
   return (
     <>
-      <Header showNavbar/>
+      <Header />
 
       <main className="relative flex flex-col items-center mt-4 mb-7">
         <FixedCard />
+
         <TablesTasks />
+
         <Notification />
       </main>
 
