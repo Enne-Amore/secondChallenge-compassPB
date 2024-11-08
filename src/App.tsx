@@ -1,3 +1,4 @@
+
 import { HomePage } from "./pages/HomePage";
 import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
@@ -18,4 +19,4 @@ export default function App() {
             </Routes>
         </>
     );
-}
+
