@@ -23,12 +23,12 @@ const validateJob = (nome: string): boolean => {
 };
 
 const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return emailRegex.test(email);
 };
 const validatePassword = (password: string): boolean => {
     const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-]{8,}$/;
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/;
     return passwordRegex.test(password);
 };
 
@@ -86,29 +86,21 @@ export const Subscribe = () => {
     };
 
     const handleSignIn = () => {
-        if (!validateEmail(email)) {
-            toast.error("E-mail invalid!");
-            setErros({ ...erros, emailErro: true });
-        } else if (!validatePassword(password)) {
-            toast.error("Passwod invalid!");
-            setErros({ ...erros, passowdErro: true });
-        } else if (!validateNome(firstName)) {
+        if (!validateNome(firstName)) {
             toast.error("First name invalid!");
-            setErros({ ...erros, firstNameErro: true });
+            setErros({ ...erros, firstNameErro: true });   
         } else if (!validateNome(lastName)) {
             toast.error("Last name invalid!");
             setErros({ ...erros, lastNameErro: true });
-        } else if (!validateJob(job)) {
+        }else if (!validateEmail(email)) {
+            toast.error("E-mail invalid!");
+            setErros({ ...erros, emailErro: true });
+        }else if (!validateJob(job)) {
             toast.error("Job invalid!");
             setErros({ ...erros, jobErro: true });
-        } else if (
-            !validateEmail(email) &&
-            !validatePassword(password) &&
-            !validateNome(firstName) &&
-            validateNome(lastName) &&
-            !validateJob(job)
-        ) {
-            toast.error("Campus invalid!");
+        }  else if (!validatePassword(password)) {
+            toast.error("Passwod invalid!");
+            setErros({ ...erros, passowdErro: true })
         } else {
             toast.success("cadastro realizado com sucesso!");
             clear();

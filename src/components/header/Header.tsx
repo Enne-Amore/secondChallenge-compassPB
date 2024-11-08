@@ -15,10 +15,10 @@ const Header: React.FC<HeaderProps> = ({ showLoginButton, showNavbar }) => {
       <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between p-4">
         
         {/* Logo e Título */}
-        <div className="flex items-center space-x-4">
+        <Link className="flex items-center space-x-4" to={'/'}>
           <img src="/logo.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
           <h1 className="text-white text-lg md:text-2xl">Project Manager</h1>
-        </div>
+        </Link>
 
         {/* Navbar (condicional) */}
         {showNavbar && <Navbar />}

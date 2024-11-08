@@ -3,6 +3,7 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { SignedOut, SignInButton } from "@clerk/clerk-react";
 
 interface Erro {
     emailErro: boolean;
@@ -10,12 +11,12 @@ interface Erro {
 }
 
 const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return emailRegex.test(email);
 };
 const validatePassword = (password: string): boolean => {
     const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-]{8,}$/;
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/;
     return passwordRegex.test(password);
 };
 
@@ -37,14 +38,14 @@ export const Login = () => {
     };
 
     const handleLogin = () => {
-        if (!validateEmail(email)) {
-            toast.error("E-mail invalid!");
+        if (!validateEmail(email) && !validatePassword(password)) {
+            toast.error("Password and E-mail invalid!");
             setErros({ ...erros, emailErro: true });
         } else if (!validatePassword(password)) {
             toast.error("Passwod invalid!");
             setErros({ ...erros, passowdErro: true });
-        } else if (!validateEmail(email) && !validatePassword(password)) {
-            toast.error("Password and E-mail invalid!");
+        } else if (!validateEmail(email)) {
+            toast.error("E-mail invalid!");
         } else {
             toast.success("login successful !");
             clear();
@@ -112,12 +113,19 @@ export const Login = () => {
                     </div>
 
                     <div className={styles.divBtn}>
-                        <button className={styles.btnFace}>
+                    
+                    <SignInButton >
+                        <div className={styles.btnFace}>
                             <img src="src/assets/facebook-logo.png" />
-                        </button>
-                        <button className={styles.btnGmail}>
+                        </div>
+                    </SignInButton>
+                    <SignInButton >
+                        <div className={styles.btnGmail}>
                             <img src="src/assets/google-icon.png" />
-                        </button>
+                        </div>
+                    </SignInButton>
+                        
+                    
                     </div>
                 </div>
             </form>
