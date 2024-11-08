@@ -46,6 +46,30 @@ export const Subscribe = () => {
         jobErro: false,
     });
 
+    const saveData = async () => {
+        const url = "http://localhost:4000/posts";
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    firstName: firstName,
+                    lastName: lastName,
+                    user: "@" + firstName + lastName,
+                    date: new Date(),
+                    "e-mail": email,
+                    password: password,
+                    position: job,
+                    socialMedia: "",
+                }),
+            }).then((response) => response.json());
+        } catch (error) {
+            console.log("Error", error);
+        }
+    };
+
     const clear = () => {
         setPassword("");
         setemail("");
@@ -86,6 +110,7 @@ export const Subscribe = () => {
         } else {
             toast.success("login successful !");
             clear();
+            saveData();
         }
     };
 
