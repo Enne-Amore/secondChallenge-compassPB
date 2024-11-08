@@ -1,5 +1,8 @@
 .container {
     @apply absolute bottom-0 bg-[#00000080] text-white rounded-2xl flex-col gap-2 pt-1.5 pb-3 px-2.5 w-10/12
+
+    /* desktop */
+    desktop:hidden
 }
 
 .containerTop {

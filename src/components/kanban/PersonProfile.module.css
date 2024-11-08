@@ -16,8 +16,11 @@
 
 .name {
     @apply text-black text-sm
+
+    /* desktop */
+    desktop:text-base
 }
 
 .job {
-    @apply text-[#160A60] text-xs
+    @apply text-[#160A60] text-xs -mt-1
 }

@@ -5,10 +5,11 @@ import { DateInputs } from "./DateInputs";
 import { TaskCoverInput } from "./TaskCoverInput";
 import { TitleInput } from "./TitleInput";
 import { RadioInputs } from "./RadioInputs";
+import styles from "./FormCreateTask.module.css";
 
 export const FormCreateTask = () => {
   return (
-    <form action="" method="post" className="flex flex-col gap-3">
+    <form action="" method="post" className={styles.container}>
       <TitleInput />
 
       <RadioInputs
@@ -49,7 +50,7 @@ export const FormCreateTask = () => {
 
       <button
         type="submit"
-        className="bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1 mt-2"
+        className={styles.btn}
       >
         Create!
       </button>

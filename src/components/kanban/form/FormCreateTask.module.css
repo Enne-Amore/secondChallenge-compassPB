@@ -1,0 +1,7 @@
+.container {
+    @apply flex flex-col gap-3
+}
+
+.btn {
+    @apply bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1 mt-2
+}

@@ -10,11 +10,11 @@ export const FixedCard = () => {
 
   if (openFixed === true) {
     fixed = "flex";
-    styleIcon = "top-5 right-1 bg-transparent";
+    styleIcon = "top-5 right-1 desktop:left-0 desktop:right-0 bg-transparent desktop:absolute desktop:left-auto desktop:top-3 desktop:right-1.5";
   } else {
     fixed = "hidden";
     styleIcon =
-      "top-1.5 left-28 bg-[#94A3B8] hover:bg-[#1E293B] transition-all";
+      "absolute top-1.5 left-28 bg-[#94A3B8] hover:bg-[#1E293B] transition-all desktop:relative desktop:top-0 desktop:left-0";
   }
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {

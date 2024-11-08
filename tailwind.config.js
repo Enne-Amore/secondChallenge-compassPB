@@ -78,7 +78,8 @@ export default {
                 'bgImg': "url('/src/assets/person-illustration.png')",
             },
             gridTemplateColumns: {
-                'metrics': "112px minmax(100px, 2fr)",
+                'metrics-mobile': "112px minmax(100px, 2fr)",
+                'metrics-desktop': "152px minmax(100px, 2fr)",
             },
             screens: {
                 'mobile': '393px',

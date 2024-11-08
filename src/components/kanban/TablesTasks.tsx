@@ -1,6 +1,6 @@
 import { TableTask } from "./TableTask";
-import styles from "./TablesTasks.module.css";
 import { Task } from "./Task";
+import styles from "./TablesTasks.module.css";
 
 export const TablesTasks = () => {
   return (

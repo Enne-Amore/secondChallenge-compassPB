@@ -23,5 +23,5 @@
 }
 
 .taskList {
-    @apply flex flex-col gap-3.5 pt-3 pb-14 px-3.5 h-full overflow-y-scroll
+    @apply flex flex-col gap-3.5 pt-3 pb-14 px-3.5 h-full overflow-y-scroll no-scrollbar
 }
