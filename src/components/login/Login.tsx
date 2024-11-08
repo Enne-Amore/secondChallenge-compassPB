@@ -2,6 +2,7 @@ import { Button } from "../button/Button";
 import styles from "./Login.module.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ButtonUser from "../ButtonUser";
 import toast from "react-hot-toast";
 
 interface Erro {
@@ -22,6 +23,7 @@ const validatePassword = (password: string): boolean => {
 export const Login = () => {
     const [email, setemail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+
     const [erros, setErros] = useState<Erro>({
         emailErro: false,
         passowdErro: false,
@@ -68,6 +70,7 @@ export const Login = () => {
                         </Link>
                     </p>
                 </div>
+
                 <div className={styles.divContainerInput}>
                     <div>
                         <label className={styles.divLabel}>Email</label>
@@ -89,9 +92,7 @@ export const Login = () => {
                             value={password}
                             placeholder="Enter your password"
                             className={`${styles.divInput} ${
-                                erros.passowdErro
-                                    ? "border-spacing-2 border-red-400"
-                                    : ""
+                                erros.passowdErro ? "bg-red-300" : ""
                             }`}
                             onChange={(e) => setPassword(e.target.value)}
                         />
