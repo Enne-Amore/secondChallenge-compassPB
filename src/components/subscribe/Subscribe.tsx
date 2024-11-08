@@ -3,13 +3,18 @@ import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useClerk } from '@clerk/clerk-react'; // Hook do Clerk
+import { useClerk } from "@clerk/clerk-react"; // Hook do Clerk
 
-const validateNome = (nome: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
-const validateJob = (nome: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
-const validateEmail = (email: string): boolean => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+const validateNome = (nome: string): boolean =>
+    /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
+const validateJob = (nome: string): boolean =>
+    /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
+const validateEmail = (email: string): boolean =>
+    /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 const validatePassword = (password: string): boolean =>
-    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(
+        password
+    );
 
 export const Subscribe = () => {
     const [firstName, setFirstName] = useState<string>("");
@@ -29,6 +34,45 @@ export const Subscribe = () => {
     const { openSignIn, isAuthenticated } = useClerk(); // Hook do Clerk para verificar a autenticação
     const navigate = useNavigate();
 
+    const saveData = async () => {
+        const url = "http://localhost:4000/posts";
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    firstName: firstName,
+                    lastName: lastName,
+                    user: "@" + firstName + lastName,
+                    date: new Date(),
+                    "e-mail": email,
+                    password: password,
+                    position: job,
+                    socialMedia: "",
+                }),
+            }).then((response) => response.json());
+        } catch (error) {
+            console.log("Error", error);
+        }
+    };
+
+    const clear = () => {
+        setPassword("");
+        setEmail("");
+        setLastName("");
+        setFirstName("");
+        setJob("");
+        setErros({
+            emailErro: false,
+            passowdErro: false,
+            lastNameErro: false,
+            firstNameErro: false,
+            jobErro: false,
+        });
+    };
+
     const handleSignIn = async () => {
         const isFirstNameValid = validateNome(firstName);
         const isLastNameValid = validateNome(lastName);
@@ -46,7 +90,15 @@ export const Subscribe = () => {
             passowdErro: !isPasswordValid,
         });
 
-        if (isFirstNameValid && isLastNameValid && isEmailValid && isJobValid && isPasswordValid) {
+        if (
+            isFirstNameValid &&
+            isLastNameValid &&
+            isEmailValid &&
+            isJobValid &&
+            isPasswordValid
+        ) {
+            await saveData();
+            clear();
             toast.success("Account created successfully!");
             setTimeout(() => navigate("/login"), 2000);
         }
@@ -71,7 +123,9 @@ export const Subscribe = () => {
                     <h1 className={styles.h1}>Sign Up Information</h1>
                     <p className={styles.p}>
                         Already have an account?{" "}
-                        <Link to="/login" className={styles.a}>Sign in</Link>
+                        <Link to="/login" className={styles.a}>
+                            Sign in
+                        </Link>
                     </p>
                 </div>
 
@@ -81,7 +135,13 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your first name"
-                            className={`${styles.inputName} ${isValidated ? (erros.firstNameErro ? "bg-red-300" : "bg-green-200") : ""}`}
+                            className={`${styles.inputName} ${
+                                isValidated
+                                    ? erros.firstNameErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         />
@@ -91,7 +151,13 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your last name"
-                            className={`${styles.inputName} ${isValidated ? (erros.lastNameErro ? "bg-red-300" : "bg-green-200") : ""}`}
+                            className={`${styles.inputName} ${
+                                isValidated
+                                    ? erros.lastNameErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                         />
@@ -104,7 +170,13 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your email"
-                            className={`${styles.divInput} ${isValidated ? (erros.emailErro ? "bg-red-300" : "bg-green-200") : ""}`}
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.emailErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -114,7 +186,13 @@ export const Subscribe = () => {
                         <input
                             type="text"
                             placeholder="Enter your job position"
-                            className={`${styles.divInput} ${isValidated ? (erros.jobErro ? "bg-red-300" : "bg-green-200") : ""}`}
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.jobErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
                             value={job}
                             onChange={(e) => setJob(e.target.value)}
                         />
@@ -124,7 +202,13 @@ export const Subscribe = () => {
                         <input
                             type="password"
                             placeholder="Enter your password"
-                            className={`${styles.divInput} ${isValidated ? (erros.passowdErro ? "bg-red-300" : "bg-green-200") : ""}`}
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.passowdErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
@@ -146,16 +230,22 @@ export const Subscribe = () => {
                         className={styles.btnFace}
                         onClick={() => handleOAuthLogin("facebook")}
                     >
-                        <img src="src/assets/facebook-logo.png" alt="Facebook login" className={styles.iconOAuth} />
-                        
+                        <img
+                            src="src/assets/facebook-logo.png"
+                            alt="Facebook login"
+                            className={styles.iconOAuth}
+                        />
                     </div>
 
                     <div
                         className={styles.btnGmail}
                         onClick={() => handleOAuthLogin("google")}
                     >
-                        <img src="src/assets/google-icon.png" alt="Google login" className={styles.iconOAuth} />
-                        
+                        <img
+                            src="src/assets/google-icon.png"
+                            alt="Google login"
+                            className={styles.iconOAuth}
+                        />
                     </div>
                 </div>
             </div>
