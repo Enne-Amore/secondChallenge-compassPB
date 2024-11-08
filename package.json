@@ -4,7 +4,11 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "start": "concurrently -n \"JSON,REACT\" \"npm run server\" \"npm run client\"",
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "start": "concurrently \"npm run server\" \"npm run client\"",
         "server": "json-server  ./dbUser/db.json --port 4000",
         "client": "vite"
     },
@@ -23,7 +27,6 @@
         "@types/react-dom": "^18.3.1",
         "@vitejs/plugin-react": "^4.3.3",
         "autoprefixer": "^10.4.20",
-        "concurrently": "^9.1.0",
         "eslint": "^9.13.0",
         "eslint-plugin-react-hooks": "^5.0.0",
         "eslint-plugin-react-refresh": "^0.4.14",

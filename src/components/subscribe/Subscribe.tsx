@@ -1,6 +1,6 @@
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -45,6 +45,8 @@ export const Subscribe = () => {
         firstNameErro: false,
         jobErro: false,
     });
+
+    const navigate = useNavigate();
 
     const saveData = async () => {
         const url = "http://localhost:4000/posts";
@@ -108,9 +110,12 @@ export const Subscribe = () => {
         ) {
             toast.error("Campus invalid!");
         } else {
-            toast.success("login successful !");
+            toast.success("cadastro realizado com sucesso!");
             clear();
             saveData();
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
         }
     };
 

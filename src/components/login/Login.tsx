@@ -27,7 +27,7 @@ export const Login = () => {
         passowdErro: false,
     });
 
-    const navegate = useNavigate();
+    const navigate = useNavigate();
 
     const clear = () => {
         setPassword("");
@@ -49,7 +49,7 @@ export const Login = () => {
             toast.success("login successful !");
             clear();
             setTimeout(() => {
-                navegate("/subscribe");
+                navigate("/kanban");
             }, 2000);
         }
     };

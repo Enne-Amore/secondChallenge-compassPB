@@ -1,15 +1,26 @@
 {
-  "posts": [
-    {
-      "id": "e9e9",
-      "firstName": "Erica",
-      "lastName": "Farias",
-      "user": "@EricaFarias",
-      "date": "2024-11-08T13:02:32.089Z",
-      "e-mail": "ericafa@gmail.com",
-      "password": "Erica23-987",
-      "position": "Desenvolvedora",
-      "socialMedia": ""
-    }
-  ]
+    "posts": [
+        {
+            "id": "e9e9",
+            "firstName": "Erica",
+            "lastName": "Farias",
+            "user": "@EricaFarias",
+            "date": "2024-11-08T13:02:32.089Z",
+            "e-mail": "ericafa@gmail.com",
+            "password": "Erica23-987",
+            "position": "Desenvolvedora",
+            "socialMedia": ""
+        },
+        {
+            "id": "1b0e",
+            "firstName": "João",
+            "lastName": "Andrare",
+            "user": "@JoãoAndrare",
+            "date": "2024-11-08T14:14:35.742Z",
+            "e-mail": "joao@gmail.com",
+            "password": "Joao23-677$",
+            "position": "Analista",
+            "socialMedia": ""
+        }
+    ]
 }
