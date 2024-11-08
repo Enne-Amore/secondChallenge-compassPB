@@ -10,12 +10,12 @@ interface Erro {
 }
 
 const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return emailRegex.test(email);
 };
 const validatePassword = (password: string): boolean => {
     const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\-]{8,}$/;
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/;
     return passwordRegex.test(password);
 };
 
@@ -37,14 +37,14 @@ export const Login = () => {
     };
 
     const handleLogin = () => {
-        if (!validateEmail(email)) {
-            toast.error("E-mail invalid!");
+        if (!validateEmail(email) && !validatePassword(password)) {
+            toast.error("Password and E-mail invalid!");
             setErros({ ...erros, emailErro: true });
         } else if (!validatePassword(password)) {
             toast.error("Passwod invalid!");
             setErros({ ...erros, passowdErro: true });
-        } else if (!validateEmail(email) && !validatePassword(password)) {
-            toast.error("Password and E-mail invalid!");
+        } else if (!validateEmail(email)) {
+            toast.error("E-mail invalid!");
         } else {
             toast.success("login successful !");
             clear();
@@ -107,7 +107,7 @@ export const Login = () => {
                     </Button>
                     <div className={styles.divSmall}>
                         <small className={styles.small}>
-                            or sing in with...
+                            or sign in with...
                         </small>
                     </div>
 
