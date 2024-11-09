@@ -1,0 +1,38 @@
+.container {
+    @apply absolute bottom-0 bg-[#00000080] text-white rounded-2xl flex-col gap-2 pt-1.5 pb-3 px-2.5 w-10/12
+
+    /* desktop */
+    desktop:hidden
+}
+
+.containerTop {
+    @apply flex items-center gap-2
+}
+
+.figure {
+    @apply w-6 h-6
+}
+
+.img {
+    @apply w-full h-full rounded-full
+}
+
+.title {
+    @apply text-base font-bold
+}
+
+.paragraph {
+    @apply text-sm font-normal
+}
+
+.containerBtn {
+    @apply flex justify-between items-center mt-1
+}
+
+.btnClose {
+    @apply bg-[#FFFCFCEB] text-black text-sm font-medium rounded-2xl p-4 py-1
+}
+
+.btnConfirm {
+    @apply bg-[#4F46E5] text-sm font-medium rounded-2xl p-4 py-1
+}

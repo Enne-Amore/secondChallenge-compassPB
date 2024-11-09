@@ -24,6 +24,7 @@ const validatePassword = (password: string): boolean => {
 export const Login = () => {
     const [email, setemail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+
     const [erros, setErros] = useState<Erro>({
         emailErro: false,
         passowdErro: false,
@@ -62,7 +63,9 @@ export const Login = () => {
     const handleOAuthLogin = () => {
         openSignIn({
             redirectUrl: "/kanban", // Redireciona após o login
-            options: { allowedSignInMethods: ["oauth_google", "oauth_facebook"] },
+            options: {
+                allowedSignInMethods: ["oauth_google", "oauth_facebook"],
+            },
         });
     };
 
@@ -75,7 +78,8 @@ export const Login = () => {
                     <p className={styles.p}>
                         New here? Let's take you to
                         <Link to="/subscribe" className={styles.a}>
-                            {" "}sign up.
+                            {" "}
+                            sign up.
                         </Link>
                     </p>
                 </div>
@@ -87,7 +91,9 @@ export const Login = () => {
                             type="email"
                             value={email}
                             placeholder="Enter your email"
-                            className={`${styles.divInput} ${erros.emailErro ? "bg-red-300" : ""}`}
+                            className={`${styles.divInput} ${
+                                erros.emailErro ? "bg-red-300" : ""
+                            }`}
                             onChange={(e) => setemail(e.target.value)}
                         />
                     </div>
@@ -98,7 +104,9 @@ export const Login = () => {
                             type="password"
                             value={password}
                             placeholder="Enter your password"
-                            className={`${styles.divInput} ${erros.passowdErro ? "border-red-400" : ""}`}
+                            className={`${styles.divInput} ${
+                                erros.passowdErro ? "border-red-400" : ""
+                            }`}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
@@ -123,14 +131,20 @@ export const Login = () => {
                             className={styles.btnFace}
                             onClick={() => handleOAuthLogin()}
                         >
-                            <img src="src/assets/facebook-logo.png" alt="Facebook login" />
+                            <img
+                                src="src/assets/facebook-logo.png"
+                                alt="Facebook login"
+                            />
                         </div>
 
                         <div
                             className={styles.btnGmail}
                             onClick={() => handleOAuthLogin()}
                         >
-                            <img src="src/assets/google-icon.png" alt="Google login" />
+                            <img
+                                src="src/assets/google-icon.png"
+                                alt="Google login"
+                            />
                         </div>
                     </div>
                 </div>

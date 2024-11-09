@@ -5,51 +5,54 @@ import { DateInputs } from "./DateInputs";
 import { TaskCoverInput } from "./TaskCoverInput";
 import { TitleInput } from "./TitleInput";
 import { RadioInputs } from "./RadioInputs";
+import styles from "./FormCreateTask.module.css";
 
 export const FormCreateTask = () => {
   return (
-    <form action="" method="post" className="flex flex-col gap-3">
-      <TitleInput />
+    <form action="" method="post" className={styles.container}>
+      <TitleInput stylesLabel={styles.titleLabel} stylesInput={styles.inputText} />
 
       <RadioInputs
+        stylesLabel={styles.titleLabel}
         label="Status"
         radioInputs={
           <>
-            <RadioInput id="todo" label="To do" name="status" />
+            <RadioInput id="todo" label="To do" name="status" stylesLabel={styles.radioLabel} />
 
-            <RadioInput id="inProgress" label="In progress" name="status" />
+            <RadioInput id="inProgress" label="In progress" name="status" stylesLabel={styles.radioLabel} />
 
-            <RadioInput id="done" label="Done" name="status" />
+            <RadioInput id="done" label="Done" name="status" stylesLabel={styles.radioLabel} />
           </>
         }
       />
 
-      <DescriptionInput />
+      <DescriptionInput stylesLabel={styles.titleLabel} stylesInput={styles.inputText} />
 
-      <DateInputs label="Start Date" id="startDate" />
+      <DateInputs stylesLabel={styles.titleLabel} stylesInput={styles.inputText} label="Start Date" id="startDate" />
 
-      <DateInputs label="End Date" id="endDate" />
+      <DateInputs stylesLabel={styles.titleLabel} stylesInput={styles.inputText} label="End Date" id="endDate" />
 
-      <TaskCoverInput />
+      <TaskCoverInput stylesLabel={styles.titleLabel} />
 
-      <AddPeopleInput />
+      <AddPeopleInput stylesLabel={styles.titleLabel} />
 
       <RadioInputs
+        stylesLabel={styles.titleLabel}
         label="Priority"
         radioInputs={
           <>
-            <RadioInput id="low" label="Low" name="priority" />
+            <RadioInput id="low" label="Low" name="priority" stylesLabel={styles.radioLabel} />
 
-            <RadioInput id="mid" label="Mid" name="priority" />
+            <RadioInput id="mid" label="Mid" name="priority" stylesLabel={styles.radioLabel} />
 
-            <RadioInput id="high" label="High" name="priority" />
+            <RadioInput id="high" label="High" name="priority" stylesLabel={styles.radioLabel} />
           </>
         }
       />
 
       <button
         type="submit"
-        className="bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1 mt-2"
+        className={styles.btn}
       >
         Create!
       </button>
