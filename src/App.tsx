@@ -1,3 +1,4 @@
+// App.js
 import { HomePage } from "./pages/HomePage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
@@ -8,6 +9,9 @@ import Settings from "./pages/Settings";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { useUser } from "@clerk/clerk-react";
+import NotFound from "./components/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Forbidden from "./components/Forbidden";
 
 export default function App() {
     const { isSignedIn } = useUser();
@@ -17,6 +21,7 @@ export default function App() {
             <Toaster />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                
                 <Route
                     path="/login"
                     element={
@@ -27,6 +32,7 @@ export default function App() {
                         )
                     }
                 />
+                
                 <Route
                     path="/subscribe"
                     element={
@@ -37,8 +43,28 @@ export default function App() {
                         )
                     }
                 />
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/setting" element={<Settings />} />
+                
+                {/* Rotas protegidas */}
+                <Route
+                    path="/kanban"
+                    element={
+                        <ProtectedRoute>
+                            <Kanban />
+                        </ProtectedRoute>
+                    }
+                />
+                
+                <Route
+                    path="/setting"
+                    element={
+                        <ProtectedRoute>
+                            <Settings />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="*" element={<NotFound />} />
+                <Route path="/403" element={<Forbidden />} />
             </Routes>
         </>
     );
