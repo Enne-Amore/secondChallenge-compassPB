@@ -24,7 +24,6 @@ const validatePassword = (password: string): boolean => {
 export const Login = () => {
     const [email, setemail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-
     const [erros, setErros] = useState<Erro>({
         emailErro: false,
         passowdErro: false,

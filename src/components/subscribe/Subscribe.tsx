@@ -1,9 +1,9 @@
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useClerk } from "@clerk/clerk-react"; // Hook do Clerk
+import { useClerk, useUser } from "@clerk/clerk-react"; // Hook do Clerk
 
 const validateNome = (nome: string): boolean =>
     /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
@@ -17,6 +17,7 @@ const validatePassword = (password: string): boolean =>
     );
 
 export const Subscribe = () => {
+    const { user } = useUser();
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [job, setJob] = useState<string>("");
@@ -30,9 +31,49 @@ export const Subscribe = () => {
         jobErro: false,
     });
     const [isValidated, setIsValidated] = useState<boolean>(false);
-
+    const userName = `${user?.firstName || ""} ${user?.lastName || ""}`;
+    const userPhoto = user?.imageUrl;
     const { openSignIn, isAuthenticated } = useClerk(); // Hook do Clerk para verificar a autenticação
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            console.log(user);
+            // Função para salvar os dados do usuário
+            const saveUserToJSONServer = async () => {
+                try {
+                    const response = await fetch(
+                        "http://localhost:4000/users",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                name: userName,
+                                photo: userPhoto,
+                            }),
+                        }
+                    );
+                    console.log(response);
+                    if (response.ok) {
+                        console.log(
+                            "Usuário salvo no JSON Server com sucesso!"
+                        );
+                    } else {
+                        console.error(
+                            "Erro ao salvar o usuário:",
+                            response.statusText
+                        );
+                    }
+                } catch (error) {
+                    console.error("Erro ao salvar o usuário:", error);
+                }
+            };
+
+            saveUserToJSONServer();
+        }
+    }, [user, userName, userPhoto]);
 
     const saveData = async () => {
         const url = "http://localhost:4000/posts";
