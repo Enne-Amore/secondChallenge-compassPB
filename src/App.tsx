@@ -1,3 +1,4 @@
+// App.js
 import { HomePage } from "./pages/HomePage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
@@ -8,8 +9,12 @@ import Settings from "./pages/Settings";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { useUser } from "@clerk/clerk-react";
+
 import Erro404Page from "./pages/Erro404Page";
 import Erro403Page from "./pages/Erro403Page";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+
 export default function App() {
     const { isSignedIn } = useUser();
 
@@ -18,6 +23,7 @@ export default function App() {
             <Toaster />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                
                 <Route
                     path="/login"
                     element={
@@ -28,6 +34,7 @@ export default function App() {
                         )
                     }
                 />
+                
                 <Route
                     path="/subscribe"
                     element={
@@ -38,10 +45,30 @@ export default function App() {
                         )
                     }
                 />
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/setting" element={<Settings />} />
-                <Route path="*" element={<Erro404Page />} />
+                
+                {/* Rotas protegidas */}
+                <Route
+                    path="/kanban"
+                    element={
+                        <ProtectedRoute>
+                            <Kanban />
+                        </ProtectedRoute>
+                    }
+                />
+                
+                <Route
+                    path="/setting"
+                    element={
+                        <ProtectedRoute>
+                            <Settings />
+                        </ProtectedRoute>
+                    }
+                />
+
+                <Route path="*" element={<NotFound />} />
                 <Route path="/erro403" element={<Erro403Page />} />
+                
+
             </Routes>
         </>
     );
