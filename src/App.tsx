@@ -9,9 +9,11 @@ import Settings from "./pages/Settings";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { useUser } from "@clerk/clerk-react";
-import NotFound from "./components/NotFound";
+
+import Erro404Page from "./pages/Erro404Page";
+import Erro403Page from "./pages/Erro403Page";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Forbidden from "./components/Forbidden";
+
 
 export default function App() {
     const { isSignedIn } = useUser();
@@ -64,7 +66,9 @@ export default function App() {
                 />
 
                 <Route path="*" element={<NotFound />} />
-                <Route path="/403" element={<Forbidden />} />
+                <Route path="/erro403" element={<Erro403Page />} />
+                
+
             </Routes>
         </>
     );
