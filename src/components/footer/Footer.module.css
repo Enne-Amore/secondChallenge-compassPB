@@ -1,9 +1,9 @@
 .footer{
-    @apply bg-blue-750 py-5;
+    @apply bg-blue-750 py-5 desktop:min-w-[1440px];
 }
 
 .container{
-    @apply max-w-[1440px] m-auto xl:flex xl:w-[1000px];
+    @apply  m-auto xl:flex xl:w-[1000px];
 }
 
 .ul{

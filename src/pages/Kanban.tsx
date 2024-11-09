@@ -5,9 +5,9 @@ import Footer from "../components/footer/Footer";
 export const Kanban = () => {
   return (
     <>
-      <Header />
+      <Header showNavbar/>
 
-      <Main />      
+      <Main />
 
       <Footer />
     </>

@@ -1,12 +1,12 @@
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-import { Login } from "../components/login/Login";
+import { Subscribe } from "../components/subscribe";
 
-export const LoginPage = () => {
+export const SubscribePage = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <Header />
-            <Login />
+            <Subscribe />
             <Footer />
         </div>
     );

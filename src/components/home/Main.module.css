@@ -1,8 +1,8 @@
 .mainSection{
     @apply bg-[url('../../assets/bg-home.jfif')] flex flex-col text-center 
     items-center pt-14  text-white bg-cover bg-center min-w-[393px] 
-    /* tela de tablete */
-    tablete:min-w-[744px] tablete:min-h-[644px] tablete:pt-0
+    /* tela de tablet */
+    tablet:min-w-[744px] tablet:min-h-[644px] tablet:pt-0
     /* tela de desktop */   
     desktop:flex-row desktop:justify-between desktop:pl-[64px] desktop:min-w-[1440px]
     desktop:py-[70px] desktop:pr-[197px] desktop:min-h-[644px] desktop:relative 
@@ -17,39 +17,39 @@
 .container{
     @apply min-w-[353px] h-285 bg-black-55 flex flex-col justify-around 
     text-center items-center rounded-3xl gap-y-[15px] 
-    /* tela de tablete */
-    tablete:w-[656px] tablete:h-[258px] tablete:justify-start tablete:mt-[90px] 
+    /* tela de tablet */
+    tablet:w-[656px] tablet:h-[258px] tablet:justify-start tablet:mt-[90px] 
      /* tela de desktop */
      desktop:self-start desktop:mt-5  desktop:ml-0
 } 
 .title{
     @apply text-24  font-bold min-w-[313px] min-h-[48px] mt-[27px]
-     /* tela de tablete */
-     tablete:text-[40px]
+     /* tela de tablet */
+     tablet:text-[40px]
       /* tela de desktop */
 }
 
 .textMain {
     @apply w-[236px] h-[120px] text-sm leading-[24px] 
-     /* tela de tablete */
-     tablete:text-start tablete:w-[520px] tablete:h-[72px] tablete:text-[16px] font-light
+     /* tela de tablet */
+     tablet:text-start tablet:w-[520px] tablet:h-[72px] tablet:text-[16px] font-light
       /* tela de desktop */
 }
 
 .getButton{
     @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6
-     /* tela de tablete */
-     tablete:items-start tablete:w-[240px] tablete:h-12 tablete:py-2 
-     tablete:px-4 tablete:self-start tablete:ml-[68px]
+     /* tela de tablet */
+     tablet:items-start tablet:w-[240px] tablet:h-12 tablet:py-2 
+     tablet:px-4 tablet:self-start tablet:ml-[68px]
       /* tela de desktop */
       desktop:self-start
 }
 
 .containerCard{
     @apply mb-margin-b  
-    /* tela de tablete */
-    tablete:flex tablete:flex-row tablete:justify-between 
-    tablete:w-[656px] tablete:mt-[62.5px] tablete:mb-0 
+    /* tela de tablet */
+    tablet:flex tablet:flex-row tablet:justify-between 
+    tablet:w-[656px] tablet:mt-[62.5px] tablet:mb-0 
      /* tela de desktop */
      desktop:flex-col  desktop:mt-0 desktop:items-end desktop:w-[179px] 
      desktop:h-[272px] desktop:self-start
@@ -58,8 +58,8 @@
 .card {
     @apply bg-brown-70 mx-auto rounded-2xl 
     min-w-[179px] min-h-20 mt-4 mb-4 text-start pt-3 pb-3
-     /* tela de tablete */
-     tablete:mx-0 tablete:mt-0 tablete:mb-0
+     /* tela de tablet */
+     tablet:mx-0 tablet:mt-0 tablet:mb-0
       /* tela de desktop */
       desktop:w-full desktop:mt-0
      
@@ -67,5 +67,5 @@
 
 .text{
     @apply ml-5 font-semibold text-[16px]
-     /* tela de tablete */
+     /* tela de tablet */
 }
