@@ -65,7 +65,7 @@ export default function App() {
                     }
                 />
 
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<Erro404Page />} />
                 <Route path="/erro403" element={<Erro403Page />} />
                 
 
