@@ -1,0 +1,99 @@
+.container {
+    @apply absolute text-white w-max h-max z-10
+
+    /* desktop */
+    desktop:relative
+}
+
+.icon {
+    @apply cursor-pointer text-xl w-max h-max rounded-full p-3 focus:outline-0 focus-visible:outline-1
+
+}
+
+.containerMain {
+    @apply bg-[#6C7D96] rounded-3xl px-5 py-8 font-bold flex-col gap-6
+
+    /* desktop */
+    desktop:py-6 desktop:gap-4 desktop:w-392
+}
+
+.title {
+    @apply text-sm mb-3
+
+    /* desktop */
+    desktop:text-xl
+}
+
+.peopleList {
+    @apply flex flex-col gap-2 min-w-52
+}
+
+.viewAllBtn {
+    @apply text-[#C7C3FF] text-xs flex justify-end mt-1
+
+    /* desktop */
+    desktop:text-sm
+}
+
+.containerGrid {
+    @apply grid grid-cols-metrics-mobile grid-rows-2 gap-2
+
+    desktop:grid-cols-metrics-desktop
+}
+
+.containerTotalTasks {
+    @apply bg-white text-[#160A60] rounded-xl py-1.5 px-2.5
+}
+
+.titleContainerGrid {
+    @apply text-xs text-[#160A60]
+
+    /* desktop */
+    desktop:text-sm
+}
+
+.textTotalTasks {
+    @apply text-xs
+
+    /* desktop */
+    desktop:text-base
+}
+
+.containerLiTotalTasks {
+    @apply flex items-center gap-1
+}
+
+.qtdTotalTasks {
+    @apply text-xl font-bold
+
+    /* desktop */
+    desktop:text-2xl
+}
+
+.containerMostActive {
+    @apply bg-[#F6F6F6E5] rounded-xl py-1.5 px-2.5 grid row-span-2
+}
+
+.subtitleMostActive {
+    @apply text-xs text-[#4F46E5] -mt-5
+
+    desktop:-my-10
+}
+
+.peopleListMostActive {
+    @apply flex flex-col gap-2 -mt-3
+
+    /* desktop */
+    desktop:-mt-10 desktop:gap-1
+}
+
+.containerTimeEstimed {
+    @apply bg-white rounded-xl py-1.5 px-2.5
+}
+
+.time {
+    @apply text-2xl text-[#4F46E5] font-bold flex justify-center
+
+    /* desktop */
+    desktop:text-3xl
+}

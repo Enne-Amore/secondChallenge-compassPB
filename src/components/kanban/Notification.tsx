@@ -1,35 +1,40 @@
+import { useState } from "react";
 import logo from "../../../public/logo.png";
+import styles from "./Notification.module.css";
 
 export const Notification = () => {
+  const [display, setDisplay] = useState<string>("flex");
+
   return (
-    <aside className="absolute bottom-0 bg-[#00000080] text-white rounded-2xl flex flex-col gap-2 pt-1.5 pb-3 px-2.5 w-10/12">
-      <div className="flex items-center gap-2">
-        <figure className="w-6 h-6">
+    <aside className={`${styles.container} ${display}`}>
+      <div className={styles.containerTop}>
+        <figure className={styles.figure}>
           <img
             src={logo}
             alt="Project Manager logo"
-            className="w-full h-full rounded-full"
+            className={styles.img}
           />
         </figure>
 
-        <h2 className="text-base font-bold">Trabalhar no aplicativo</h2>
+        <h2 className={styles.title}>Trabalhar no aplicativo</h2>
       </div>
 
-      <p className="text-sm font-normal">
+      <p className={styles.paragraph}>
         Adicione ideias, notas e faça um plano de organização de onde estiver.
       </p>
 
-      <div className="flex justify-between items-center mt-1">
+      <div className={styles.containerBtn}>
         <button
           type="button"
-          className="bg-[#FFFCFCEB] text-black text-sm font-medium rounded-2xl p-4 py-1"
+          className={styles.btnClose}
+          onClick={() => setDisplay("hidden")}
         >
           Agora não
         </button>
 
         <a
           href=""
-          className="bg-[#4F46E5] text-sm font-medium rounded-2xl p-4 py-1"
+          className={styles.btnConfirm}
         >
           Usar o aplicativo
         </a>

@@ -1,0 +1,26 @@
+.container {
+    @apply bg-white rounded-xl flex items-center gap-2 px-2 py-1.5
+}
+
+.figure {
+    @apply w-9 h-9
+}
+
+.img {
+    @apply w-full h-full rounded-full
+}
+
+.containerInfo {
+    @apply flex flex-col
+}
+
+.name {
+    @apply text-black text-sm
+
+    /* desktop */
+    desktop:text-base
+}
+
+.job {
+    @apply text-[#160A60] text-xs -mt-1
+}

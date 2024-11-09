@@ -1,20 +1,21 @@
 import imgProfile from "../../assets/profile-img-1.png";
+import styles from "./PersonProfile.module.css";
 
 export const PersonProfile = () => {
   return (
-    <article className="bg-white rounded-xl flex items-center gap-2 px-2 py-1.5">
-      <figure className="w-9 h-9">
+    <article className={styles.container}>
+      <figure className={styles.figure}>
         <img
           src={imgProfile}
           alt="Profile image"
-          className="w-full h-full rounded-full"
+          className={styles.img}
         />
       </figure>
 
-      <div className="flex flex-col">
-        <h3 className="text-black text-sm">John Doe</h3>
+      <div className={styles.containerInfo}>
+        <h3 className={styles.name}>John Doe</h3>
 
-        <span className="text-[#160A60] text-xs">Project Manager</span>
+        <span className={styles.job}>Project Manager</span>
       </div>
     </article>
   );

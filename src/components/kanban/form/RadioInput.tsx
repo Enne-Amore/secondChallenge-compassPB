@@ -5,11 +5,12 @@ export type InfoRadio = ComponentProps<"input"> &
     id: string;
     name: string;
     label: string;
+    stylesLabel: string;
   };
 
-export const RadioInput = ({ id, name, label }: InfoRadio) => {
+export const RadioInput = ({ id, name, label, stylesLabel }: InfoRadio) => {
   return (
-    <li className="flex items-center gap-1">
+    <li className="flex items-center gap-1 desktop:gap-1.5">
       <input
         type="radio"
         name={name}
@@ -17,7 +18,7 @@ export const RadioInput = ({ id, name, label }: InfoRadio) => {
         value={id}
         className="form-radio h-4 w-4 transition duration-200 ease-in-out"
       />
-      <label htmlFor={id} className="text-[#2B2F32] text-xs font-normal">
+      <label htmlFor={id} className={stylesLabel}>
         {label}
       </label>
     </li>
