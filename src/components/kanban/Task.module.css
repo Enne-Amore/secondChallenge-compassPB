@@ -1,13 +1,22 @@
 .container {
     @apply bg-white rounded-2xl shadow-sm p-2.5 pb-1.5 flex flex-col gap-3 min-w-52
+
+    /* desktop */
+    desktop:min-w-64
 }
 
 .priority {
     @apply bg-[#FFFBEB] text-[#F59E0B] text-xs font-semibold font-plus py-1.5 px-2.5 rounded-full w-max
+
+    /* desktop */
+    desktop:text-sm
 }
 
 .title {
     @apply text-[#1E293B] text-xs font-bold mb-1
+
+    /* desktop */
+    desktop:text-base
 }
 
 .containerProgress {
@@ -20,10 +29,16 @@
 
 .labelProgress {
     @apply text-[#475569] text-xs font-medium font-plus
+
+    /* desktop */
+    desktop:text-sm
 }
 
 .percentage {
     @apply text-xs font-bold font-plus
+
+    /* desktop */
+    desktop:text-sm
 }
 
 .inputProgress {
@@ -60,8 +75,14 @@
 
 .icon {
     @apply text-[#94A3B8] text-sm
+
+    /* desktop */
+    desktop:text-base
 }
 
 .qtd {
     @apply text-xs font-semibold font-plus
+
+    /* desktop */
+    desktop:text-base
 }

@@ -12,10 +12,16 @@
 
 .qtd {
     @apply text-white text-xs pt-1.5 pb-2.5 px-3 rounded-3xl font-semibold
+
+    /* desktop */
+    desktop:text-sm
 }
 
 .title {
     @apply text-xs font-bold
+
+    /* desktop */
+    desktop:text-base
 }
 
 .moreIcon {

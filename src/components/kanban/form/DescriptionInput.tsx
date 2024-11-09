@@ -1,9 +1,16 @@
-export const DescriptionInput = () => {
+import { ComponentProps } from "react";
+
+export type Styles = ComponentProps<"label"> & {
+  stylesLabel: string;
+  stylesInput: string;
+};
+
+export const DescriptionInput = ({ stylesLabel, stylesInput }: Styles) => {
   return (
     <div className="flex flex-col gap-1">
       <label
         htmlFor="description"
-        className="text-[#331436] text-xs font-medium"
+        className={stylesLabel}
       >
         Description
       </label>
@@ -11,7 +18,7 @@ export const DescriptionInput = () => {
       <textarea
         id="description"
         placeholder="Enter a description"
-        className="text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md h-20 resize-none"
+        className={`${stylesInput} h-20 resize-none`}
         maxLength={300}
       ></textarea>
     </div>
