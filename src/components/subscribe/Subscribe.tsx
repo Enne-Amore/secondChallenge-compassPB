@@ -124,7 +124,7 @@ export const Subscribe = () => {
                     <p className={styles.p}>
                         Already have an account?{" "}
                         <Link to="/login" className={styles.a}>
-                            Sign in
+                            Log in
                         </Link>
                     </p>
                 </div>
