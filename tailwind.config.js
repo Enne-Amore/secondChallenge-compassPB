@@ -69,6 +69,7 @@ export default {
         '32': "32px",
         '20': "20px",
         '28': "28px",
+        '86' : '86px'
       },
       fontFamily: {
         'roboto': ["Roboto", "sans-serif"],
