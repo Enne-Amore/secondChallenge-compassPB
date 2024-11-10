@@ -1,38 +1,38 @@
 .profileContainer {
-  @apply max-w-full w-full bg-white p-8 tablet:p-6  tablet:max-w-[1440px]  desktop:p-10 rounded-lg shadow-lg m-auto;
+  @apply max-w-full w-full bg-white p-5 tablete:p-6  tablete:max-w-[1440px]  desktopi:p-10 rounded-lg shadow-lg m-auto;
 }
 
 .projectProfile {
-  @apply  leading-9 tablet:leading-7 desktop:leading-9;
+  @apply  leading-9 tablete:leading-7 desktopi:leading-9;
 }
 
 .projectProfile h1 {
-  @apply font-semibold text-32 tablet:text-32 desktop:text-32;
+  @apply font-semibold text-32 tablete:text-32 desktopi:text-32;
 }
 
 .projectProfile p {
-  @apply leading-9 text-sm tablet:text-base text-black text-opacity-50;
+  @apply leading-9 text-sm tablete:text-base text-black text-opacity-50;
 }
 
 .basicInfo,
 .profileInfo,
 .profileCommunication,
 .profileSocial {
-  @apply w-full tablet:w-1/2 leading-9 tablet:leading-8 desktop:w-51 desktop:leading-9;
+  @apply w-full tablete:w-1/2 leading-9 tablete:leading-8 desktopi:w-51 desktopi:leading-9;
 }
 
 .basicInfo h1,
 .profileInfo h1,
 .profileCommunication h1,
 .profileSocial h1 {
-  @apply font-semibold text-20 tablet:text-2xl;
+  @apply font-semibold text-20 tablete:text-2xl;
 }
 
 .basicInfo p,
 .profileInfo p,
 .profileCommunication p,
 .profileSocial p {
-  @apply leading-9 text-sm tablet:text-15 text-black text-opacity-50;
+  @apply leading-9 text-sm tablete:text-15 text-black text-opacity-50;
 }
 
 .inputName,
@@ -42,38 +42,38 @@
 }
 
 .profileHeader {
-  @apply flex gap-4 tablet:flex-row items-center mb-6 tablet:mb-10;
+  @apply flex gap-4 tablete:flex-row items-center mb-6 tablete:mb-10;
 }
 
 .uploadSection {
-  @apply font-medium w-full tablet:w-1/2 font-inter;
+  @apply font-medium w-full tablete:w-1/2 font-inter;
 }
 
 .profilePicture {
-  @apply w-32 h-32 tablet:w-36 tablet:h-36 desktop:w-44 desktop:h-44 rounded-full mr-0 tablet:mr-5;
+  @apply w-32 h-32 tablete:w-44 tablete:h-48 desktopi:w-44 desktopi:h-44 rounded-full mr-0 tablete:mr-5;
 }
 
 .profileName {
-  @apply text-3xl tablet:text-4xl desktop:text-5xl font-medium mb-1;
+  @apply text-3xl tablete:text-4xl desktopi:text-5xl font-medium mb-1;
 }
 
 .profileEmail {
-  @apply text-lg tablet:text-xl desktop:text-28 text-black text-opacity-70;
+  @apply text-20 tablete:text-xl desktopi:text-28 text-black text-opacity-70;
 }
 
 .profileSection {
-  @apply gap-6 border-t border-gray-300 pt-5 mt-5 flex flex-col tablet:gap-4 desktop:gap-1/5 desktop:flex desktop:flex-row;
+  @apply gap-6 border-t border-gray-300 pt-5 mt-5 flex flex-col tablete:gap-4 desktopi:gap-1/5 desktopi:flex desktopi:flex-row;
 }
 
 .profileGrid {
-  @apply tablet:w-85 gap-3 tablet:gap-4 tablet:flex tablet:flex-row tablet:flex-wrap desktop:w-70 desktop:gap-5 w-full;
+  @apply tablete:w-85 gap-3 tablete:gap-4 tablete:flex tablete:flex-row tablete:flex-wrap desktopi:w-70 desktopi:gap-5 w-full;
 }
 
 .profileGrid input {
   @apply p-2 border border-gray-300 rounded-md;
 }
 .profileContent{
-  @apply tablet:w-48
+  @apply tablete:w-48
 }
 .profileGrid .inputName,
 .profileGrid .inputLname,
@@ -86,19 +86,19 @@
 }
 
 .lastName {
-  @apply ml-0 tablet:ml-1/3;
+  @apply ml-0 tablete:ml-1/3;
 }
 
 .profilePictureSection {
-  @apply tablet:flex items-center leading-7 tablet:leading-8 desktop:leading-9 gap-5 w-full desktop:w-70;
+  @apply tablete:flex items-center leading-7 tablete:leading-8 desktopi:leading-9 gap-5 w-full desktopi:w-70;
 }
 
 .profilePicturePreview {
-  @apply w-32 h-32 tablet:w-36 tablet:h-36 desktop:w-44 desktop:h-44 rounded-full border border-gray-300;
+  @apply w-32 h-32 tablete:w-44 tablete:h-48 desktopi:w-44 desktopi:h-44 rounded-full border border-gray-300;
 }
 
 .uploadArea {
-  @apply flex flex-col gap-3 items-center justify-center border-2 border-dashed border-gray-400 p-2 rounded-md w-full max-w-full min-h-36 desktop:max-w-[300px] text-center text-gray-700 font-normal;
+  @apply flex flex-col gap-3 items-center justify-center border-2 border-dashed border-gray-400 p-2 rounded-md w-full max-w-full min-h-36 desktopi:max-w-[300px] text-center text-gray-700 font-normal;
 }
 
 .uploadLink {
@@ -106,11 +106,11 @@
 }
 
 .checkboxSection {
-  @apply leading-4 flex flex-col gap-2 w-full desktop:w-70 font-normal text-sm;
+  @apply leading-4 flex flex-col gap-2 w-full desktopi:w-70 font-normal text-sm;
 }
 
 .socialContainer {
-  @apply flex flex-col gap-5 w-full tablet:w-2/3 desktop:w-70;
+  @apply flex flex-col gap-5 w-full tablete:w-2/3 desktopi:w-70;
 }
 
 .socialContainer label {
@@ -126,15 +126,17 @@
 }
 
 .inputRow input {
-  @apply border border-gray-200 rounded-lg p-2 desktop:p-4;
+  @apply border border-gray-200 rounded-lg p-2 desktopi:p-4;
 }
 
 .urlInput {
-  @apply bg-gray-100 pointer-events-none text-gray-600;
+  @apply w-55 bg-gray-100 pointer-events-none text-gray-600;
 }
-
+.socialInput{
+  @apply w-45
+}
 .buttonUpdate {
-  @apply w-full tablet:w-51 flex flex-col mx-auto mt-6 tablet:mt-8;
+  @apply w-full tablete:w-51 flex flex-col mx-auto mt-6 tablete:mt-8;
 }
 
 .updateButton {
@@ -162,7 +164,7 @@
 }
 
 .optionDescription {
-  @apply mt-2 mb-2 tablet:mb-4 text-gray-600;
+  @apply mt-2 mb-2 tablete:mb-4 text-gray-600;
 }
 
 .fileNameContainer {

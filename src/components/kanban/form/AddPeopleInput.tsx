@@ -1,15 +1,17 @@
-import { ComponentProps } from "react";
+import { ChangeEvent, ComponentProps } from "react";
 import { CiSearch } from "react-icons/ci";
 
 export type Styles = ComponentProps<"label"> & {
   stylesLabel: string;
+  val: string;
+  changeVal: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const AddPeopleInput = ({ stylesLabel }: Styles) => {
+export const AddPeopleInput = ({ stylesLabel, val, changeVal }: Styles) => {
   return (
     <div className="flex flex-col gap-1">
       <label
-        htmlFor="add-people"
+        htmlFor="addPeople"
         className={stylesLabel}
       >
         Add people
@@ -18,8 +20,10 @@ export const AddPeopleInput = ({ stylesLabel }: Styles) => {
       <div className="relative w-full">
         <input
           type="text"
-          id="add-people"
+          id="addPeople"
           placeholder="John Doe"
+          value={val}
+          onChange={changeVal}
           className="text-[#5E6366] text-xs desktop:text-base border border-[#0000001A] py-1.5 pl-8 pr-2 rounded-md w-full desktop:py-2 desktop:pl-12"
         />
 

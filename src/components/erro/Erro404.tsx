@@ -18,7 +18,7 @@ const Erro404 = () => {
                         </p>
                     </div>
                     <div className=" pt-7  flex justify-center items-center md:justify-end md:h-full md:mr-20">
-                        <Link to="/" className="text-blue-46 underline">
+                        <Link to="/" className="text-blue-46 underline font-bold">
                             Go back to home
                         </Link>
                     </div>
