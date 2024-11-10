@@ -1,38 +1,41 @@
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useUser, useClerk } from "@clerk/clerk-react"; // Hook do Clerk
+import toast from "react-hot-toast";
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useClerk } from "@clerk/clerk-react"; // Hook do Clerk
 
-const validateNome = (nome: string): boolean =>
-    /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
-const validateJob = (nome: string): boolean =>
-    /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
-const validateEmail = (email: string): boolean =>
-    /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
-const validatePassword = (password: string): boolean =>
-    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(
-        password
-    );
+const validateNome = (nome) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
+const validateJob = (nome) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
+const validateEmail = (email) => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+const validatePassword = (password) =>
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
 
 export const Subscribe = () => {
-    const [firstName, setFirstName] = useState<string>("");
-    const [lastName, setLastName] = useState<string>("");
-    const [job, setJob] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [erros, setErros] = useState({
-        emailErro: false,
-        passowdErro: false,
-        lastNameErro: false,
-        firstNameErro: false,
-        jobErro: false,
-    });
-    const [isValidated, setIsValidated] = useState<boolean>(false);
-
-    const { openSignIn, isAuthenticated } = useClerk(); // Hook do Clerk para verificar a autenticação
+    const { user, openSignIn, isAuthenticated } = useClerk();
     const navigate = useNavigate();
+
+    const [firstName, setFirstName] = useState(user?.firstName || "");
+    const [lastName, setLastName] = useState(user?.lastName || "");
+    const [email, setEmail] = useState(user?.emailAddresses[0]?.emailAddress || "");
+    const [job, setJob] = useState("");
+    const [password, setPassword] = useState("");
+    const [isValidated, setIsValidated] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const [erros, setErros] = useState({
+        firstNameErro: false,
+        lastNameErro: false,
+        emailErro: false,
+        jobErro: false,
+        passwordErro: false,
+    });
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate("/kanban");
+        }
+    }, [isAuthenticated, navigate]);
 
     const saveData = async () => {
         const url = "http://localhost:4000/posts";
@@ -43,33 +46,34 @@ export const Subscribe = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    firstName: firstName,
-                    lastName: lastName,
+                    firstName,
+                    lastName,
                     user: "@" + firstName + lastName,
                     date: new Date(),
-                    "e-mail": email,
-                    password: password,
+                    email,
+                    password,
                     position: job,
                     socialMedia: "",
                 }),
-            }).then((response) => response.json());
+            });
+            return response.json();
         } catch (error) {
             console.log("Error", error);
         }
     };
 
     const clear = () => {
-        setPassword("");
-        setEmail("");
-        setLastName("");
         setFirstName("");
+        setLastName("");
+        setEmail("");
         setJob("");
+        setPassword("");
         setErros({
-            emailErro: false,
-            passowdErro: false,
-            lastNameErro: false,
             firstNameErro: false,
+            lastNameErro: false,
+            emailErro: false,
             jobErro: false,
+            passwordErro: false,
         });
     };
 
@@ -81,25 +85,20 @@ export const Subscribe = () => {
         const isPasswordValid = validatePassword(password);
 
         setIsValidated(true);
-
         setErros({
             firstNameErro: !isFirstNameValid,
             lastNameErro: !isLastNameValid,
             emailErro: !isEmailValid,
             jobErro: !isJobValid,
-            passowdErro: !isPasswordValid,
+            passwordErro: !isPasswordValid,
         });
 
-        if (
-            isFirstNameValid &&
-            isLastNameValid &&
-            isEmailValid &&
-            isJobValid &&
-            isPasswordValid
-        ) {
+        if (isFirstNameValid && isLastNameValid && isEmailValid && isJobValid && isPasswordValid) {
+            setIsLoading(true);
             await saveData();
             clear();
             toast.success("Account created successfully!");
+            setIsLoading(false);
             setTimeout(() => navigate("/login"), 2000);
         }
     };
@@ -107,14 +106,9 @@ export const Subscribe = () => {
     const handleOAuthLogin = (provider: string) => {
         openSignIn({
             strategy: provider === "google" ? "oauth_google" : "oauth_facebook",
-            redirectUrl: "/kanban", // Redireciona para a página de Kanban após login
+            redirectUrl: "/kanban",
         });
     };
-
-    // Verifica se o usuário está autenticado, e redireciona para o Kanban
-    if (isAuthenticated) {
-        navigate("/kanban");
-    }
 
     return (
         <div className={styles.divContainer}>
@@ -145,6 +139,9 @@ export const Subscribe = () => {
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         />
+                        {isValidated && erros.firstNameErro && (
+                            <p className="text-red-500">First name must contain only letters and at least 2 characters.</p>
+                        )}
                     </div>
                     <div className="md:w-1/2 md:ml-1">
                         <label className={styles.labelName}>Last name</label>
@@ -161,6 +158,9 @@ export const Subscribe = () => {
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                         />
+                        {isValidated && erros.lastNameErro && (
+                            <p className="text-red-500">Last name must contain only letters and at least 2 characters.</p>
+                        )}
                     </div>
                 </div>
 
@@ -180,6 +180,9 @@ export const Subscribe = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        {isValidated && erros.emailErro && (
+                            <p className="text-red-500">Please enter a valid email address.</p>
+                        )}
                     </div>
                     <div className="w-full">
                         <label className={styles.divLabel}>Job position</label>
@@ -196,6 +199,9 @@ export const Subscribe = () => {
                             value={job}
                             onChange={(e) => setJob(e.target.value)}
                         />
+                        {isValidated && erros.jobErro && (
+                            <p className="text-red-500">Job position must be at least 5 characters.</p>
+                        )}
                     </div>
                     <div className="w-full">
                         <label className={styles.divLabel}>Password</label>
@@ -204,7 +210,7 @@ export const Subscribe = () => {
                             placeholder="Enter your password"
                             className={`${styles.divInput} ${
                                 isValidated
-                                    ? erros.passowdErro
+                                    ? erros.passwordErro
                                         ? "bg-red-300"
                                         : "bg-green-200"
                                     : ""
@@ -212,6 +218,9 @@ export const Subscribe = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        {isValidated && erros.passwordErro && (
+                            <p className="text-red-500">Password must be at least 8 characters, with an uppercase letter, a number, and a special character.</p>
+                        )}
                     </div>
                 </div>
 
@@ -221,8 +230,9 @@ export const Subscribe = () => {
                     color="blue"
                     className={styles.btnSingIn}
                     onClick={handleSignIn}
+                    disabled={isLoading}
                 >
-                    Create an account
+                    {isLoading ? "Creating account..." : "Create an account"}
                 </Button>
 
                 <div className={styles.divBtn}>
