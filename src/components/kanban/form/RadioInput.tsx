@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ChangeEvent, ComponentProps } from "react";
 
 export type InfoRadio = ComponentProps<"input"> &
   ComponentProps<"label"> & {
@@ -6,9 +6,11 @@ export type InfoRadio = ComponentProps<"input"> &
     name: string;
     label: string;
     stylesLabel: string;
+    val: string;
+    changeVal: (e: ChangeEvent<HTMLInputElement>) => void;
   };
 
-export const RadioInput = ({ id, name, label, stylesLabel }: InfoRadio) => {
+export const RadioInput = ({ id, name, label, stylesLabel, val, changeVal }: InfoRadio) => {
   return (
     <li className="flex items-center gap-1 desktop:gap-1.5">
       <input
@@ -16,6 +18,8 @@ export const RadioInput = ({ id, name, label, stylesLabel }: InfoRadio) => {
         name={name}
         id={id}
         value={id}
+        checked={val === id}
+        onChange={changeVal}
         className="form-radio h-4 w-4 transition duration-200 ease-in-out"
       />
       <label htmlFor={id} className={stylesLabel}>
