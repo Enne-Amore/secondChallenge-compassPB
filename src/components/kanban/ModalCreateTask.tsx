@@ -36,7 +36,7 @@ export const ModalCreateTask = ({ modalCreate, setModalCreate }: Modal) => {
           />
         </div>
 
-        <FormCreateTask />
+        <FormCreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
       </article>
     </div>
   );
