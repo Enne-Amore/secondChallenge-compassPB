@@ -13,7 +13,9 @@
       "dateEnd": "20/12/2024",
       "timeEnd": "18:00",
       "estimed": "10",
-      "creatorTask": "Enne"
+      "creatorTask": "Enne",
+      "imgSrc": "",
+      "imgAlt": ""
     }
   ]
 }
