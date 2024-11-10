@@ -10,9 +10,9 @@ import "./index.css";
 import { Toaster } from "react-hot-toast";
 import { useUser } from "@clerk/clerk-react";
 
+import ProtectedRoute from "./components/ProtectedRoute";
 import Erro404Page from "./pages/Erro404Page";
 import Erro403Page from "./pages/Erro403Page";
-import ProtectedRoute from "./components/ProtectedRoute";
 
 
 export default function App() {
