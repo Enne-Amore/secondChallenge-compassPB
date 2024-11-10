@@ -29,7 +29,7 @@ export const Login = () => {
         passowdErro: false,
     });
 
-    const { openSignIn } = useClerk(); // Usando openSignIn para autenticação social
+    const { openSignIn } = useClerk();
     const navigate = useNavigate();
 
     const clear = () => {
@@ -104,7 +104,7 @@ export const Login = () => {
                             value={password}
                             placeholder="Enter your password"
                             className={`${styles.divInput} ${
-                                erros.passowdErro ? "border-red-400" : ""
+                                erros.passowdErro ? "bg-red-300" : ""
                             }`}
                             onChange={(e) => setPassword(e.target.value)}
                         />

@@ -14,7 +14,6 @@ import Erro404Page from "./pages/Erro404Page";
 import Erro403Page from "./pages/Erro403Page";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-
 export default function App() {
     const { isSignedIn } = useUser();
 
@@ -23,7 +22,7 @@ export default function App() {
             <Toaster />
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                
+
                 <Route
                     path="/login"
                     element={
@@ -34,7 +33,7 @@ export default function App() {
                         )
                     }
                 />
-                
+
                 <Route
                     path="/subscribe"
                     element={
@@ -45,7 +44,7 @@ export default function App() {
                         )
                     }
                 />
-                
+
                 {/* Rotas protegidas */}
                 <Route
                     path="/kanban"
@@ -55,7 +54,7 @@ export default function App() {
                         </ProtectedRoute>
                     }
                 />
-                
+
                 <Route
                     path="/setting"
                     element={
@@ -65,10 +64,8 @@ export default function App() {
                     }
                 />
 
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<Erro404Page />} />
                 <Route path="/erro403" element={<Erro403Page />} />
-                
-
             </Routes>
         </>
     );
