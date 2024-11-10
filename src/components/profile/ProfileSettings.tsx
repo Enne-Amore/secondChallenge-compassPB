@@ -1,6 +1,7 @@
 import styles from './Profile.module.css';
 import { GrTrash } from "react-icons/gr";
 import { FiUpload } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function ProfileSettings() {
   return (
@@ -157,7 +158,7 @@ export default function ProfileSettings() {
       {/* Update Button */}
       <div className={styles.buttonUpdate}>
         <button className={styles.updateButton}>Update information</button>
-        <p className={styles.backLink}>Never mind, take me <a href="#">back to my project</a>.</p>
+        <p className={styles.backLink}>Never mind, take me <Link to="/kanban">back to my project</Link>.</p>
       </div>
     </div>
   );

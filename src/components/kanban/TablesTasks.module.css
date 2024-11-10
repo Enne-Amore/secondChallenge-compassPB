@@ -1,0 +1,6 @@
+.containerTables {
+    @apply flex gap-4 py-60 w-11/12 overflow-auto
+
+    /* desktop */
+    desktop:py-4 desktop:w-full desktop:justify-center
+}

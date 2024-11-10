@@ -1,0 +1,34 @@
+.container {
+    @apply flex flex-col gap-3
+
+    /* desktop */
+    desktop:flex-wrap desktop:h-418 desktop:gap-x-20
+}
+
+.titleLabel {
+    @apply text-[#331436] text-xs font-medium
+
+    /* desktop */
+    desktop:text-sm
+}
+
+.inputText {
+    @apply text-[#00000080] text-xs border border-[#0000001A] py-1 px-2 rounded-md
+
+    /* desktop */
+    desktop:text-sm desktop:py-2 desktop:px-3
+}
+
+.radioLabel {
+    @apply text-[#2B2F32] text-xs font-normal
+
+    /* desktop */
+    desktop:text-sm
+}
+
+.btn {
+    @apply bg-[#22C55E] hover:bg-[#5CB77D] transition-all text-white rounded-lg p-1 mt-2
+
+    /* desktop */
+    desktop:text-base desktop:py-3
+}

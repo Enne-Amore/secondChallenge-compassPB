@@ -1,0 +1,32 @@
+.container {
+    @apply fixed min-h-screen inset-x-0 inset-y-0 flex justify-center items-center z-20
+}
+
+.transparency {
+    @apply absolute min-h-screen inset-x-0 inset-y-0 bg-[#00000080]
+}
+
+.containerMain {
+    @apply bg-[#FBFBFB] rounded-xl min-w-80 flex flex-col px-6 pt-2 pb-4 z-30
+
+    /* desktop */
+    desktop:px-10 desktop:pt-4 desktop:pb-5 desktop:-translate-x-20 desktop:w-900
+}
+
+.containerTop {
+    @apply flex justify-between
+}
+
+.title {
+    @apply text-[#160A60] text-lg font-semibold mb-2
+
+    /* desktop */
+    desktop:text-2xl
+}
+
+.icon {
+    @apply text-red-800 text-xl font-bold mt-0.5 cursor-pointer focus:outline-0 focus-visible:outline-1
+
+    /* desktop */
+    desktop:text-2xl
+}
