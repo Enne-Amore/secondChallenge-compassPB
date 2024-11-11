@@ -5,6 +5,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { SubscribePage } from "./pages/SubscribePage";
 import { Kanban } from "./pages/Kanban";
 import Settings from "./pages/Settings";
+import ProfileAct from "./components/profile/ProfileActivities";
 
 import "./index.css";
 import { Toaster } from "react-hot-toast";
@@ -62,7 +63,15 @@ export default function App() {
                             <Settings />
                         </ProtectedRoute>
                     }
-                />
+                /> 
+                <Route
+                path="/profile"
+                element={
+                    <ProtectedRoute>
+                        <ProfileAct />
+                    </ProtectedRoute>
+                }
+            />
 
                 <Route path="*" element={<Erro404Page/>} />
                 <Route path="/403" element={<Erro403Page />} />
