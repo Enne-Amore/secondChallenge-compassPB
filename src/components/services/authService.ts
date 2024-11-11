@@ -1,8 +1,10 @@
 import axios from "axios";
 import bcrypt from "bcryptjs";
 import { User } from "../types/User";
+import { Tasks } from "../types/Tasks";
 
 const API_URL = "http://localhost:4000/users";
+const API_URL_Task = "http://localhost:4000/tasks";
 
 // Função de cadastro com hashing
 export async function registerUser(userData: Omit<User, 'id' | 'createdAt' | 'password'> & { password: string }): Promise<User> {
@@ -41,4 +43,12 @@ export async function loginUser(email: string, password: string): Promise<User |
     console.error("Error during login:", error);
     return null;
   }
+}
+
+// Function Add Task
+export async function addTask(taskData: object): Promise<Tasks> {
+  const response = await axios.post(API_URL_Task, {
+    ...taskData
+  });
+  return response.data;
 }

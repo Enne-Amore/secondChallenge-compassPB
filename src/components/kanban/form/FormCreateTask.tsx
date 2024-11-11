@@ -5,10 +5,10 @@ import { DateInputs } from "./DateInputs";
 import { TaskCoverInput } from "./TaskCoverInput";
 import { TitleInput } from "./TitleInput";
 import { RadioInputs } from "./RadioInputs";
-import styles from "./FormCreateTask.module.css";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Modal } from "../ModalCreateTask";
-import axios from "axios";
+import { addTask } from "../../services/authService";
+import styles from "./FormCreateTask.module.css";
 
 export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
   const [title, setTitle] = useState<string>("");
@@ -59,10 +59,7 @@ export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
     };
 
     try {
-      const response = await axios.post("http://localhost:4000/tasks", taskData);
-      console.log(response.data);
-      console.log(response)
-      console.log(taskData)
+      await addTask(taskData);
     } catch (error) {
       console.log(`Error: ${error}`);
     }

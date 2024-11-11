@@ -33,5 +33,35 @@
       "position": "hjdbchdc",
       "socialMedia": ""
     }
+  ],
+  "tasks": [
+    {
+      "id": "6c35",
+      "title": "n rjcjfere",
+      "status": "done",
+      "description": "",
+      "startDate": "2020-12-12",
+      "endDate": "2020-12-12",
+      "startTime": "00:00",
+      "endTime": "00:00",
+      "fileName": null,
+      "addPeople": [],
+      "priority": "high",
+      "createdAt": "2024-11-11T18:49:35.319Z"
+    },
+    {
+      "id": "230f",
+      "title": "Task 01",
+      "status": "done",
+      "description": "",
+      "startDate": "2020-12-12",
+      "endDate": "2020-12-12",
+      "startTime": "00:00",
+      "endTime": "00:00",
+      "fileName": null,
+      "addPeople": [],
+      "priority": "low",
+      "createdAt": "2024-11-11T18:52:58.276Z"
+    }
   ]
 }

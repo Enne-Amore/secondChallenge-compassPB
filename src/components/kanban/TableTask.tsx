@@ -3,7 +3,7 @@ import { ModalCreateTask } from "./ModalCreateTask";
 import styles from "./TableTask.module.css";
 import axios from "axios";
 import { Task } from "./Task";
-import { Tasks } from "../../types/Tasks";
+import { Tasks } from "../types/Tasks";
 
 export type Colors = ComponentProps<"div"> &
   ComponentProps<"strong"> &
