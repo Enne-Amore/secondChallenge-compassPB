@@ -10,7 +10,12 @@ export type Styles = ComponentProps<"label"> & {
   setFileName: (fileName: string | null) => void;
 };
 
-export const TaskCoverInput = ({ stylesLabel, changeVal, fileName, setFileName }: Styles) => {
+export const TaskCoverInput = ({
+  stylesLabel,
+  changeVal,
+  fileName,
+  setFileName,
+}: Styles) => {
   return (
     <div className="flex flex-col">
       <label htmlFor="img" className={stylesLabel}>
@@ -32,7 +37,9 @@ export const TaskCoverInput = ({ stylesLabel, changeVal, fileName, setFileName }
             <div className="flex items-center gap-1 desktop:gap-1.5">
               <GoPaperclip className="text-xs desktop:text-base" />
 
-              <span className="text-xs font-normal desktop:text-base">{fileName}</span>
+              <span className="text-xs font-normal desktop:text-base">
+                {fileName}
+              </span>
             </div>
 
             <FiTrash2

@@ -6,7 +6,11 @@ export type InfoRadioInut = ComponentProps<"ul"> & {
   radioInputs: React.ReactNode;
 };
 
-export const RadioInputs = ({ label, stylesLabel, radioInputs }: InfoRadioInut) => {
+export const RadioInputs = ({
+  label,
+  stylesLabel,
+  radioInputs,
+}: InfoRadioInut) => {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor="status" className={stylesLabel}>

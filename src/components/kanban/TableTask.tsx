@@ -1,14 +1,13 @@
-import React, { ComponentProps, useEffect, useState } from "react";
+import React, { ComponentProps, useState } from "react";
 import { ModalCreateTask } from "./ModalCreateTask";
 import styles from "./TableTask.module.css";
-import axios from "axios";
-import { Tasks } from "../types/Tasks";
 
 export type Colors = ComponentProps<"div"> &
   ComponentProps<"strong"> &
   ComponentProps<"h2"> &
   ComponentProps<"path"> & {
     title: string;
+    qtd: number;
     topBgColor: string;
     strongBgColor: string;
     titleColor: string;
@@ -16,7 +15,15 @@ export type Colors = ComponentProps<"div"> &
     task: React.ReactNode;
   };
 
-export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIcon, task }: Colors) => {
+export const TableTask = ({
+  title,
+  qtd,
+  topBgColor,
+  strongBgColor,
+  titleColor,
+  moreIcon,
+  task,
+}: Colors) => {
   const [modalCreate, setModalCreate] = useState<boolean>(false);
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
@@ -25,33 +32,11 @@ export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIc
     }
   };
 
-  const [tasks, setTasks] = useState<Tasks[]>([])
-
-  const getTasks = async () => {
-    try {
-      const response = await axios.get("http://localhost:4000/tasks");
-      const data: Tasks[] = response.data;
-      setTasks(data);
-    } catch (error) {
-      console.log(`Error: ${error}`);
-    }
-  };
-
-  useEffect(() => {
-    getTasks();
-  }, []);
-
   return (
     <article className={styles.containerTable}>
-      <div
-        className={`${topBgColor} ${styles.containerInfoTop}`}
-      >
+      <div className={`${topBgColor} ${styles.containerInfoTop}`}>
         <div className={styles.containerInfo}>
-          <strong
-            className={`${strongBgColor} ${styles.qtd}`}
-          >
-            {tasks.length}
-          </strong>
+          <strong className={`${strongBgColor} ${styles.qtd}`}>{qtd}</strong>
 
           <h2 className={`${titleColor} ${styles.title}`}>{title}</h2>
         </div>
@@ -75,12 +60,13 @@ export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIc
       </div>
 
       {modalCreate && (
-        <ModalCreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
+        <ModalCreateTask
+          modalCreate={modalCreate}
+          setModalCreate={setModalCreate}
+        />
       )}
 
-      <ul className={styles.taskList}>
-        {task}
-      </ul>
+      <ul className={styles.taskList}>{task}</ul>
     </article>
   );
 };

@@ -12,7 +12,17 @@ export type InfoDateInputs = ComponentProps<"label"> & {
   changeValTime: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const DateInputs = ({ label, idDate, idTime, stylesLabel, stylesInput, valDate, changeValDate, valTime, changeValTime }: InfoDateInputs) => {
+export const DateInputs = ({
+  label,
+  idDate,
+  idTime,
+  stylesLabel,
+  stylesInput,
+  valDate,
+  changeValDate,
+  valTime,
+  changeValTime,
+}: InfoDateInputs) => {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={idDate} className={stylesLabel}>
@@ -26,6 +36,7 @@ export const DateInputs = ({ label, idDate, idTime, stylesLabel, stylesInput, va
           value={valDate}
           onChange={changeValDate}
           className={stylesInput}
+          required
         />
 
         <input
@@ -34,6 +45,7 @@ export const DateInputs = ({ label, idDate, idTime, stylesLabel, stylesInput, va
           value={valTime}
           onChange={changeValTime}
           className={`${stylesInput} -translate-y-0.5`}
+          required
         />
       </div>
     </div>
