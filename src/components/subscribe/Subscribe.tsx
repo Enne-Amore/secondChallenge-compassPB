@@ -1,9 +1,9 @@
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import toast from "react-hot-toast";
-import { useClerk, useUser } from "@clerk/clerk-react";
+import { useClerk } from "@clerk/clerk-react";
 import { registerUser } from "../services/authService";
 
 // Validações de regex
