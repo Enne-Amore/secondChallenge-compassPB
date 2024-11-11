@@ -52,7 +52,7 @@
 }
 
 .subscribeButton {
-    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-8
+    @apply w-[142px]  h-[36px] text-white bg-blue-750 rounded-md text-[15px]  mt-8 hover:bg-[#3B5174]
       /* tela para tablet */
       tablet:w-[240px] tablet:h-[48px] tablet:py-3 tablet:text-[16px] tablet:font-medium
     /* tela para desktop */
