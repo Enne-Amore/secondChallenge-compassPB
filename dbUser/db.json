@@ -51,6 +51,40 @@
       },
       "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
       "createdAt": "2024-11-11T17:49:43.635Z"
+    },
+    {
+      "id": "62f9",
+      "firstName": "orlean",
+      "lastName": "sousa",
+      "username": "@orleansousa",
+      "createdDate": "2024-11-11T18:49:34.991Z",
+      "email": "orlean@sousa.com",
+      "password": "$2a$10$E6OjujF1JJuA5SLxEF1GLupH2L6Z59uqg5cWuzNTsfZtm4m33/OnW",
+      "job": "desenvolvedor",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+      "createdAt": "2024-11-11T18:49:34.991Z"
+    },
+    {
+      "id": "f05c",
+      "firstName": "asdasd",
+      "lastName": "asdadas",
+      "username": "@asdasdasdadas",
+      "createdDate": "2024-11-11T18:55:46.801Z",
+      "email": "teste1@test.com",
+      "password": "$2a$10$Eqyy/bCqq53gBvXm.pzmv.bSqyHSpUT6ZbfPIVUkDbv3XYGrC8d0i",
+      "job": "adasdas",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+      "createdAt": "2024-11-11T18:55:46.801Z"
     }
   ]
 }

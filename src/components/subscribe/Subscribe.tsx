@@ -1,9 +1,8 @@
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import toast from "react-hot-toast";
-import { useClerk, useUser } from "@clerk/clerk-react";
 import { registerUser } from "../services/authService";
 
 // Validações de regex
@@ -14,7 +13,7 @@ const validatePassword = (password: string): boolean =>
   /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
 
 export const Subscribe = () => {
-  const { isAuthenticated } = useClerk();
+  
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [job, setJob] = useState<string>("");
@@ -54,7 +53,7 @@ export const Subscribe = () => {
       const userData = {
         firstName,
         lastName,
-        user: `@${firstName}${lastName}`,
+        username: `@${firstName}${lastName}`,
         createdDate: new Date().toISOString(),
         email,
         password,

@@ -3,10 +3,10 @@ export interface User {
     firstName: string;
     lastName: string;
     username: string;
-    createdAt: string; // timestamp de criação
+    createdDate: string; // timestamp de criação
     email: string;
     password: string;
-    jobPosition: string;
+    job: string;
     socialMedia: {
       twitter: string;
       instagram: string;
