@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 </li>
                 <li>
                     <Link
-                        to="/"
+                        to="/profile"
                         className="mr-5 xl:mr-10 text-white hover:underline"
                     >
                         Profile
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className="text-white block pt-4 pb-8">
+                    <Link to="/profile" className="text-white block pt-4 pb-8">
                         Profile
                     </Link>
                 </li>
