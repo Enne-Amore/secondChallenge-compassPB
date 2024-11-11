@@ -24,7 +24,6 @@ export const AddPeopleInput = ({ stylesLabel, val, changeVal }: Styles) => {
           placeholder="John Doe"
           value={val}
           onChange={changeVal}
-          required
           className="text-[#5E6366] text-xs desktop:text-base border border-[#0000001A] py-1.5 pl-8 pr-2 rounded-md w-full desktop:py-2 desktop:pl-12"
         />
 
