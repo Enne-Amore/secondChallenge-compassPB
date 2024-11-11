@@ -103,12 +103,12 @@ npm install
 
 Para iniciar o servidor de desenvolvimento, execute:
 ```bash
-npm run dev
+npm run start
 ```
-O projeto estará disponível em http://localhost:3000.
+O projeto estará disponível em http://localhost:4000.
 
 Como Usar
-Abra o seu navegador e acesse http://localhost:3000 para visualizar o projeto em execução.
+Abra o seu navegador e acesse http://localhost:4000 para visualizar o projeto em execução.
 
 Na aplicação, você pode:
 
