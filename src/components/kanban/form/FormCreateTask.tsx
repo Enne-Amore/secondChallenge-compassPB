@@ -22,20 +22,13 @@ export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
   const [addPeople, setAddPeople] = useState<string[]>([]);
   const [priority, setPriority] = useState<string>("");
 
-  const handleTitle = (e: ChangeEvent<HTMLInputElement>) =>
-    setTitle(e.target.value);
-  const handleStatus = (e: ChangeEvent<HTMLInputElement>) =>
-    setStatus(e.target.value);
-  const handleDescription = (e: ChangeEvent<HTMLTextAreaElement>) =>
-    setDescription(e.target.value);
-  const handleStartDate = (e: ChangeEvent<HTMLInputElement>) =>
-    setStartDate(e.target.value);
-  const handleEndDate = (e: ChangeEvent<HTMLInputElement>) =>
-    setEndDate(e.target.value);
-  const handleStartTime = (e: ChangeEvent<HTMLInputElement>) =>
-    setStartTime(e.target.value);
-  const handleEndTime = (e: ChangeEvent<HTMLInputElement>) =>
-    setEndTime(e.target.value);
+  const handleTitle = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
+  const handleStatus = (e: ChangeEvent<HTMLInputElement>) => setStatus(e.target.value);
+  const handleDescription = (e: ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value);
+  const handleStartDate = (e: ChangeEvent<HTMLInputElement>) => setStartDate(e.target.value);
+  const handleEndDate = (e: ChangeEvent<HTMLInputElement>) => setEndDate(e.target.value);
+  const handleStartTime = (e: ChangeEvent<HTMLInputElement>) => setStartTime(e.target.value);
+  const handleEndTime = (e: ChangeEvent<HTMLInputElement>) => setEndTime(e.target.value);
 
   const handleImg = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;

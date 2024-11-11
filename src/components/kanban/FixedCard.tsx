@@ -39,11 +39,11 @@ export const FixedCard = () => {
           <h2 className={styles.title}>In this project</h2>
 
           <ul className={styles.peopleList}>
-            <PersonProfile />
+            <PersonProfile styleTitle="desktop:text-base" styleJob="desktop:text-10" />
 
-            <PersonProfile />
+            <PersonProfile styleTitle="desktop:text-base" styleJob="desktop:text-10" />
 
-            <PersonProfile />
+            <PersonProfile styleTitle="desktop:text-base" styleJob="desktop:text-10" />
           </ul>
 
           <a href="" className={styles.viewAllBtn}>
@@ -90,11 +90,11 @@ export const FixedCard = () => {
               <h4 className={styles.subtitleMostActive}>lats 30 days</h4>
 
               <ul className={styles.peopleListMostActive}>
-                <PersonProfile />
+                <PersonProfile styleTitle="desktop:text-10" styleJob="desktop:text-5" />
 
-                <PersonProfile />
+                <PersonProfile styleTitle="desktop:text-10" styleJob="desktop:text-5" />
 
-                <PersonProfile />
+                <PersonProfile styleTitle="desktop:text-10" styleJob="desktop:text-5" />
               </ul>
             </article>
 

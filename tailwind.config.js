@@ -68,6 +68,8 @@ export default {
         '418': '418px',
       },
       fontSize: {
+        '5': '5px',
+        '10': '10px',
         '14': "14px",
         '15': "15px",
         '16': "16px",
@@ -78,7 +80,7 @@ export default {
         '38': "38px",
         '40': "40px",
         '48': "48px",
-        '86' : '86px'
+        '86': '86px'
       },
       fontFamily: {
         'roboto': ["Roboto", "sans-serif"],
@@ -102,7 +104,6 @@ export default {
       gridTemplateColumns: {
         'metrics-mobile': "112px minmax(100px, 2fr)",
         'metrics-desktop': "152px minmax(100px, 2fr)",
-        'metrics': '112px minmax(100px, 2fr)',
       },
       screens: {
         'mobile': '393px',

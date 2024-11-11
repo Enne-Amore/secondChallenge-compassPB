@@ -38,6 +38,7 @@ export const TablesTasks = () => {
         task={todoTasks.map((task) => (
           <Task
             key={task.id}
+            imgSrc={task.fileName}
             priority={task.priority}
             title={task.title}
             qtdComments={task.qtdComments}
@@ -56,6 +57,7 @@ export const TablesTasks = () => {
         task={inProgressTasks.map((task) => (
           <Task
             key={task.id}
+            imgSrc={task.fileName}
             priority={task.priority}
             title={task.title}
             qtdComments={task.qtdComments}
@@ -74,6 +76,7 @@ export const TablesTasks = () => {
         task={doneTasks.map((task) => (
           <Task
             key={task.id}
+            imgSrc={task.fileName}
             priority={task.priority}
             title={task.title}
             qtdComments={task.qtdComments}
