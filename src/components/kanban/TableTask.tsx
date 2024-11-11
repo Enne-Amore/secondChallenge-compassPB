@@ -2,7 +2,6 @@ import React, { ComponentProps, useEffect, useState } from "react";
 import { ModalCreateTask } from "./ModalCreateTask";
 import styles from "./TableTask.module.css";
 import axios from "axios";
-import { Task } from "./Task";
 import { Tasks } from "../types/Tasks";
 
 export type Colors = ComponentProps<"div"> &
@@ -14,9 +13,10 @@ export type Colors = ComponentProps<"div"> &
     strongBgColor: string;
     titleColor: string;
     moreIcon: string;
+    task: React.ReactNode;
   };
 
-export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIcon }: Colors) => {
+export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIcon, task }: Colors) => {
   const [modalCreate, setModalCreate] = useState<boolean>(false);
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
@@ -79,17 +79,7 @@ export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIc
       )}
 
       <ul className={styles.taskList}>
-        {tasks.length > 0 ? (
-          tasks.map((task) => (
-            <Task
-              key={task.id}
-              priority={task.priority}
-              title={task.title}
-              qtdComments={task.qtdComments}
-              qtdCompletedTasks={task.qtdCompletedTasks}
-            />
-          ))
-        ) : null}
+        {task}
       </ul>
     </article>
   );

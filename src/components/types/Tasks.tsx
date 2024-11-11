@@ -1,6 +1,7 @@
 export interface Tasks {
   id: number;
   priority: string;
+  status: string;
   title: string;
   members: string[];
   qtdComments: number;
