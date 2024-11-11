@@ -5,10 +5,10 @@ import toast from "react-hot-toast";
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 
-const validateNome = (nome) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
-const validateJob = (nome) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
-const validateEmail = (email) => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
-const validatePassword = (password) =>
+const validateNome = (nome: string) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
+const validateJob = (nome: string) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
+const validateEmail = (email: string) => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+const validatePassword = (password: string) =>
     /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
 
 export const Subscribe = () => {
@@ -110,18 +110,18 @@ export const Subscribe = () => {
         });
     };
 
-    return (
-        <div className={styles.divContainer}>
-            <div className={styles.divForm}>
-                <div className={styles.divText}>
-                    <h1 className={styles.h1}>Sign Up Information</h1>
-                    <p className={styles.p}>
-                        Already have an account?{" "}
-                        <Link to="/login" className={styles.a}>
-                            Sign in
-                        </Link>
-                    </p>
-                </div>
+  return (
+    <div className={styles.divContainer}>
+      <div className={styles.divForm}>
+        <div className={styles.divText}>
+          <h1 className={styles.h1}>Sign Up Information</h1>
+          <p className={styles.p}>
+            Already have an account?{" "}
+            <Link to="/login" className={styles.a}>
+              Sign in
+            </Link>
+          </p>
+        </div>
 
                 <div className={styles.divName}>
                     <div className="md:w-1/2 md:mr-1">

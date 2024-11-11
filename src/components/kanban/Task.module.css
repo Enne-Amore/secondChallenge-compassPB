@@ -2,11 +2,22 @@
     @apply bg-white rounded-2xl shadow-sm p-2.5 pb-1.5 flex flex-col gap-3 min-w-52
 
     /* desktop */
-    desktop:min-w-64
+    desktop:min-w-64 desktop:rounded-3xl desktop:px-3
+}
+
+.figureTask {
+    @apply -mt-1 mb-1
+
+    /* desktop */
+    desktop:-mt-0
+}
+
+.imgTask {
+    @apply bg-[#E2E8F0] w-full h-full rounded-xl border border-[#E2E8F0]
 }
 
 .priority {
-    @apply bg-[#FFFBEB] text-[#F59E0B] text-xs font-semibold font-plus py-1.5 px-2.5 rounded-full w-max
+    @apply text-xs capitalize font-semibold font-plus py-1.5 px-2.5 rounded-full w-max
 
     /* desktop */
     desktop:text-sm
@@ -62,7 +73,7 @@
 }
 
 .img {
-    @apply w-full h-full rounded-full
+    @apply bg-[#E2E8F0] w-full h-full rounded-full
 }
 
 .containerInfo {

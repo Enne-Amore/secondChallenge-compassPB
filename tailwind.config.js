@@ -20,6 +20,8 @@ export default {
         "blue-check": "#5570F1",
         "social-color": "#5E6366",
         "btn-blue": "#1E293B",
+        'white2': '#F6F6F6E5',
+        'white3': '#FFFCFC'
       },
       width: {
         '342': "342px",
@@ -40,7 +42,12 @@ export default {
         '393': "393px",
         '308': "308px",
         '900': '900px',
+        '37': '37%',
+        '45': '45%',
+        '48': '48%',
         '51': '51%',
+        '55': '55%',
+        '65': '65%',
         '70': '70%',
         '85': '85%',
       },
@@ -61,14 +68,16 @@ export default {
         '418': '418px',
       },
       fontSize: {
-        '24': "24px",
-        '15': "15px",
         '14': "14px",
-        '40': "40px",
+        '15': "15px",
         '16': "16px",
-        '32': "32px",
         '20': "20px",
+        '24': "24px",
         '28': "28px",
+        '32': "32px",
+        '38': "38px",
+        '40': "40px",
+        '48': "48px",
         '86' : '86px'
       },
       fontFamily: {
@@ -97,8 +106,10 @@ export default {
       },
       screens: {
         'mobile': '393px',
-        'tablet': "744px",
-        'desktop': "1440px",
+        'tablet': '744px',
+        'desktop': '1440px',
+        'tablete': '394px',
+        'desktopi': "745px",
       },
       spacing: {
         '1/5': '20%',

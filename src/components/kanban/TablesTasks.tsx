@@ -1,5 +1,6 @@
 import { TableTask } from "./TableTask";
 import { Task } from "./Task";
+import img from "../../assets/task-img-illustration.png"
 import styles from "./TablesTasks.module.css";
 
 export const TablesTasks = () => {
@@ -14,9 +15,9 @@ export const TablesTasks = () => {
         moreIcon={"#4F46E5"}
         task={
           <>
-            <Task />
+            <Task priority="mid" title="Task 3" qtdComments={987} qtdCompletedTasks={210} />
 
-            <Task />
+            <Task priority="low" title="Task 2" qtdComments={32} qtdCompletedTasks={100} />
           </>
         }
       />
@@ -30,11 +31,11 @@ export const TablesTasks = () => {
         moreIcon={"#F59E0B"}
         task={
           <>
-            <Task />
+            <Task priority="high" title="Task 3" qtdComments={11} qtdCompletedTasks={187} />
 
-            <Task />
+            <Task priority="high" title="Task 3" qtdComments={11} qtdCompletedTasks={187} />
             
-            <Task />
+            <Task priority="low" title="Task 3" qtdComments={987} qtdCompletedTasks={210} />
           </>
         }
       />
@@ -48,7 +49,7 @@ export const TablesTasks = () => {
         moreIcon={"#22C55E"}
         task={
           <>
-            <Task />
+            <Task imgSrc={img} imgAlt="Task Illustration Image" priority="low" title="Task 3" qtdComments={987} qtdCompletedTasks={210} />
           </>
         }
       />

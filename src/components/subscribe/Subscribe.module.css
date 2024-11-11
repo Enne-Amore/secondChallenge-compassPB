@@ -1,25 +1,38 @@
 .divContainer {
-    @apply w-full h-full flex-1 flex justify-center items-center 
-    relative xl:flex xl:flex-row xl:justify-start bg-no-repeat xl:flex-1 
-    before:bg-[url("src/assets/sign-illustration.png")] md:before:h-full 
-    before:z-0 before:w-screen before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 
-    before:bg-no-repeat before:bg-cover before:bg-right-top 
-    before:blur-sm xl:before:w-1/2 xl:before:blur-none xl:before:left-1/2
+    @apply w-full h-full flex-1 flex justify-center items-center relative
+    before:bg-[url("src/assets/sign-illustration.png")] bg-no-repeat
+    before:z-0 before:w-screen before:absolute before:top-0 before:left-0 before:right-0 
+    before:bottom-0 before:bg-no-repeat before:blur-sm
+     before:bg-cover before:bg-right-top
+    /*tablet screen*/
+    tablet:before:h-full
+    /*desktop screen*/
+     desktop:flex desktop:flex-row desktop:justify-start desktop:flex-1 
+     desktop:before:w-1/2 desktop:before:blur-none desktop:before:left-1/2
 }
 
 
 .divForm {
     @apply bg-white w-353 flex flex-col my-5
-     justify-evenly rounded-3xl z-10 relative  md:w-656 md:justify-start md:min-h-[64.7%]
-     px-5 md:px-24 xl:w-1/2 xl:px-36 xl:h-full xl:flex xl:flex-col xl:items-start xl:justify-evenly
+    justify-evenly rounded-3xl  relative px-5
+    /*tablet screen*/
+     tablet:w-656 tablet:justify-start tablet:min-h-[64.7%]
+    tablet:px-24 
+    /*desktop screen*/
+      desktop:w-1/2 desktop:px-36 desktop:h-full desktop:flex desktop:flex-col desktop:items-start 
+      desktop:justify-evenly
 }
 
 .divText {
-    @apply flex flex-col items-center md:items-start md:mb-0  ;
+    @apply flex flex-col items-center 
+    /*tablet screen*/
+    tablet:items-start tablet:mb-0  ;
 }
 
 .divName{
-    @apply flex flex-col justify-between md:flex  md:flex-row  md:w-full 
+    @apply flex flex-col justify-between 
+    /*tablet screen*/
+    tablet:flex  tablet:flex-row  tablet:w-full 
      
 }
 .inputName{
@@ -33,7 +46,9 @@
 }
 
 .h1 {
-    @apply  text-24 font-roboto text-black-51 font-bold  md:mt-12 md:text-40 }
+    @apply  text-24 font-roboto text-black-51 font-bold  
+    /*tablet screen*/
+    tablet:mt-12 tablet:text-40 }
 .p {
     @apply text-15 text-black-51 
 }
@@ -48,20 +63,20 @@
 
 .btnSingIn {
     @apply  font-roboto  mb-5 mt-3
-         hover:bg-blue-74
+    /*hover*/
+     hover:bg-blue-74
 }
 .divLabel {
     @apply flex flex-col mt-3 text-14 text-black-51 font-bold  
 }
 
 .divInput {
-    @apply w-full  text-14 border-2 mb-3 md:flex-auto border-gray-100
-     p-2 rounded-md   focus:outline-none  
+    @apply w-full  text-14 border-2 mb-3  border-gray-100 p-2 rounded-md
+    /*focus*/
+    focus:outline-none
+  
 }
 
-.divSmallContainer{
-
-}
 
 .divSmall {
     @apply flex justify-center  w-full
@@ -78,10 +93,13 @@
 
 .btnFace {
     @apply flex justify-center border-2 p-2 mr-3 border-gray-200 
-    rounded-3xl w-110  hover:border-blue-26
+    rounded-3xl w-110 
+    /*hover*/
+    hover:border-blue-26
 }
 
 .btnGmail {
     @apply flex justify-center border-2 p-3 border-gray-200 rounded-3xl w-110 
+    /*hover*/
      hover:border-blue-26
 }

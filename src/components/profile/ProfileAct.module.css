@@ -1,0 +1,126 @@
+.profileContainer {
+  @apply max-w-full w-full flex flex-col bg-white2 p-8 tablet:p-6  tablet:max-w-[1440px]  desktop:p-10 rounded-lg m-auto desktopi:flex-row
+}
+
+.desktopLeft{
+  @apply desktopi:w-51
+}
+
+.desktopRight{
+  @apply desktopi:border-l desktopi:border-l-[rgba(0,0,0,0.25)] desktopi:border-l-[1px] desktopi:p-4 desktopi:flex desktopi:items-center desktopi:mt-10 desktopi:mt-40
+}
+.sectionLine{
+  @apply border-t border-t-[rgba(0,0,0,0.25)] border-t-[1px] desktopi:border-t-0
+}
+.profileSection{
+  @apply flex flex-col gap-9
+}
+
+.profileHeader {
+  @apply flex gap-4 tablet:flex-row items-center mb-6 tablet:mb-10;
+}
+
+.profileHeader p{
+  @apply text-28 -mt-[10px]
+}
+
+.profileContainer p{
+  @apply text-black text-opacity-50
+}
+
+.profilePicture {
+  @apply w-32 h-32 mb-9 drop-shadow-[0_2.89px_2.89px_rgba(0,0,0,0.5)] tablete:w-[174px] tablete:h-[181px] tablete:drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] desktop:w-44 desktop:h-44 tablet:mr-5;
+}
+
+.profileName {
+  @apply text-38 tablete:text-48 desktopi:text-5xl font-medium mb-1;
+}
+
+.username {
+  @apply text-28 tablet:text-xl desktop:text-28 text-black text-opacity-70;
+ }
+
+.profileData{
+  @apply mb-7
+}
+
+.profileData h1{
+  @apply text-24 font-medium tablete:text-32;
+}
+
+.profileData p{
+  @apply text-16 text-black text-opacity-50
+}
+
+.profileContent h1{
+  @apply text-24 font-medium mb-5
+}
+
+.contactInfo,
+.userDetails{
+  @apply text-15 text-black text-opacity-50
+}
+
+.social{
+  @apply font-bold w-11
+}
+
+.userTable{
+  @apply table-fixed border-separate border-spacing-y-4
+}
+
+.social{
+  @apply pr-12
+}
+
+.activityHeader{
+  @apply mb-[35px]
+}
+
+.activityHeader p{
+  @apply -mt-[15px]
+}
+
+.activityContent{
+  @apply flex gap-2
+}
+
+.activityContent{
+  @apply text-14 tablete:text-16 desktopi:mb-5
+}
+
+.actHL {
+  @apply  text-black font-medium
+}
+
+.activityPicture{
+  @apply w-6 h-12 rounded-[100px] desktopi:w-[50px] desktopi:h-[50px]
+}
+
+.reportHeader p{
+  @apply -mt-[15px]
+}
+
+.reportHeader{
+  @apply mb-5
+}
+.reportContent p{
+  @apply text-blue-46 font-bold 
+}
+.reportContent span{
+  @apply font-medium
+}
+
+.tasks{
+  @apply flex gap-5 
+}
+.reportContent{
+  @apply flex flex-wrap flex-col gap-6 text-16 tablete:text-20
+}
+.activityHeader h1{
+  @apply text-32
+}
+
+.reportHeader h1{
+  @apply tablete:text-32
+}
