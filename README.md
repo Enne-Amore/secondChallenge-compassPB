@@ -78,11 +78,11 @@ secondchallenge-compasspb/
 
 1. **Clone o repositório:**
 
-   No terminal, execute o seguinte comando para clonar o repositório:
+No terminal, execute o seguinte comando para clonar o repositório:
 
-   ```bash
-   git clone https://github.com/Enne-Amore/secondChallenge-compassPB.git
-   ```
+```bash
+git clone https://github.com/Enne-Amore/secondChallenge-compassPB.git
+```
 2. **Entre no diretório do projeto:**
 
 Navegue até o diretório do projeto clonado:
