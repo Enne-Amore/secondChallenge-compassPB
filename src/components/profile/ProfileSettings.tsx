@@ -14,8 +14,6 @@ export default function ProfileSettings() {
           <p className={styles.profileEmail}>john.doe@example.com</p>
         </div>
       </div>
-
-      {/* Project Profile Section */}
       <div className={styles.projectProfile}>
         <h1>Project Profile</h1>
         <p>Update your profile information in the sections below</p>
@@ -31,7 +29,6 @@ export default function ProfileSettings() {
           </p>
         </div>
         <div className={styles.profileGrid}>
-          {/* First Name e Last Name lado a lado */}
           <div className={styles.profileContent}>
             <span>First Name</span><br />
             <input className={`${styles.inputName} inputName`} type="text" placeholder="First name" />
@@ -41,7 +38,6 @@ export default function ProfileSettings() {
             <input className={`${styles.inputLname} inputLname`} type="text" placeholder="Last name" />
           </div>
 
-          {/* Campo de Email abaixo */}
           <div className="col-span-2 w-full">
             <span>Email</span>
             <input className={`${styles.inputEmail} inputEmail`} type="email" placeholder="E-mail" />
@@ -89,7 +85,7 @@ export default function ProfileSettings() {
           <div className={styles.optionsContainer}>
             <div className={styles.option}>
               <div className={styles.buttonTitle}>
-                <button className={styles.checkboxButton} onClick={() => selectOption(1)}></button>
+                <button className={styles.checkboxButton}></button>
                 <span>New Task</span>
               </div>
               <div className={styles.optionDescription}>
@@ -98,7 +94,7 @@ export default function ProfileSettings() {
             </div>
             <div className={styles.option}>
               <div className={styles.buttonTitle}>
-                <button className={styles.checkboxButton} onClick={() => selectOption(2)}></button>
+                <button className={styles.checkboxButton}></button>
                 <span>New team members</span>
               </div>
               <div className={styles.optionDescription}>
@@ -107,7 +103,7 @@ export default function ProfileSettings() {
             </div>
             <div className={styles.option}>
               <div className={styles.buttonTitle}>
-                <button className={styles.checkboxButton} onClick={() => selectOption(3)}></button>
+                <button className={styles.checkboxButton}></button>
                 <span>Weekly reports</span>
               </div>
               <div className={styles.optionDescription}>
@@ -163,8 +159,3 @@ export default function ProfileSettings() {
     </div>
   );
 }
-
-function selectOption(option: number) {
-  console.log(`Option ${option} selected`);
-}
-

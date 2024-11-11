@@ -1,5 +1,6 @@
 .profileContainer {
-  @apply max-w-full w-full bg-white p-5 tablete:p-6  tablete:max-w-[1440px]  desktopi:p-10 rounded-lg shadow-lg m-auto;
+  @apply max-w-full w-full bg-white3 p-8 tablet:p-6  tablet:max-w-[1440px]  desktop:p-10 rounded-lg m-auto;
+
 }
 
 .projectProfile {

@@ -15,6 +15,8 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.15.2",
     "cors": "^2.8.5",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
     "icons": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

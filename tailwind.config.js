@@ -20,6 +20,8 @@ export default {
         "blue-check": "#5570F1",
         "social-color": "#5E6366",
         "btn-blue": "#1E293B",
+        'white2': '#F6F6F6E5',
+        'white3': '#FFFCFC'
       },
       width: {
         '342': "342px",
@@ -66,16 +68,17 @@ export default {
         '418': '418px',
       },
       fontSize: {
-        '14': '14px',
-        '15': '15px',
-        '16': '16px',
-        '20': '20px',
-        '24': '24px',
-        '28': '28px',
-        '32': '32px',
-        '40': '40px',
-        '48': '48px',
-        '86': '86px'
+        '14': "14px",
+        '15': "15px",
+        '16': "16px",
+        '20': "20px",
+        '24': "24px",
+        '28': "28px",
+        '32': "32px",
+        '38': "38px",
+        '40': "40px",
+        '48': "48px",
+        '86' : '86px'
       },
       fontFamily: {
         'roboto': ["Roboto", "sans-serif"],
