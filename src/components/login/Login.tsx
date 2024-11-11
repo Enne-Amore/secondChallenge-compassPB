@@ -95,7 +95,6 @@ export const Login = () => {
       <form className={styles.divForm}>
         <div className={styles.divText}>
           <h1 className={styles.h1}>Login Information</h1>
-          <p className={styles.p}>Enter your credentials</p>
           <p className={styles.p}>
             New here? Let's take you to
             <Link to="/subscribe" className={styles.a}>
