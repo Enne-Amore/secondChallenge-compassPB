@@ -10,5 +10,6 @@ export interface Tasks {
   startTime: string;
   endTime: string;
   estimatedTime: string;
+  fileName: string;
   creator: string;
 }

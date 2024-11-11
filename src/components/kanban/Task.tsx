@@ -9,7 +9,6 @@ export type InfoTask = ComponentProps<"strong"> &
   ComponentProps<"input"> &
   ComponentProps<"span"> & {
     imgSrc?: string;
-    imgAlt?: string;
     priority: string;
     title: string;
     qtdComments: number;
@@ -18,7 +17,6 @@ export type InfoTask = ComponentProps<"strong"> &
 
 export const Task = ({
   imgSrc,
-  imgAlt,
   priority,
   title,
   qtdComments,
@@ -38,11 +36,11 @@ export const Task = ({
 
   return (
     <article className={styles.container}>
-      {imgSrc ? (
+      {imgSrc && (
         <figure className={styles.figureTask}>
-          <img src={imgSrc} alt={imgAlt} className={styles.imgTask} />
+          <img src={imgSrc} alt={imgSrc} className={styles.imgTask} />
         </figure>
-      ) : null}
+      )}
 
       <strong className={`${styles.priority} ${stylePriority}`}>
         {priority}

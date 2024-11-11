@@ -16,9 +16,6 @@
 
 .name {
     @apply text-black text-sm
-
-    /* desktop */
-    desktop:text-base
 }
 
 .job {
