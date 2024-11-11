@@ -114,7 +114,9 @@ Na aplicação, você pode:
 
 Realizar login e cadastro utilizando as opções integradas (Facebook, Google ou manualmente).
 Gerenciar produtos na página de administração.
-Explorar a navegação através do menu, que inclui links para páginas como Perfil e Configurações.## 🎨 Cores Utilizadas
+Explorar a navegação através do menu, que inclui links para páginas como Perfil e Configurações.
+
+## 🎨 Cores Utilizadas
 
 Aqui estão as cores utilizadas no projeto, com os valores correspondentes e a visualização delas:
 
