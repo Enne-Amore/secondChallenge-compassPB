@@ -44,7 +44,7 @@
 }
 
 .ftButton {
-    @apply bg-white  w-[148px] h-9 rounded-md font-bold text-[15px] text-blue-850
+    @apply bg-white  w-[148px] h-9 rounded-md font-bold text-[15px] text-blue-850 hover:bg-[#1E293B] hover:text-white
     /* tela de tablet */
     tablet:w-[240px] tablet:h-[48px] tablet:text-[16px]
 }

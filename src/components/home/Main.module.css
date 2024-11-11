@@ -37,12 +37,12 @@
 }
 
 .getButton{
-    @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6
+    @apply text-center rounded-full border w-[118px] h-[36px] font-bold  mb-6 
      /* tela de tablet */
      tablet:items-start tablet:w-[240px] tablet:h-12 tablet:py-2 
      tablet:px-4 tablet:self-start tablet:ml-[68px]
       /* tela de desktop */
-      desktop:self-start
+      desktop:self-start hover:border-[#268FE4]
 }
 
 .containerCard{

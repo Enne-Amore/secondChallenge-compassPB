@@ -16,6 +16,7 @@ import Erro404Page from "./pages/Erro404Page";
 import Erro403Page from "./pages/Erro403Page";
 import Profile from "./pages/Profile";
 
+
 export default function App() {
     const { isSignedIn } = useUser();
 
@@ -69,10 +70,13 @@ export default function App() {
                 path="/profile"
                 element={
                     <ProtectedRoute>
+
                         <Profile />
+
                     </ProtectedRoute>
                 }
             />
+
 
                 <Route path="*" element={<Erro404Page/>} />
                 <Route path="/403" element={<Erro403Page />} />
