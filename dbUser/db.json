@@ -33,24 +33,5 @@
       "position": "hjdbchdc",
       "socialMedia": ""
     }
-  ],
-  "tasks": [
-    {
-      "id": "1",
-      "title": "First Task",
-      "priority": "mid",
-      "people": "Enne",
-      "comments": "10",
-      "completedTasks": "1",
-      "progress": "50",
-      "startDate": "12/12/2024",
-      "startTime": "12:00",
-      "endDate": "20/12/2024",
-      "endTime": "18:00",
-      "estimed": "10",
-      "creatorTask": "Enne",
-      "imgSrc": "",
-      "imgAlt": ""
-    }
   ]
 }

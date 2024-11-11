@@ -30,7 +30,7 @@
 }
 
 .learButton {
-    @apply w-52 h-9 border rounded-md bg-white text-blue-950  m-auto font-semibold
+    @apply w-52 h-9 border rounded-md bg-white text-blue-950  m-auto font-semibold hover:bg-[#5C5A79] border-none hover:text-white
     /* tela de tablet */
     tablet:w-[240px] tablet:h-[48px] tablet:self-start tablet:p-[12px] tablet:m-0
 }

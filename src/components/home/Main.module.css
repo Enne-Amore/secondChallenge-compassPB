@@ -42,7 +42,7 @@
      tablet:items-start tablet:w-[240px] tablet:h-12 tablet:py-2 
      tablet:px-4 tablet:self-start tablet:ml-[68px]
       /* tela de desktop */
-      desktop:self-start
+      desktop:self-start hover:border-[#268FE4]
 }
 
 .containerCard{

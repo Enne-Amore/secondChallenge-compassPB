@@ -1,32 +1,45 @@
 .divContainer {
-    @apply  w-full h-full flex-1 flex justify-center items-center relative
-     xl:flex xl:flex-row xl:justify-end bg-no-repeat  xl:flex-1
-    before:bg-[url("src/assets/login-illustration.png")] md:before:h-full
-      before:z-0 before:w-screen before:absolute before:top-0 before:left-0 
-     before:right-0 before:bottom-0 before:bg-no-repeat before:bg-cover before:blur-sm
-     xl:before:w-1/2 xl:before:blur-none
+    @apply w-full h-full flex-1 flex justify-center items-center relative
+     before:bg-[url("src/assets/login-illustration.png")]  before:z-0 
+     before:w-screen before:absolute before:top-0 before:left-0 
+    before:right-0 before:bottom-0 before:bg-no-repeat before:bg-cover before:blur-sm
+    bg-no-repeat
+     /*tablet screen*/
+     tablet:before:h-full 
+    /*desktop screen*/
+     desktop:flex desktop:flex-row desktop:justify-end  desktop:flex-1
+     desktop:before:w-1/2 desktop:before:blur-none
     
  
 }
 
-
-
 .divForm {
-    @apply bg-white w-353 flex flex-col justify-evenly rounded-3xl z-10 relative h-624 
-      md:w-656 md:justify-start md:h-624  px-5  md:px-24 xl:w-1/2 xl:px-36 my-5 md:my-0
-     xl:h-full  xl:flex xl:flex-col xl:items-start xl:justify-evenly 
+    @apply bg-white w-353 flex flex-col justify-evenly rounded-3xl  relative h-624 
+            px-5 my-5
+    /*tablet screen*/
+      tablet:w-656 tablet:justify-start tablet:h-624   tablet:px-24 xl:w-1/2 xl:px-36  tablet:my-3
+    /*desktop screen*/
+     desktop:h-full desktop:flex desktop:flex-col desktop:items-start desktop:justify-evenly 
 }
 
 .divText {
-    @apply flex flex-col items-center md:items-start md:mb-12  
+    @apply flex flex-col items-center
+    /*tablet screen*/
+    tablet:items-start tablet:mb-12  
 }
 
 .h1 {
-    @apply  text-24 font-roboto text-black-51 font-bold  md:mt-12  md:text-40 xl:ml-0;
+    @apply  text-24 font-roboto text-black-51 font-bold 
+    /*tablet screen*/
+     tablet:mt-12  tablet:text-40
+    /*desktop screen*/
+     desktop:ml-0;
 }
 
 .p {
-    @apply text-15 text-black-51  xl:text-16 xl:ml-0;
+    @apply text-15 text-black-51 
+    /*desktop screen*/
+    desktop:text-16 desktop:ml-0;
 }
 
 .a {
@@ -34,19 +47,28 @@
 }
 
 .divContainerInput {
-    @apply flex flex-col  w-full xl:mb-0
+    @apply flex flex-col  w-full 
+    /*desktop screen*/
+    desktop:mb-0
 }
 
 .divLabel {
-    @apply flex flex-col text-14 text-black-51 font-bold  xl:mt-0;
+    @apply flex flex-col text-14 text-black-51 font-bold 
+    /*desktop screen*/
+    desktop:mt-0;
 }
 
 .divInput {
-    @apply w-full  border-2 mb-3 border-gray-100 p-3 rounded-md  focus:outline-none  
-    xl:ml-0 xl:mb-5 
+    @apply w-full  border-2 mb-3 border-gray-100 p-3 rounded-md  focus:outline-none 
+    /*desktop screen*/
+    desktop:ml-0 desktop:mb-5 
 }
 .btnLogin { 
-    @apply mt-10 font-roboto mb-10   xl:ml-0 hover:bg-blue-74;
+    @apply mt-10 font-roboto mb-10   
+    /*desktop screen*/
+    desktop:ml-0
+    /*hover*/
+    hover:bg-blue-74;
 }
 .divSmall {
     @apply flex justify-center  ;
@@ -56,7 +78,9 @@
 }
 
 .divBtn {
-    @apply flex justify-center mb-4 items-center  xl:mb-32;
+    @apply flex justify-center mb-4 items-center 
+    /*desktop screen*/
+    desktop:mb-32;
 }
 .btnFace {
     @apply flex justify-center border-2 p-2  border-gray-200 rounded-3xl 
@@ -64,5 +88,6 @@
 }
 .btnGmail {
     @apply flex justify-center border-2 p-3 ml-2 border-gray-200 rounded-3xl w-110 
+    /*hover*/
      hover:border-blue-26;
 }
