@@ -1,96 +1,114 @@
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useUser, useClerk } from "@clerk/clerk-react"; // Hook do Clerk
+import toast from "react-hot-toast";
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import { useClerk, useUser } from "@clerk/clerk-react";
-import { registerUser } from "../services/authService";
 
-// Validações de regex
-const validateNome = (nome: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
-const validateJob = (job: string): boolean => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(job);
-const validateEmail = (email: string): boolean => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
-const validatePassword = (password: string): boolean =>
-  /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
+const validateNome = (nome: string) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{2,}$/.test(nome);
+const validateJob = (nome: string) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]{5,}$/.test(nome);
+const validateEmail = (email: string) => /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+const validatePassword = (password: string) =>
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
 
 export const Subscribe = () => {
-  const { isAuthenticated } = useClerk();
-  const [firstName, setFirstName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
-  const [job, setJob] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [errors, setErrors] = useState({
-    emailError: false,
-    passwordError: false,
-    lastNameError: false,
-    firstNameError: false,
-    jobError: false,
-  });
-  const [isValidated, setIsValidated] = useState<boolean>(false);
-  const navigate = useNavigate();
+    const { user, openSignIn, isAuthenticated } = useClerk();
+    const navigate = useNavigate();
 
-  // Lida com a validação dos campos
-  const handleValidation = () => {
-    const isFirstNameValid = validateNome(firstName);
-    const isLastNameValid = validateNome(lastName);
-    const isEmailValid = validateEmail(email);
-    const isJobValid = validateJob(job);
-    const isPasswordValid = validatePassword(password);
+    const [firstName, setFirstName] = useState(user?.firstName || "");
+    const [lastName, setLastName] = useState(user?.lastName || "");
+    const [email, setEmail] = useState(user?.emailAddresses[0]?.emailAddress || "");
+    const [job, setJob] = useState("");
+    const [password, setPassword] = useState("");
+    const [isValidated, setIsValidated] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
-    setErrors({
-      firstNameError: !isFirstNameValid,
-      lastNameError: !isLastNameValid,
-      emailError: !isEmailValid,
-      jobError: !isJobValid,
-      passwordError: !isPasswordValid,
+    const [erros, setErros] = useState({
+        firstNameErro: false,
+        lastNameErro: false,
+        emailErro: false,
+        jobErro: false,
+        passwordErro: false,
     });
 
-    return isFirstNameValid && isLastNameValid && isEmailValid && isJobValid && isPasswordValid;
-  };
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate("/kanban");
+        }
+    }, [isAuthenticated, navigate]);
 
-  const handleSignUp = async () => {
-    if (handleValidation()) {
-      const userData = {
-        firstName,
-        lastName,
-        user: `@${firstName}${lastName}`,
-        createdDate: new Date().toISOString(),
-        email,
-        password,
-        job,
-        socialMedia: { twitter: "", instagram: "", linkedin: "" },
-        profilePicture: "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
-      };
+    const saveData = async () => {
+        const url = "http://localhost:4000/users";
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    user: "@" + firstName + lastName,
+                    date: new Date(),
+                    email,
+                    password,
+                    position: job,
+                    socialMedia: "",
+                }),
+            });
+            return response.json();
+        } catch (error) {
+            console.log("Error", error);
+        }
+    };
 
-      try {
-        await registerUser(userData);
-        toast.success("Account created successfully!");
-        setTimeout(() => navigate("/login"), 2000); // Redireciona para login após sucesso
-        clearInputs();
-      } catch (error) {
-        console.error("Error registering user:", error);
-        toast.error("Failed to create account. Please try again.");
-      }
-    } else {
-      setIsValidated(true);
-    }
-  };
+    const clear = () => {
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setJob("");
+        setPassword("");
+        setErros({
+            firstNameErro: false,
+            lastNameErro: false,
+            emailErro: false,
+            jobErro: false,
+            passwordErro: false,
+        });
+    };
 
-  const clearInputs = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setJob("");
-    setPassword("");
-    setErrors({
-      emailError: false,
-      passwordError: false,
-      lastNameError: false,
-      firstNameError: false,
-      jobError: false,
-    });
-  };
+    const handleSignIn = async () => {
+        const isFirstNameValid = validateNome(firstName);
+        const isLastNameValid = validateNome(lastName);
+        const isEmailValid = validateEmail(email);
+        const isJobValid = validateJob(job);
+        const isPasswordValid = validatePassword(password);
+
+        setIsValidated(true);
+        setErros({
+            firstNameErro: !isFirstNameValid,
+            lastNameErro: !isLastNameValid,
+            emailErro: !isEmailValid,
+            jobErro: !isJobValid,
+            passwordErro: !isPasswordValid,
+        });
+
+        if (isFirstNameValid && isLastNameValid && isEmailValid && isJobValid && isPasswordValid) {
+            setIsLoading(true);
+            await saveData();
+            clear();
+            toast.success("Account created successfully!");
+            setIsLoading(false);
+            setTimeout(() => navigate("/login"), 2000);
+        }
+    };
+
+    const handleOAuthLogin = (provider: string) => {
+        openSignIn({
+            strategy: provider === "google" ? "oauth_google" : "oauth_facebook",
+            redirectUrl: "/kanban",
+        });
+    };
 
   return (
     <div className={styles.divContainer}>
@@ -100,81 +118,147 @@ export const Subscribe = () => {
           <p className={styles.p}>
             Already have an account?{" "}
             <Link to="/login" className={styles.a}>
-              Sign in
+              Log in
             </Link>
           </p>
         </div>
 
-        <div className={styles.divName}>
-          <div className="md:w-1/2 md:mr-1">
-            <label className={styles.labelName}>First name</label>
-            <input
-              type="text"
-              placeholder="Enter your first name"
-              className={`${styles.inputName} ${
-                isValidated ? (errors.firstNameError ? "bg-red-300" : "bg-green-200") : ""
-              }`}
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-          <div className="md:w-1/2 md:ml-1">
-            <label className={styles.labelName}>Last name</label>
-            <input
-              type="text"
-              placeholder="Enter your last name"
-              className={`${styles.inputName} ${
-                isValidated ? (errors.lastNameError ? "bg-red-300" : "bg-green-200") : ""
-              }`}
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
-        </div>
+                <div className={styles.divName}>
+                    <div className="md:w-1/2 md:mr-1">
+                        <label className={styles.labelName}>First name</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your first name"
+                            className={`${styles.inputName} ${
+                                isValidated
+                                    ? erros.firstNameErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
+                        {isValidated && erros.firstNameErro && (
+                            <p className="text-red-500">First name must contain only letters and at least 2 characters.</p>
+                        )}
+                    </div>
+                    <div className="md:w-1/2 md:ml-1">
+                        <label className={styles.labelName}>Last name</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your last name"
+                            className={`${styles.inputName} ${
+                                isValidated
+                                    ? erros.lastNameErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                        {isValidated && erros.lastNameErro && (
+                            <p className="text-red-500">Last name must contain only letters and at least 2 characters.</p>
+                        )}
+                    </div>
+                </div>
 
-        <div className={styles.divContainerInput}>
-          <div className="w-full">
-            <label className={styles.divLabel}>Email</label>
-            <input
-              type="text"
-              placeholder="Enter your email"
-              className={`${styles.divInput} ${
-                isValidated ? (errors.emailError ? "bg-red-300" : "bg-green-200") : ""
-              }`}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="w-full">
-            <label className={styles.divLabel}>Job position</label>
-            <input
-              type="text"
-              placeholder="Enter your job position"
-              className={`${styles.divInput} ${
-                isValidated ? (errors.jobError ? "bg-red-300" : "bg-green-200") : ""
-              }`}
-              value={job}
-              onChange={(e) => setJob(e.target.value)}
-            />
-          </div>
-          <div className="w-full">
-            <label className={styles.divLabel}>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className={`${styles.divInput} ${
-                isValidated ? (errors.passwordError ? "bg-red-300" : "bg-green-200") : ""
-              }`}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-        </div>
+                <div className={styles.divContainerInput}>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Email</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your email"
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.emailErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        {isValidated && erros.emailErro && (
+                            <p className="text-red-500">Please enter a valid email address.</p>
+                        )}
+                    </div>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Job position</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your job position"
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.jobErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
+                            value={job}
+                            onChange={(e) => setJob(e.target.value)}
+                        />
+                        {isValidated && erros.jobErro && (
+                            <p className="text-red-500">Job position must be at least 5 characters.</p>
+                        )}
+                    </div>
+                    <div className="w-full">
+                        <label className={styles.divLabel}>Password</label>
+                        <input
+                            type="password"
+                            placeholder="Enter your password"
+                            className={`${styles.divInput} ${
+                                isValidated
+                                    ? erros.passwordErro
+                                        ? "bg-red-300"
+                                        : "bg-green-200"
+                                    : ""
+                            }`}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        {isValidated && erros.passwordErro && (
+                            <p className="text-red-500">Password must be at least 8 characters, with an uppercase letter, a number, and a special character.</p>
+                        )}
+                    </div>
+                </div>
 
-        <Button type="button" full color="blue" className={styles.btnSingIn} onClick={handleSignUp}>
-          Create an account
-        </Button>
-      </div>
-    </div>
-  );
+                <Button
+                    type="button"
+                    full
+                    color="blue"
+                    className={styles.btnSingIn}
+                    onClick={handleSignIn}
+                    disabled={isLoading}
+                >
+                    {isLoading ? "Creating account..." : "Create an account"}
+                </Button>
+
+                <div className={styles.divBtn}>
+                    <div
+                        className={styles.btnFace}
+                        onClick={() => handleOAuthLogin("facebook")}
+                    >
+                        <img
+                            src="src/assets/facebook-logo.png"
+                            alt="Facebook login"
+                            className={styles.iconOAuth}
+                        />
+                    </div>
+
+                    <div
+                        className={styles.btnGmail}
+                        onClick={() => handleOAuthLogin("google")}
+                    >
+                        <img
+                            src="src/assets/google-icon.png"
+                            alt="Google login"
+                            className={styles.iconOAuth}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };

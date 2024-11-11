@@ -5,7 +5,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { SubscribePage } from "./pages/SubscribePage";
 import { Kanban } from "./pages/Kanban";
 import Settings from "./pages/Settings";
-import ProfileAct from "./components/profile/ProfileActivities";
+
 
 import "./index.css";
 import { Toaster } from "react-hot-toast";
@@ -14,6 +14,7 @@ import { useUser } from "@clerk/clerk-react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Erro404Page from "./pages/Erro404Page";
 import Erro403Page from "./pages/Erro403Page";
+import ProfilePage from "./pages/ProfilePage";
 
 export default function App() {
     const { isSignedIn } = useUser();
@@ -68,10 +69,11 @@ export default function App() {
                 path="/profile"
                 element={
                     <ProtectedRoute>
-                        <ProfileAct />
+                        <ProfilePage />
                     </ProtectedRoute>
                 }
             />
+
 
                 <Route path="*" element={<Erro404Page/>} />
                 <Route path="/403" element={<Erro403Page />} />

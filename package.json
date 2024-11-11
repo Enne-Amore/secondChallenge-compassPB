@@ -16,6 +16,8 @@
     "@clerk/clerk-react": "^5.15.2",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
     "icons": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

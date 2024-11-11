@@ -1,38 +1,47 @@
 {
-    "posts": [
-        {
-            "id": "e9e9",
-            "firstName": "Erica",
-            "lastName": "Farias",
-            "user": "@EricaFarias",
-            "date": "2024-11-08T13:02:32.089Z",
-            "e-mail": "ericafa@gmail.com",
-            "password": "Erica23-987",
-            "position": "Desenvolvedora",
-            "socialMedia": ""
-        },
-        {
-            "id": "1b0e",
-            "firstName": "João",
-            "lastName": "Andrare",
-            "user": "@JoãoAndrare",
-            "date": "2024-11-08T14:14:35.742Z",
-            "e-mail": "joao@gmail.com",
-            "password": "Joao23-677$",
-            "position": "Analista",
-            "socialMedia": ""
-        },
-        {
-            "id": "faaf",
-            "firstName": "pedro",
-            "lastName": "farias",
-            "user": "@pedrofarias",
-            "date": "2024-11-08T23:14:28.130Z",
-            "e-mail": "pedr@gmail.com",
-            "password": "Ertgvgv4996-9955",
-            "position": "hjdbchdc",
-            "socialMedia": ""
-        }
-    ],
-    "users": []
+  "posts": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "position": "Developer",
+      "socialMedia": ""
+    },
+    {
+      "id": "0fd1",
+      "firstName": "orlean",
+      "lastName": "sousa",
+      "user": "@orleansousa",
+      "date": "2024-11-11T14:03:55.997Z",
+      "email": "teste@test.com",
+      "password": "129312837A!",
+      "position": "uahsuashu",
+      "socialMedia": ""
+    },
+    {
+      "id": "7429",
+      "firstName": "asdasd",
+      "lastName": "adasd",
+      "user": "@asdasdadasd",
+      "date": "2024-11-11T14:06:28.405Z",
+      "email": "asdasd@asdas.com",
+      "password": "12312312Q@",
+      "position": "qeqweqw",
+      "socialMedia": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "6fa7",
+      "firstName": "asdasd",
+      "lastName": "adasd",
+      "user": "@asdasdadasd",
+      "date": "2024-11-11T14:08:02.131Z",
+      "email": "sda@das.com",
+      "password": "13121412@!A",
+      "position": "sadasdas",
+      "socialMedia": ""
+    }
+  ]
 }

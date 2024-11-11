@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Erro404 = () => {
     return (
         <div>
-            <div className="  flex flex-col justify-start items-center md:flex-row lg:justify-center">
+            <div className="  flex flex-col justify-start items-center md:flex-row lg:justify-center desktopi:gap-16">
                 <div>
                     <img
                         src="src/assets/error-illustration.png"
@@ -11,14 +11,15 @@ const Erro404 = () => {
                     ></img>
                 </div>
                 <div>
-                    <div className="flex flex-col justify-center items-center">
-                        <h1 className="text-86 text-black ">404</h1>
-                        <p className="text-18 text-black text-center px-16">
+                    <div className="flex flex-col justify-center items-center ">
+                        <h1 className="text-86 text-black desktopi:self-start">404</h1>
+                        <p className="text-18 text-black text-center px-16 desktopi:text-24 
+                        desktopi:max-w-[440px] desktopi:px-0 desktopi:text-start">
                             Oops! Nothing to see here, just a lot Kanban task.
                         </p>
                     </div>
                     <div className=" pt-7  flex justify-center items-center md:justify-end md:h-full md:mr-20">
-                        <Link to="/" className="text-blue-46 underline font-bold">
+                        <Link to="/" className="text-blue-46 underline font-bold desktopi:text-[20px]">
                             Go back to home
                         </Link>
                     </div>
