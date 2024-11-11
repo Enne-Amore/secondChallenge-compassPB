@@ -42,8 +42,12 @@ export default {
         '393': "393px",
         '308': "308px",
         '900': '900px',
-        '40': "40%",
+        '37': '37%',
+        '45': '45%',
+        '48': '48%',
         '51': '51%',
+        '55': '55%',
+        '65': '65%',
         '70': '70%',
         '85': '85%',
       },
@@ -102,10 +106,10 @@ export default {
       },
       screens: {
         'mobile': '393px',
-        'tablet': "744px",
-        'desktop': "1440px",
-        'tablete': "394px",
-        'desktopi': "745px"
+        'tablet': '744px',
+        'desktop': '1440px',
+        'tablete': '394px',
+        'desktopi': "745px",
       },
       spacing: {
         '1/5': '20%',

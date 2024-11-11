@@ -127,7 +127,7 @@ export default function ProfileSettings() {
             <label>Twitter/X</label>
             <div className={styles.inputRow}>
               <input type="text" className={styles.urlInput} value="https://x.com/" readOnly />
-              <input type="text" placeholder="TheJohnDoe" />
+              <input type="text" className={styles.socialInput} placeholder="TheJohnDoe" />
             </div>
           </div>
 
@@ -136,7 +136,7 @@ export default function ProfileSettings() {
             <label>Instagram</label>
             <div className={styles.inputRow}>
               <input type="text" className={styles.urlInput} value="https://instagram.com/" readOnly />
-              <input type="text" placeholder="TheJohnDoe" />
+              <input type="text" className={styles.socialInput} placeholder="TheJohnDoe" />
             </div>
           </div>
 
@@ -145,7 +145,7 @@ export default function ProfileSettings() {
             <label>Linkedin</label>
             <div className={styles.inputRow}>
               <input type="text" className={styles.urlInput} value="https://linkedin.com/" readOnly />
-              <input type="text" placeholder="TheJohnDoe" />
+              <input type="text" className={styles.socialInput} placeholder="TheJohnDoe" />
             </div>
           </div>
         </div>

@@ -1,20 +1,16 @@
-import { ComponentProps, useState } from "react";
+import { ChangeEvent, ComponentProps } from "react";
 import { BsUpload } from "react-icons/bs";
 import { FiTrash2 } from "react-icons/fi";
 import { GoPaperclip } from "react-icons/go";
 
 export type Styles = ComponentProps<"label"> & {
   stylesLabel: string;
+  changeVal: (e: ChangeEvent<HTMLInputElement>) => void;
+  fileName: string | null;
+  setFileName: (fileName: string | null) => void;
 };
 
-export const TaskCoverInput = ({ stylesLabel }: Styles) => {
-  const [fileName, setFileName] = useState<string | null>(null);
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files ? event.target.files[0] : null;
-    setFileName(file ? file.name : null);
-  };
-
+export const TaskCoverInput = ({ stylesLabel, changeVal, fileName, setFileName }: Styles) => {
   return (
     <div className="flex flex-col">
       <label htmlFor="img" className={stylesLabel}>
@@ -24,9 +20,9 @@ export const TaskCoverInput = ({ stylesLabel }: Styles) => {
       <div className="relative w-full flex flex-col items-end desktop:-mt-1.5">
         <input
           type="file"
-          id="file-upload"
+          id="fileUpload"
           className="hidden"
-          onChange={handleFileChange}
+          onChange={changeVal}
         />
 
         <span className="text-xs text-[#4F46E5] font-medium">optional</span>
@@ -47,7 +43,7 @@ export const TaskCoverInput = ({ stylesLabel }: Styles) => {
         ) : null}
 
         <label
-          htmlFor="file-upload"
+          htmlFor="fileUpload"
           className="flex flex-col items-center gap-2 w-full border border-[#60A5FA] border-dashed rounded-lg px-8 py-4 desktop:py-6 text-[#4B5563] text-xs font-normal cursor-pointer"
         >
           <BsUpload className="text-lg" />

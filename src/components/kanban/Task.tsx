@@ -1,26 +1,58 @@
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
 import imgProfile from "../../assets/profile-img-1.png";
 import { FaCircleCheck } from "react-icons/fa6";
-import { useState } from "react";
+import { ComponentProps, useState } from "react";
 import styles from "./Task.module.css";
 
-export const Task = () => {
+export type InfoTask = ComponentProps<"strong"> &
+  ComponentProps<"h3"> &
+  ComponentProps<"input"> &
+  ComponentProps<"span"> & {
+    imgSrc?: string;
+    imgAlt?: string;
+    priority: string;
+    title: string;
+    qtdComments: number;
+    qtdCompletedTasks: number;
+  };
+
+export const Task = ({
+  imgSrc,
+  imgAlt,
+  priority,
+  title,
+  qtdComments,
+  qtdCompletedTasks,
+}: InfoTask) => {
   const [progress, setProgress] = useState<string>("0");
+
+  let stylePriority: string = "";
+
+  if (priority === "mid") {
+    stylePriority = "bg-[#FFFBEB] text-[#F59E0B]";
+  } else if (priority === "low") {
+    stylePriority = "bg-[#EEF2FF] text-[#4F46E5]";
+  } else if (priority === "high") {
+    stylePriority = "bg-[#BD2323] text-white";
+  }
 
   return (
     <article className={styles.container}>
-      <strong className={styles.priority}>
-        Mid
+      {imgSrc ? (
+        <figure className={styles.figureTask}>
+          <img src={imgSrc} alt={imgAlt} className={styles.imgTask} />
+        </figure>
+      ) : null}
+
+      <strong className={`${styles.priority} ${stylePriority}`}>
+        {priority}
       </strong>
 
-      <h3 className={styles.title}>Task 3</h3>
+      <h3 className={styles.title}>{title}</h3>
 
       <div className={styles.containerProgress}>
         <div className={styles.containerInfoProgress}>
-          <label
-            htmlFor="progress"
-            className={styles.labelProgress}
-          >
+          <label htmlFor="progress" className={styles.labelProgress}>
             Progress
           </label>
 
@@ -40,19 +72,11 @@ export const Task = () => {
       <div className={styles.containerPeople}>
         <ul className={styles.imgsPeople}>
           <figure className={styles.firstPerson}>
-            <img
-              src={imgProfile}
-              alt="Profile image"
-              className={styles.img}
-            />
+            <img src={imgProfile} alt="Profile image" className={styles.img} />
           </figure>
 
           <figure className={styles.othersPeople}>
-            <img
-              src={imgProfile}
-              alt="Profile image"
-              className={styles.img}
-            />
+            <img src={imgProfile} alt="Profile image" className={styles.img} />
           </figure>
         </ul>
 
@@ -60,13 +84,13 @@ export const Task = () => {
           <div className={styles.containerData}>
             <IoChatbubbleEllipsesSharp className={styles.icon} />
 
-            <span className={styles.qtd}>987</span>
+            <span className={styles.qtd}>{qtdComments}</span>
           </div>
 
           <div className={styles.containerData}>
             <FaCircleCheck className={styles.icon} />
 
-            <span className={styles.qtd}>210</span>
+            <span className={styles.qtd}>{qtdCompletedTasks}</span>
           </div>
         </div>
       </div>
