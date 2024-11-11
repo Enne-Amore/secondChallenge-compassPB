@@ -60,6 +60,7 @@ export const Subscribe = () => {
         password,
         job,
         socialMedia: { twitter: "", instagram: "", linkedin: "" },
+        profilePicture: "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
       };
 
       try {

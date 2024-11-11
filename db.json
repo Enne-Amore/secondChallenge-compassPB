@@ -1,3 +1,20 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "user": "@johndoe",
+      "createdDate": "2024-11-11T10:00:00",
+      "email": "john.doe@example.com",
+      "password": "password123",
+      "job": "Developer",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg"
+    }
+  ]
 }
