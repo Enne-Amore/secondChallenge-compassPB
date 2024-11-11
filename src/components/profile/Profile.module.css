@@ -39,7 +39,7 @@
 .inputName,
 .inputLname,
 .inputEmail {
-  @apply p-2 w-full h-9 mt-1 mb-2 border border-gray-200 rounded-lg;
+  @apply p-2 w-full h-9 mt-1 mb-2 border border-gray-200 rounded-lg hover:border-[rgba(0,0,0,0.5)];
 }
 
 .profileHeader {
@@ -134,14 +134,14 @@
   @apply w-55 bg-gray-100 pointer-events-none text-gray-600;
 }
 .socialInput{
-  @apply w-45
+  @apply w-45 hover:border-[rgba(0,0,0,0.5)]
 }
 .buttonUpdate {
-  @apply w-full tablete:w-51 flex flex-col mx-auto mt-6 tablete:mt-8;
+  @apply w-full tablete:w-51 flex flex-col mx-auto mt-6 tablete:mt-8 
 }
 
 .updateButton {
-  @apply bg-btn-blue text-white py-2 px-4 rounded-lg font-medium w-full mt-5
+  @apply bg-btn-blue text-white py-2 px-4 rounded-lg font-medium w-full mt-5 hover:bg-[#3B5174]
 }
 
 .backLink {

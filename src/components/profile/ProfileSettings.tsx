@@ -154,7 +154,7 @@ export default function ProfileSettings() {
       {/* Update Button */}
       <div className={styles.buttonUpdate}>
         <button className={styles.updateButton}>Update information</button>
-        <p className={styles.backLink}>Never mind, take me <Link to="/kanban">back to my project</Link>.</p>
+        <p className={styles.backLink}>Never mind, take me <Link to="/kanban" className="hover:underline">back to my project</Link>.</p>
       </div>
     </div>
   );
