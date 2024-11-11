@@ -5,9 +5,10 @@ import { DateInputs } from "./DateInputs";
 import { TaskCoverInput } from "./TaskCoverInput";
 import { TitleInput } from "./TitleInput";
 import { RadioInputs } from "./RadioInputs";
-import styles from "./FormCreateTask.module.css";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Modal } from "../ModalCreateTask";
+import { addTask } from "../../services/authService";
+import styles from "./FormCreateTask.module.css";
 
 export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
   const [title, setTitle] = useState<string>("");
@@ -18,36 +19,23 @@ export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
   const [startTime, setStartTime] = useState<string>("00:00");
   const [endTime, setEndTime] = useState<string>("00:00");
   const [fileName, setFileName] = useState<string | null>(null);
-  const [addPeople, setAddPeople] = useState<string>("");
+  const [addPeople, setAddPeople] = useState<string[]>([]);
   const [priority, setPriority] = useState<string>("");
 
-  const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleTitle = (e: ChangeEvent<HTMLInputElement>) =>
     setTitle(e.target.value);
-  };
-
-  const handleStatus = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleStatus = (e: ChangeEvent<HTMLInputElement>) =>
     setStatus(e.target.value);
-  };
-
-  const handleDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleDescription = (e: ChangeEvent<HTMLTextAreaElement>) =>
     setDescription(e.target.value);
-  };
-
-  const handleStartDate = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleStartDate = (e: ChangeEvent<HTMLInputElement>) =>
     setStartDate(e.target.value);
-  };
-
-  const handleEndDate = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEndDate = (e: ChangeEvent<HTMLInputElement>) =>
     setEndDate(e.target.value);
-  };
-
-  const handleStartTime = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleStartTime = (e: ChangeEvent<HTMLInputElement>) =>
     setStartTime(e.target.value);
-  };
-
-  const handleEndTime = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEndTime = (e: ChangeEvent<HTMLInputElement>) =>
     setEndTime(e.target.value);
-  };
 
   const handleImg = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
@@ -55,15 +43,37 @@ export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
   };
 
   const handleAddPeople = (e: ChangeEvent<HTMLInputElement>) => {
-    setAddPeople(e.target.value);
+    const names = e.target.value
+      .split(",")
+      .map((name) => name.trim())
+      .filter((name) => name);
+    setAddPeople(names);
   };
 
-  const handlePriority = (e: ChangeEvent<HTMLInputElement>) => {
+  const handlePriority = (e: ChangeEvent<HTMLInputElement>) =>
     setPriority(e.target.value);
-  };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    const taskData: object = {
+      title,
+      status,
+      description,
+      startDate,
+      endDate,
+      startTime,
+      endTime,
+      fileName,
+      addPeople,
+      priority,
+    };
+
+    try {
+      await addTask(taskData);
+    } catch (error) {
+      console.log(`Error: ${error}`);
+    }
 
     setModalCreate(!modalCreate);
   };
@@ -157,7 +167,7 @@ export const FormCreateTask = ({ setModalCreate, modalCreate }: Modal) => {
 
       <AddPeopleInput
         stylesLabel={styles.titleLabel}
-        val={addPeople}
+        val={addPeople.join(", ")}
         changeVal={handleAddPeople}
       />
 

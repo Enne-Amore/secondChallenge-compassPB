@@ -7,13 +7,15 @@ export type Styles = ComponentProps<"label"> & {
   changeVal: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
-export const DescriptionInput = ({ stylesLabel, stylesInput, val, changeVal }: Styles) => {
+export const DescriptionInput = ({
+  stylesLabel,
+  stylesInput,
+  val,
+  changeVal,
+}: Styles) => {
   return (
     <div className="flex flex-col gap-1">
-      <label
-        htmlFor="description"
-        className={stylesLabel}
-      >
+      <label htmlFor="description" className={stylesLabel}>
         Description
       </label>
 
@@ -23,6 +25,7 @@ export const DescriptionInput = ({ stylesLabel, stylesInput, val, changeVal }: S
         value={val}
         onChange={changeVal}
         className={`${stylesInput} h-20 resize-none`}
+        required
         maxLength={300}
       ></textarea>
     </div>

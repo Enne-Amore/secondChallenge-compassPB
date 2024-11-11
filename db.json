@@ -1,0 +1,20 @@
+{
+  "user": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "profilePicture": "https://via.placeholder.com/150",
+    "social": {
+      "twitter": "TheJohnDoe",
+      "instagram": "TheJohnDoe",
+      "linkedin": "TheJohnDoe"
+    },
+    "notifications": {
+      "newTasks": true,
+      "newMembers": false,
+      "weeklyReports": false
+    }
+  },
+  "tasks": []
+}

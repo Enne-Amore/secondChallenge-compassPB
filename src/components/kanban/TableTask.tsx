@@ -7,7 +7,7 @@ export type Colors = ComponentProps<"div"> &
   ComponentProps<"h2"> &
   ComponentProps<"path"> & {
     title: string;
-    qtd?: number;
+    qtd: number;
     topBgColor: string;
     strongBgColor: string;
     titleColor: string;
@@ -15,7 +15,15 @@ export type Colors = ComponentProps<"div"> &
     task: React.ReactNode;
   };
 
-export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, moreIcon, task }: Colors) => {
+export const TableTask = ({
+  title,
+  qtd,
+  topBgColor,
+  strongBgColor,
+  titleColor,
+  moreIcon,
+  task,
+}: Colors) => {
   const [modalCreate, setModalCreate] = useState<boolean>(false);
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
@@ -26,15 +34,9 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
 
   return (
     <article className={styles.containerTable}>
-      <div
-        className={`${topBgColor} ${styles.containerInfoTop}`}
-      >
+      <div className={`${topBgColor} ${styles.containerInfoTop}`}>
         <div className={styles.containerInfo}>
-          <strong
-            className={`${strongBgColor} ${styles.qtd}`}
-          >
-            {qtd}
-          </strong>
+          <strong className={`${strongBgColor} ${styles.qtd}`}>{qtd}</strong>
 
           <h2 className={`${titleColor} ${styles.title}`}>{title}</h2>
         </div>
@@ -57,13 +59,14 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
         </svg>
       </div>
 
-      {modalCreate === true ? (
-        <ModalCreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
-      ) : null}
+      {modalCreate && (
+        <ModalCreateTask
+          modalCreate={modalCreate}
+          setModalCreate={setModalCreate}
+        />
+      )}
 
-      <ul className={styles.taskList}>
-        {task}
-      </ul>
+      <ul className={styles.taskList}>{task}</ul>
     </article>
   );
 };
