@@ -155,22 +155,6 @@ Aqui estão as fontes utilizadas no projeto:
   Exemplo de uso:   
   `font-family: 'Inter', sans-serif;`
 
-## 🅵🅾️ntes Utilizadas
-
-Aqui estão as fontes utilizadas no projeto:
-
-- **Roboto**  
-  Exemplo de uso:  
-  `font-family: 'Roboto', sans-serif;`
-
-- **Plus Jakarta Sans**  
-  Exemplo de uso:   
-  `font-family: 'Plus Jakarta Sans', sans-serif;`
-
-- **Inter**  
-  Exemplo de uso:   
-  `font-family: 'Inter', sans-serif;`
-
 ## 👥 Colaboradores do projeto
 
 | Nome                | GitHub                                      |
