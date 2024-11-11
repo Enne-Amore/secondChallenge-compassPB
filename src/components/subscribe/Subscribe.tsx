@@ -38,7 +38,7 @@ export const Subscribe = () => {
     }, [isAuthenticated, navigate]);
 
     const saveData = async () => {
-        const url = "http://localhost:4000/posts";
+        const url = "http://localhost:4000/users";
         try {
             const response = await fetch(url, {
                 method: "POST",

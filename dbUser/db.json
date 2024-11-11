@@ -1,14 +1,47 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "johndoe@example.com",
-            "position": "Developer",
-            "socialMedia": ""
-          }
-    ],
-    "users": []
-  }
-  
+  "posts": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "position": "Developer",
+      "socialMedia": ""
+    },
+    {
+      "id": "0fd1",
+      "firstName": "orlean",
+      "lastName": "sousa",
+      "user": "@orleansousa",
+      "date": "2024-11-11T14:03:55.997Z",
+      "email": "teste@test.com",
+      "password": "129312837A!",
+      "position": "uahsuashu",
+      "socialMedia": ""
+    },
+    {
+      "id": "7429",
+      "firstName": "asdasd",
+      "lastName": "adasd",
+      "user": "@asdasdadasd",
+      "date": "2024-11-11T14:06:28.405Z",
+      "email": "asdasd@asdas.com",
+      "password": "12312312Q@",
+      "position": "qeqweqw",
+      "socialMedia": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "6fa7",
+      "firstName": "asdasd",
+      "lastName": "adasd",
+      "user": "@asdasdadasd",
+      "date": "2024-11-11T14:08:02.131Z",
+      "email": "sda@das.com",
+      "password": "13121412@!A",
+      "position": "sadasdas",
+      "socialMedia": ""
+    }
+  ]
+}
