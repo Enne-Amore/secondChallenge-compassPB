@@ -1,9 +1,10 @@
 import styles from "./Subscribe.module.css";
 import { Button } from "../button";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
-import { useClerk, useUser } from "@clerk/clerk-react";
+
+import { User } from "../types/User";
 import { registerUser } from "../services/authService";
 
 // Validações de regex
@@ -14,7 +15,6 @@ const validatePassword = (password: string): boolean =>
   /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>/?`~\\-]{8,}$/.test(password);
 
 export const Subscribe = () => {
-  const { isAuthenticated } = useClerk();
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [job, setJob] = useState<string>("");
@@ -30,8 +30,8 @@ export const Subscribe = () => {
   const [isValidated, setIsValidated] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  // Lida com a validação dos campos
-  const handleValidation = () => {
+  // Valida os campos
+  const handleValidation = (): boolean => {
     const isFirstNameValid = validateNome(firstName);
     const isLastNameValid = validateNome(lastName);
     const isEmailValid = validateEmail(email);
@@ -51,23 +51,21 @@ export const Subscribe = () => {
 
   const handleSignUp = async () => {
     if (handleValidation()) {
-      const userData = {
+      const userData: Omit<User, 'id' | 'createdAt'> = {
         firstName,
         lastName,
-        user: `@${firstName}${lastName}`,
-        createdDate: new Date().toISOString(),
         email,
         password,
-        job,
         socialMedia: { twitter: "", instagram: "", linkedin: "" },
         profilePicture: "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+        username: "",
+        jobPosition: ""
       };
 
       try {
         await registerUser(userData);
         toast.success("Account created successfully!");
         setTimeout(() => navigate("/login"), 2000); // Redireciona para login após sucesso
-        clearInputs();
       } catch (error) {
         console.error("Error registering user:", error);
         toast.error("Failed to create account. Please try again.");
@@ -75,21 +73,6 @@ export const Subscribe = () => {
     } else {
       setIsValidated(true);
     }
-  };
-
-  const clearInputs = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setJob("");
-    setPassword("");
-    setErrors({
-      emailError: false,
-      passwordError: false,
-      lastNameError: false,
-      firstNameError: false,
-      jobError: false,
-    });
   };
 
   return (
@@ -178,3 +161,4 @@ export const Subscribe = () => {
     </div>
   );
 };
+

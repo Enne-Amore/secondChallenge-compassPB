@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Main = () => {
   return (
-        <div className={styles.mainSection}>
+        <main className={styles.mainSection}>
             <div className={styles.container}>
                 <h1 className={styles.title}>Welcome to <span className='text-blue-55'>Project Manager</span></h1>
                 <p className={styles.textMain}>Get your projects and ideas in order, 
@@ -28,7 +28,7 @@ const Main = () => {
                 </div>
             </div>
             <div className={styles.imgcenter}></div>
-        </div>
+        </main>
     
   )
 }

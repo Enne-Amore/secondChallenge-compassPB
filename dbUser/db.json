@@ -36,45 +36,21 @@
   ],
   "tasks": [
     {
-      "id": "6c35",
-      "title": "n rjcjfere",
-      "status": "done",
-      "description": "",
-      "startDate": "2020-12-12",
-      "endDate": "2020-12-12",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "fileName": null,
-      "addPeople": [],
-      "priority": "high",
-      "createdAt": "2024-11-11T18:49:35.319Z"
-    },
-    {
-      "id": "230f",
-      "title": "Task 01",
-      "status": "done",
-      "description": "",
-      "startDate": "2020-12-12",
-      "endDate": "2020-12-12",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "fileName": null,
-      "addPeople": [],
-      "priority": "low",
-      "createdAt": "2024-11-11T18:52:58.276Z"
-    },
-    {
-      "id": "75cd",
-      "title": "Task 02",
-      "status": "inProgress",
-      "description": "",
-      "startDate": "2020-12-12",
-      "endDate": "2020-12-12",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "fileName": null,
-      "addPeople": [],
-      "priority": "mid"
+      "id": "9c3c",
+      "firstName": "orlean",
+      "lastName": "sousa",
+      "user": "@orleansousa",
+      "createdDate": "2024-11-11T17:49:43.635Z",
+      "email": "test@test.com",
+      "password": "$2a$10$ihkhdwvx61rPhtlWPmysAO//66X2gM4uOkJGe4uVA8YG4g5dDk5Du",
+      "job": "desenvol",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+      "createdAt": "2024-11-11T17:49:43.635Z"
     }
   ]
 }

@@ -60,26 +60,25 @@ export const Login = () => {
       toast.error("Please check your email and password.");
       return;
     }
-
-    setLoading(true); // Inicia o loading
-
+  
+    setLoading(true);
+  
     try {
-      const user = await loginUser(email, password);
-      if (user) {
+      const isAuthenticated = await loginUser(email, password);
+      if (isAuthenticated) {
         toast.success("Login successful!");
         clear();
-        setTimeout(() => {
-          navigate("/kanban");
-        }, 2000);
+        navigate("/kanban");
       } else {
         toast.error("Invalid email or password.");
       }
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
     } finally {
-      setLoading(false); // Finaliza o loading
+      setLoading(false);
     }
   };
+  
 
   const handleOAuthLogin = () => {
     openSignIn({
