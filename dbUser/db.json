@@ -36,21 +36,36 @@
   ],
   "users": [
     {
-      "id": "9c3c",
+      "id": "10da",
       "firstName": "orlean",
       "lastName": "sousa",
-      "user": "@orleansousa",
-      "createdDate": "2024-11-11T17:49:43.635Z",
-      "email": "test@test.com",
-      "password": "$2a$10$ihkhdwvx61rPhtlWPmysAO//66X2gM4uOkJGe4uVA8YG4g5dDk5Du",
-      "job": "desenvol",
+      "email": "orlean@test.com",
+      "password": "$2a$10$jV/nqX/uz9Q7wvQDSY0TVODj/kYXKhZIJqt36kBbalcxePfME07p.",
       "socialMedia": {
         "twitter": "",
         "instagram": "",
         "linkedin": ""
       },
       "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
-      "createdAt": "2024-11-11T17:49:43.635Z"
+      "username": "",
+      "jobPosition": "",
+      "createdAt": "2024-11-11T18:26:43.336Z"
+    },
+    {
+      "id": "57ab",
+      "firstName": "orlean",
+      "lastName": "sousa",
+      "email": "orlean@teste.com",
+      "password": "$2a$10$Q2.aPIqjT5e9D4brSukGrOhZihH.wGIiiJrkf3E2/2T4aDqvoRA4i",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+      "username": "",
+      "jobPosition": "",
+      "createdAt": "2024-11-11T18:43:59.292Z"
     }
   ]
 }

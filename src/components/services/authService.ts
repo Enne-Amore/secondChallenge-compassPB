@@ -5,26 +5,36 @@ import { User } from "../types/User";
 const API_URL = "http://localhost:4000/users";
 
 // Função de cadastro com hashing
-export async function registerUser(userData: Omit<User, 'id' | 'createdAt' | 'password'> & { password: string }): Promise<User> {
+export async function registerUser(
+  userData: Omit<User, 'id' | 'createdAt' | 'password'> & { password: string }
+): Promise<User> {
   const createdAt = new Date().toISOString();
 
-  // Gera o hash da senha
-  const hashedPassword = await bcrypt.hash(userData.password, 10);
+  try {
+    // Gera o hash da senha
+    const hashedPassword = await bcrypt.hash(userData.password, 10);
 
-  // Cria o usuário com a senha hashed
-  const response = await axios.post(API_URL, {
-    ...userData,
-    password: hashedPassword, // Usa a senha hashed
-    createdAt,
-  });
-  return response.data;
+    // Cria o usuário com a senha hashed
+    const response = await axios.post<User>(API_URL, {
+      ...userData,
+      password: hashedPassword, // Usa a senha hashed
+      createdAt,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error during registration:", error);
+    throw new Error("Registration failed. Please try again.");
+  }
 }
 
 // Função de login com verificação do hash da senha
-export async function loginUser(email: string, password: string): Promise<User | null> {
+export async function loginUser(
+  email: string, 
+  password: string
+): Promise<User | null> {
   try {
     // Busca o usuário pelo email
-    const response = await axios.get(API_URL, {
+    const response = await axios.get<User[]>(API_URL, {
       params: { email },
     });
 

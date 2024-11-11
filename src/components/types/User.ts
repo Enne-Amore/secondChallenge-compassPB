@@ -7,6 +7,7 @@ export interface User {
     email: string;
     password: string;
     jobPosition: string;
+    profilePicture:string;
     socialMedia: {
       twitter: string;
       instagram: string;
