@@ -1,21 +1,22 @@
-import React, { ComponentProps, useState } from "react";
+import React, { ComponentProps, useEffect, useState } from "react";
 import { ModalCreateTask } from "./ModalCreateTask";
 import styles from "./TableTask.module.css";
+import axios from "axios";
+import { Task } from "./Task";
+import { Tasks } from "../../types/Tasks";
 
 export type Colors = ComponentProps<"div"> &
   ComponentProps<"strong"> &
   ComponentProps<"h2"> &
   ComponentProps<"path"> & {
     title: string;
-    qtd?: number;
     topBgColor: string;
     strongBgColor: string;
     titleColor: string;
     moreIcon: string;
-    task: React.ReactNode;
   };
 
-export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, moreIcon, task }: Colors) => {
+export const TableTask = ({ title, topBgColor, strongBgColor, titleColor, moreIcon }: Colors) => {
   const [modalCreate, setModalCreate] = useState<boolean>(false);
 
   const keyDown = (event: React.KeyboardEvent<SVGElement>) => {
@@ -23,6 +24,22 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
       setModalCreate(!modalCreate);
     }
   };
+
+  const [tasks, setTasks] = useState<Tasks[]>([])
+
+  const getTasks = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/tasks");
+      const data: Tasks[] = response.data;
+      setTasks(data);
+    } catch (error) {
+      console.log(`Error: ${error}`);
+    }
+  };
+
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   return (
     <article className={styles.containerTable}>
@@ -33,7 +50,7 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
           <strong
             className={`${strongBgColor} ${styles.qtd}`}
           >
-            {qtd}
+            {tasks.length}
           </strong>
 
           <h2 className={`${titleColor} ${styles.title}`}>{title}</h2>
@@ -57,12 +74,22 @@ export const TableTask = ({ title, qtd, topBgColor, strongBgColor, titleColor, m
         </svg>
       </div>
 
-      {modalCreate === true ? (
+      {modalCreate && (
         <ModalCreateTask modalCreate={modalCreate} setModalCreate={setModalCreate} />
-      ) : null}
+      )}
 
       <ul className={styles.taskList}>
-        {task}
+        {tasks.length > 0 ? (
+          tasks.map((task) => (
+            <Task
+              key={task.id}
+              priority={task.priority}
+              title={task.title}
+              qtdComments={task.qtdComments}
+              qtdCompletedTasks={task.qtdCompletedTasks}
+            />
+          ))
+        ) : null}
       </ul>
     </article>
   );

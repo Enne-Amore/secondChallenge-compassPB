@@ -1,5 +1,8 @@
 .containerTable {
-    @apply bg-[#1E293B1A] rounded-3xl h-510 overflow-y-clip
+    @apply bg-[#1E293B1A] rounded-3xl h-510 overflow-y-clip min-w-52
+
+    /* desktop */
+    desktop:min-w-64
 }
 
 .containerInfoTop {
