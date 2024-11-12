@@ -85,6 +85,23 @@
       },
       "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
       "createdAt": "2024-11-11T18:55:46.801Z"
+    },
+    {
+      "id": "50e7",
+      "firstName": "natalia",
+      "lastName": "almeida",
+      "username": "@nataliaalmeida",
+      "createdDate": "2024-11-12T17:22:08.832Z",
+      "email": "nath@test.com",
+      "password": "$2a$10$dYo9kE2SvmsYLCcyPh5y1OmORMtrPXMBO/V8K91B3SqDPcABvCeMa",
+      "job": "professora",
+      "socialMedia": {
+        "twitter": "",
+        "instagram": "",
+        "linkedin": ""
+      },
+      "profilePicture": "https://assets.dryicons.com/uploads/icon/svg/5609/00c2616e-3746-48be-ac80-a4b8add412b5.svg",
+      "createdAt": "2024-11-12T17:22:08.832Z"
     }
   ]
 }
